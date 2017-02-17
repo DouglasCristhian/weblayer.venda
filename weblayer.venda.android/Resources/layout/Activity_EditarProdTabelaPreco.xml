@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="400dp"
+    android:minHeight="500dp">
+
+    <include
+      android:id="@+id/toolbar"
+      layout="@layout/toolbar"/>
+
+    <TextView
+      android:id="@+id/lblIdProdutoTbl"
+      android:layout_marginTop="30dip"
+      android:layout_marginLeft = "18dip"
+      android:textSize="18sp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Produto"/>
+    <Spinner
+      android:id="@+id/spinnerIdProdutoTbl"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginLeft = "18dip"
+      android:layout_marginRight = "18dip"/>
+    <TextView
+      android:id="@+id/lblIdTabPreco"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft = "18dip"
+      android:text="Tabela"/>
+    <Spinner
+      android:id="@+id/spinnerIdTabPreco"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginLeft = "18dip"
+      android:layout_marginRight = "18dip"/>
+    <TextView
+      android:id="@+id/lblValorTabProd"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft = "18dip"
+      android:text="Valor"/>
+    <EditText
+      android:id="@+id/txtValorTabProd"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="right"
+      android:textSize="18sp"
+      android:inputType="numberDecimal"
+      android:layout_marginLeft = "18dip"
+      android:layout_marginRight = "18dip"
+      android:focusable="false"
+      android:editable="false"/>
+  </LinearLayout>
+</ScrollView>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <color name="colorPrimary">#D6D7D7</color>
+  <color name="colorPrimaryDark">#423E3E</color>
+  <color name="colorAccent">#423E3E</color>
+
+  <color name="grey">#E5E5E5</color>
+  <color name="Orcamento">#95a5a6</color>
+  <color name="Finalizado">#808080</color>
+  <color name="Sincronizado">#3498d5</color>
+  <color name="ParcProcessado">#6a5eb7</color>
+  <color name="NaoProcessado">#c0392b</color>
+  <color name="Cancelado">#c0392b</color>
+  <color name="ParcFaturado">#f3b913</color>
+  <color name="Faturado">#f3b913</color>
+  <color name="ParcEntregue">#27cc71</color>
+  <color name="Entregue">#27cc71</color>
+
+</resources>

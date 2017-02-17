@@ -43,15 +43,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Bll\Cliente_Manager.cs" />
+    <Compile Include="Bll\PedidoItem_Manager.cs" />
+    <Compile Include="Bll\Pedido_Manager.cs" />
+    <Compile Include="Bll\ProdutoTabelaPreco_Manager.cs" />
+    <Compile Include="Bll\Produto_Manager.cs" />
+    <Compile Include="Bll\TabelaPreco_Manager.cs" />
+    <Compile Include="Dal\ClienteRepository.cs" />
+    <Compile Include="Dal\Database.cs" />
+    <Compile Include="Dal\PedidoItemRepository.cs" />
+    <Compile Include="Dal\PedidoRepository.cs" />
+    <Compile Include="Dal\ProdutoRepository.cs" />
+    <Compile Include="Dal\ProdutoTabelaPrecoRepository.cs" />
+    <Compile Include="Dal\TabelaPrecoRepository.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Pedido.cs" />
+    <Compile Include="Model\PedidoItem.cs" />
+    <Compile Include="Model\Produto.cs" />
+    <Compile Include="Model\ProdutoTabelaPreco.cs" />
+    <Compile Include="Model\TabelaPreco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sinc\Model\Cliente.cs" />
+    <Compile Include="Sinc\Model\ProdutoTabelaPreco.cs" />
+    <Compile Include="Sinc\Model\Produto.cs" />
+    <Compile Include="Sinc\Sinc_Manager.cs" />
+    <Compile Include="Sinc\Model\TabelaPreco.cs" />
+    <Compile Include="Sinc\WebServiceMock.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\AboutResources.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Values\Strings.xml" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

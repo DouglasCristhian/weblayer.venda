@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="weblayer.venda.android.weblayer.venda.android" android:versionCode="1" android:versionName="1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="weblayer.venda.android.pro" android:versionCode="1" android:versionName="1.0">
   <uses-sdk android:minSdkVersion="16" />
-  <application android:label="weblayer.venda.android"></application>
+  <application
+  android:label="W/Vendas"
+  android:theme="@style/MaterialTheme"
+  android:icon="@mipmap/ic_launcher2">
+  </application>
 </manifest>

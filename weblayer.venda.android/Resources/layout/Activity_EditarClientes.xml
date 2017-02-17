@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="400dp"
+    android:minHeight="500dp">
+
+    <include
+      android:id="@+id/toolbar"
+      layout="@layout/toolbar"/>
+
+    <TextView
+      android:id="@+id/lblCodigoCliente"
+      android:layout_marginTop="30dip"
+      android:layout_marginLeft = "18dip"
+      android:textSize="18sp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Código"/>
+
+    <EditText
+      android:id="@+id/txtCodigoCliente"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginLeft="18dip"
+      android:layout_marginRight="18dip"
+      android:focusable="false"
+      android:editable="false"/>
+
+    <TextView
+      android:id="@+id/lblRazaoSocial"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft = "18dip"
+      android:text="Razão Social"/>
+
+    <EditText
+      android:id="@+id/txtRazaoSocial"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginLeft="18dip"
+      android:layout_marginRight="18dip"
+      android:focusable="false"
+      android:editable="false"/>
+
+    <TextView
+      android:id="@+id/lblNomeFantasia"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft = "18dip"
+      android:text="Nome Fantasia"/>
+
+    <EditText
+      android:id="@+id/txtNomeFantasia"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginLeft="18dip"
+      android:layout_marginRight="18dip"
+      android:focusable="false"
+      android:editable="false"/>
+
+    <TextView
+      android:id="@+id/lblCNPJ"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft = "18dip"
+      android:text="CNPJ"/>
+
+    <EditText
+      android:id="@+id/txtCNPJ"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginLeft="18dip"
+      android:layout_marginRight="18dip"
+      android:focusable="false"
+      android:editable="false"/>
+
+    <TextView
+      android:id="@+id/lblSpinner"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft = "18dip"
+      android:text="Tabela de Preços"/>
+
+    <Spinner
+      android:id="@+id/spinnerTblPrecos"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:layout_marginLeft="18dip"
+      android:layout_marginRight="18dip"/>
+  </LinearLayout>
+</ScrollView>

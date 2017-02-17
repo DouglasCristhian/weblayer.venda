@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weblayer.venda.android", "weblayer.venda.android\weblayer.venda.android.csproj", "{65280AF4-566A-4062-A946-8AC77CD75548}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weblayer.venda.android.pro", "weblayer.venda.android\weblayer.venda.android.pro.csproj", "{65280AF4-566A-4062-A946-8AC77CD75548}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weblayer.venda.core", "weblayer.venda.core\weblayer.venda.core.csproj", "{0AA9D10F-5744-450E-9AE2-F415C1579959}"
 EndProject
