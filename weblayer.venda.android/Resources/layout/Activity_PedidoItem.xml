@@ -57,7 +57,7 @@
        android:layout_width="match_parent"
        android:gravity="right"
        android:layout_marginTop="3dp"
-       android:text="0"
+       android:text="0,00"
        android:editable="false"
        android:clickable="false"/>
 
@@ -79,7 +79,7 @@
        android:layout_marginLeft="18dip"
        android:layout_marginRight="18dip"
        android:inputType="number"
-       android:text="0"/>
+       android:text="0,00"/>
 
     <TextView
        android:id="@+id/lblDesconto"

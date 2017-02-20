@@ -207,7 +207,7 @@ namespace weblayer.venda.android.Activities
                 txtValorTotal.Enabled = false;
             }
 
-            txtDesconto.Text = "0";
+            txtDesconto.Text = "0,00";
             txtValorLista.Enabled = false;
             txtDesconto.Enabled = false;
             txtValorTotal.Enabled = false;
@@ -425,7 +425,7 @@ namespace weblayer.venda.android.Activities
                 {
                     txtValorLista.Text = tabprecoprod.vl_Valor.ToString("#,##0.00");
                     txtValorVenda.Text = tabprecoprod.vl_Valor.ToString("#,##0.00");
-                    txtDesconto.Text = "0";
+                    txtDesconto.Text = "0,00";
                 }
                 else
                 {
