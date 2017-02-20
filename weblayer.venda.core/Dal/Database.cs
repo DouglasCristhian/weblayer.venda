@@ -1,6 +1,6 @@
 using SQLite;
+using System;
 using weblayer.venda.core.Model;
-using Environment = System.Environment;
 
 namespace weblayer.venda.core.Dal
 {
@@ -26,12 +26,12 @@ namespace weblayer.venda.core.Dal
         {
             CreateDatabase(GetConnection());
 
-            //new ProdutoRepository().MakeDataMock();
-            //new TabelaPrecoRepository().MakeDataMock();
-            //new ClienteRepository().MakeDataMock();
+            new ProdutoRepository().MakeDataMock();
+            new TabelaPrecoRepository().MakeDataMock();
+            new ClienteRepository().MakeDataMock();
             new PedidoRepository().MakeDataMock();
-            //new ProdutoTabelaPrecoRepository().MakeDataMock();
-            //new PedidoItemRepository().MakeDataMock();
+            new ProdutoTabelaPrecoRepository().MakeDataMock();
+            new PedidoItemRepository().MakeDataMock();
 
         }
 

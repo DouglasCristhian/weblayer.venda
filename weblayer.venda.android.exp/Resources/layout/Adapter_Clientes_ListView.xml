@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="18dip"
+    android:baselineAligned="false"
+    android:orientation="vertical">
+  
+  <TextView
+    android:id="@+id/txtCodigoCliente"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="17sp"/>
+  <TextView
+    android:id="@+id/txtRazaoSocial"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="17sp"/>
+  <TextView
+    android:id="@+id/txtNomeFantasia"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="17sp"/>
+  <TextView
+    android:id="@+id/txtCNPJ"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="17sp"/>
+  <TextView
+    android:id="@+id/txtTabelaPrecoCli"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="17sp"/>
+</LinearLayout>

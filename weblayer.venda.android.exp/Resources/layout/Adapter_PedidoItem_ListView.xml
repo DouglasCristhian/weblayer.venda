@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:padding="18dip"
+    android:orientation="vertical">
+
+  <TextView
+    android:id="@+id/txtIdProdutoPedidoItem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="17sp"/>
+  <TextView
+    android:id="@+id/txtValorPedidoItem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="17sp"/>
+  <TextView
+    android:id="@+id/txtQuantidadePedidoItem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="17sp"/>
+  <TextView
+    android:id="@+id/txtValorTotalPedidoItem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="17sp"/>
+  
+</LinearLayout>

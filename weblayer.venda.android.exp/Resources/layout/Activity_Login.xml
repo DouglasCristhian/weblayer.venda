@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+  <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+
+    <TextView
+        android:text="Servidor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dip"
+        android:layout_marginRight = "18dip"
+        android:layout_marginLeft = "18dip"
+        android:id="@+id/txtServidor" />
+
+    <EditText
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight = "18dip"
+        android:layout_marginLeft = "18dip"
+        android:id="@+id/edtServidor"/>
+
+    <TextView
+    android:text="Usuário"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight = "18dip"
+    android:layout_marginLeft = "18dip"
+    android:id="@+id/txtUsuario" />
+
+    <EditText
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight = "18dip"
+        android:layout_marginLeft = "18dip"
+        android:id="@+id/edtUsuario" />
+    <TextView
+        android:text="Senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight = "18dip"
+        android:layout_marginLeft = "18dip"
+        android:id="@+id/txtSenha" />
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight = "18dip"
+        android:layout_marginLeft = "18dip"
+        android:id="@+id/edtSenha" />
+    <Button
+        android:text="Entrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight = "18dip"
+        android:layout_marginLeft = "18dip"
+        android:id="@+id/btnEntrar" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight = "18dip"
+        android:layout_marginLeft = "18dip"
+        android:id="@+id/txtMensagem"
+        android:textColor="#fff50d0d" />
+  </LinearLayout>
+</LinearLayout>

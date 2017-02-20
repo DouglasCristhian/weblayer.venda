@@ -16,10 +16,9 @@ namespace weblayer.venda.core.Dal
 
         public void Save(Produto entidade)
         {
-
             try
             {
-                if (entidade.id > 0 && Get(entidade.id) != null)
+                if (entidade.id > 0)// && Get(entidade.id) != null)
                     Database.GetConnection().Update(entidade);
                 else
                     Database.GetConnection().Insert(entidade);
@@ -32,6 +31,12 @@ namespace weblayer.venda.core.Dal
 
         public void Delete(Produto entidade)
         {
+            var TabelasPreco = new TabelaPrecoRepository().GetByProd(entidade.id);
+            if (TabelasPreco.Count > 0)
+            {
+                throw new Exception("O produto não pode ser excluído pois existem tabelas de preço vinculadas a ele!");
+            }
+
             Database.GetConnection().Delete(entidade);
         }
 
@@ -42,29 +47,17 @@ namespace weblayer.venda.core.Dal
 
         public IList<Produto> ListFiltro(string filtro)
         {
-            return Database.GetConnection().Table<Produto>().Where(x => x.ds_nome.StartsWith(filtro)).ToList();
+            return Database.GetConnection().Table<Produto>().Where(x => x.ds_nome.Contains(filtro)).ToList();
         }
 
-        //public string Prod(Produto entidade)
-        //{
-        //    return Database.GetConnection().Table<Produto>().Where(x => entidade.ds_nome == x.ds_nome).ToList().ToString();
-        //}
+        public void MakeDataMock()
+        {
+            if (List().Count > 0)
+                return;
 
-        //public string DescProd(int id)
-        //{
-        //    return Database.GetConnection().Table<Produto>().Where(x => x.id == id).ToString();
-        //}
-
-        //public void MakeDataMock()
-        //{
-        //    if (List().Count > 0)
-        //        return;
-
-        //    Save(new Produto() { id_codigo = "1111", ds_nome = "LAPIS DE COR AMARELO", ds_unimedida = "CX", id_tabpreco = 1, /*vl_Valor = 1.00*/ vl_Lista = 1.00 });
-        //    Save(new Produto() { id_codigo = "2222", ds_nome = "LAPIS DE COR VERMELHO", ds_unimedida = "PCT", id_tabpreco = 2, /*vl_Valor = 1.00*/ vl_Lista = 1.00 });
-        //    Save(new Produto() { id_codigo = "3333", ds_nome = "LAPIS DE COR AZUL", ds_unimedida = "CX", id_tabpreco = 2, /*vl_Valor = 1.00 */ vl_Lista = 1.00 });
-        //    Save(new Produto() { id_codigo = "4444", ds_nome = "LAPIS DE COR PRETO", ds_unimedida = "UN", id_tabpreco = 1, /*vl_Valor = 1.00*/ vl_Lista = 1.00 });
-        //}
-
+            Save(new Produto() { id_codigo = "1111", ds_nome = "LAPIS DE COR AMARELO", ds_unimedida = "CX", vl_Venda = 6.30, vl_Lista = 6.30 });
+            Save(new Produto() { id_codigo = "2222", ds_nome = "LAPIS DE COR VERMELHO", ds_unimedida = "PCT", vl_Venda = 5.25, vl_Lista = 5.25 });
+            Save(new Produto() { id_codigo = "3333", ds_nome = "LAPIS DE COR AZUL", ds_unimedida = "CX", vl_Venda = 8, vl_Lista = 8 });
+        }
     }
 }

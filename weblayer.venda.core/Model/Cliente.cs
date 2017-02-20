@@ -5,7 +5,7 @@ namespace weblayer.venda.core.Model
     [Table("Cliente")]
     public class Cliente
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int id { get; set; }
 
         [MaxLength(60)]

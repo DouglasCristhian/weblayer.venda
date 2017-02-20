@@ -14,6 +14,11 @@ namespace weblayer.venda.core.Dal
             return Database.GetConnection().Table<TabelaPreco>().Where(x => x.id == id).FirstOrDefault();
         }
 
+        public IList<TabelaPreco> GetByProd(int id_produto)
+        {
+            return Database.GetConnection().Table<TabelaPreco>().Where(x => x.id == id_produto).ToList();
+        }
+
         public void Save(TabelaPreco entidade)
         {
             try

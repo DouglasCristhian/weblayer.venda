@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="400dp"
+    android:minHeight="500dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <include
+      android:id="@+id/toolbar"
+      layout="@layout/toolbar"/>
+
+    <TextView
+       android:id="@+id/lblIdProduto"
+       android:layout_marginTop="10dip"
+       android:layout_marginLeft="18dip"
+       android:textSize="18sp"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:focusable="false"
+       android:text="Produto"/>
+
+
+    <EditText
+       android:id="@+id/txtIdProduto"
+       android:layout_marginLeft = "18dip"
+       android:layout_marginRight = "18dip"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:layout_marginTop="3dp"
+       android:hint="Clique para adicionar o produto"
+       android:editable="false"
+       android:clickable="true"/>
+
+    <TextView
+       android:id="@+id/lblValorLista"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:layout_marginTop="10dip"
+       android:layout_marginLeft="18dip"
+       android:textSize="18sp"
+       android:text="Valor da Lista"/>
+
+
+    <EditText
+       android:id="@+id/txtValorLista"
+       android:layout_marginLeft = "18dip"
+       android:layout_marginRight = "18dip"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:gravity="right"
+       android:layout_marginTop="3dp"
+       android:text="0,00"
+       android:editable="false"
+       android:clickable="false"/>
+
+    <TextView
+       android:id="@+id/lblValorVenda"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:layout_marginTop="10dip"
+       android:layout_marginLeft="18dip"
+       android:textSize="18sp"
+       android:text="Valor de Venda"/>
+
+    <EditText
+       android:id="@+id/txtValorVenda"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:gravity="right"
+       android:textSize="18sp"
+       android:layout_marginLeft="18dip"
+       android:layout_marginRight="18dip"
+       android:inputType="number"
+       android:text="0,00"/>
+
+    <TextView
+       android:id="@+id/lblDesconto"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:layout_marginTop="10dip"
+       android:layout_marginLeft="18dip"
+       android:textSize="18sp"
+       android:text="Desconto"/>
+
+    <EditText
+       android:id="@+id/txtDesconto"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:textSize="18sp"
+       android:layout_marginLeft="18dip"
+       android:layout_marginRight="18dip"
+       android:gravity="right"
+       android:editable="false"
+       android:clickable="false"/>
+
+    <TextView
+       android:id="@+id/lblQuantidade"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:layout_marginTop="10dip"
+       android:layout_marginLeft="18dip"
+       android:textSize="18sp"
+       android:text="Quantidade"/>
+
+
+      <LinearLayout
+          android:layout_height="wrap_content"
+          android:layout_width="match_parent"
+          android:orientation="horizontal">
+
+        <Button
+          android:id="@+id/btnMenos"
+          android:layout_height="wrap_content"
+          android:layout_width="wrap_content"
+          android:layout_marginLeft="18dip"
+          android:textSize="18sp"
+          android:text="-"/>
+
+        <EditText
+           android:id="@+id/txtQuantidade"
+           android:layout_height="wrap_content"
+           android:layout_width="150dip"
+           android:inputType="number"
+           android:gravity="center"
+           android:text="0"
+           android:textSize="18sp"/>
+
+        <Button
+          android:id="@+id/btnMais"
+          android:layout_height="wrap_content"
+          android:layout_width="wrap_content"
+          android:layout_marginRight="18dip"
+          android:textSize="18sp"
+          android:text="+"/>
+      </LinearLayout>
+
+
+    <TextView
+       android:id="@+id/lblValorTotal"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:layout_marginTop="10dip"
+       android:layout_marginLeft="18dip"
+       android:textSize="18sp"
+       android:text="Valor Total"/>
+
+    <EditText
+       android:id="@+id/txtValorTotal"
+       android:layout_marginLeft = "18dip"
+       android:layout_marginRight = "18dip"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:layout_marginTop="3dp"
+       android:gravity="right"
+       android:editable="false"
+       android:clickable="true"
+       android:text="0"/>
+    
+    <Button
+       android:id="@+id/btnSalvar"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:layout_marginRight="18dip"
+       android:layout_marginLeft="18dip"
+       android:layout_marginTop="10dip"
+       android:text="Salvar"/>
+
+    <Button
+       android:id="@+id/btnSalvarOutro"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:layout_marginRight="18dip"
+       android:layout_marginLeft="18dip"
+       android:text="Salvar +"/>
+
+    <Button
+      android:id="@+id/btnLimparPedidoItem"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_marginRight="18dip"
+      android:layout_marginLeft="18dip"
+      android:text="Limpar"/>
+
+    <Button
+      android:id="@+id/btnSalvarAtualizar"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_marginTop="10dp"
+      android:layout_marginRight="18dip"
+      android:layout_marginLeft="18dip"
+      android:text="Salvar"/>
+
+    <Button
+      android:id="@+id/btnExcluirPedidoItem"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_marginRight="18dip"
+      android:layout_marginLeft="18dip"
+      android:text="Excluir"/>
+
+  </LinearLayout>
+</ScrollView>

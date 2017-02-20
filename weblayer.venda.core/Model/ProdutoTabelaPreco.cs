@@ -5,7 +5,7 @@ namespace weblayer.venda.core.Model
     [Table("ProdutoTabelaPreco")]
     public class ProdutoTabelaPreco
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int id { get; set; }
 
         public int id_produto { get; set; }
