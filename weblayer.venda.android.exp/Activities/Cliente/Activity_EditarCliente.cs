@@ -39,12 +39,25 @@ namespace weblayer.venda.android.exp.Activities
             switch (item.ItemId)
             {
                 case Resource.Id.action_salvar:
-                    Save();
-                    return true;
+                    if (txtCNPJCli.Length() < 14)
+                    {
+                        txtCNPJCli.Error = "CNPJ inválido!";
+                    }
+                    else
+                    {
+                        Save();
+                        return true;
+                    }
+                    break;
 
                 case Resource.Id.action_deletar:
                     Delete();
                     return true;
+
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
+
             }
             return base.OnOptionsItemSelected(item);
         }
@@ -84,12 +97,15 @@ namespace weblayer.venda.android.exp.Activities
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_toolbar, menu);
-            //menu.RemoveItem(Resource.Id.action_salvar);
-            //menu.RemoveItem(Resource.Id.action_deletar);
             menu.RemoveItem(Resource.Id.action_adicionar);
             menu.RemoveItem(Resource.Id.action_sobre);
             menu.RemoveItem(Resource.Id.action_help);
             menu.RemoveItem(Resource.Id.action_sair);
+
+            if (cli == null)
+            {
+                menu.RemoveItem(Resource.Id.action_deletar);
+            }
 
             return base.OnCreateOptionsMenu(menu);
         }
@@ -105,7 +121,6 @@ namespace weblayer.venda.android.exp.Activities
             txtCNPJCli.AddTextChangedListener(new Mask(txtCNPJCli, "##.###.###/####-##"));
 
             spinnerTabelaPreco.ItemSelected += new EventHandler<ItemSelectedEventArgs>(spinTblPreco_ItemSelected);
-
         }
 
         private void BindView()
@@ -141,15 +156,6 @@ namespace weblayer.venda.android.exp.Activities
             var mytabelapreco = tblprecospinner[spinnerTabelaPreco.SelectedItemPosition];
             cli.id_tabelapreco = mytabelapreco.Id();
         }
-
-        //private void BindData()
-        //{
-        //    spinnerTabelaPreco.Enabled = false;
-        //    txtCodCli.Enabled = false;
-        //    txtRazaoSocialCli.Enabled = false;
-        //    txtNomeFantasiaCli.Enabled = false;
-        //    txtCNPJCli.Enabled = false;
-        //}
 
         private bool ValidateViews()
         {

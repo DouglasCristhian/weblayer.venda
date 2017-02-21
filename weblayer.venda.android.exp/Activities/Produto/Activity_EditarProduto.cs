@@ -6,6 +6,7 @@ using Android.Widget;
 using System;
 using System.Collections.Generic;
 using weblayer.venda.android.exp.Adapters;
+using weblayer.venda.android.exp.Helpers;
 using weblayer.venda.core.Bll;
 using weblayer.venda.core.Dal;
 using weblayer.venda.core.Model;
@@ -75,6 +76,10 @@ namespace weblayer.venda.android.exp.Activities
                 case Resource.Id.action_deletar:
                     Delete();
                     return true;
+
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
             }
 
             return base.OnOptionsItemSelected(item);
@@ -88,6 +93,11 @@ namespace weblayer.venda.android.exp.Activities
             menu.RemoveItem(Resource.Id.action_sair);
             menu.RemoveItem(Resource.Id.action_adicionar);
 
+            if (prod == null)
+            {
+                menu.RemoveItem(Resource.Id.action_deletar);
+            }
+
             return base.OnCreateOptionsMenu(menu);
         }
 
@@ -98,6 +108,8 @@ namespace weblayer.venda.android.exp.Activities
             txtValorProd = FindViewById<EditText>(Resource.Id.txtValorProd);
             spinUniMedidaProd = FindViewById<Spinner>(Resource.Id.spinnerUnidadeMedida);
             spinUniMedidaProd.ItemSelected += new EventHandler<ItemSelectedEventArgs>(spinUnidadeMedidadProd_ItemSelected);
+
+            txtValorProd.AddTextChangedListener(new CurrencyConverterHelper(txtValorProd));
 
         }
 
@@ -150,6 +162,13 @@ namespace weblayer.venda.android.exp.Activities
             {
                 validacao = false;
                 txtNomeProd.Error = "Nome do produto inválido!";
+            }
+
+
+            if (txtValorProd.Length() == 0)
+            {
+                validacao = false;
+                txtNomeProd.Error = "Valor do produto inválido!";
             }
 
             if (spinUniMedidaProd.SelectedItemPosition == 0)

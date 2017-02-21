@@ -14,11 +14,6 @@ namespace weblayer.venda.core.Dal
             return Database.GetConnection().Table<TabelaPreco>().Where(x => x.id == id).FirstOrDefault();
         }
 
-        public IList<TabelaPreco> GetByProd(int id_produto)
-        {
-            return Database.GetConnection().Table<TabelaPreco>().Where(x => x.id == id_produto).ToList();
-        }
-
         public void Save(TabelaPreco entidade)
         {
             try
@@ -36,13 +31,27 @@ namespace weblayer.venda.core.Dal
 
         public void Delete(TabelaPreco entidade)
         {
-            var clientes = new ClienteRepository().GetBytabPreco(entidade.id);
-            if (clientes.Count > 0)
+
+            string msgerro = "";
+
+            var clientes = new ClienteRepository().GetByTabPreco(entidade.id);
+            var ProdutoTabelaPreco = new ProdutoTabelaPrecoRepository().GetByTab(entidade.id);
+
+            if (clientes == true)
             {
-                throw new Exception("Tabela de preço não pode ser excluída pois existem clientes vinculados a ela!");
+                msgerro = "Clientes e ";
             }
 
+            if (ProdutoTabelaPreco == true)
+            {
+                msgerro = msgerro + "Produtos   ";
+            }
+
+            if (msgerro.Length > 0)
+                throw new Exception($"Tabela de preço não pode ser excluída pois existem {msgerro.Left(msgerro.Length - 3)} vinculados a ela!");
+
             Database.GetConnection().Delete(entidade);
+
         }
 
         public IList<TabelaPreco> List()

@@ -54,6 +54,10 @@ namespace weblayer.venda.android.exp.Activities
                     intent.SetClass(this, typeof(Activity_EditarTabelaPreco));
                     StartActivityForResult(intent, 0);
                     break;
+
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
             }
 
             return base.OnOptionsItemSelected(item);

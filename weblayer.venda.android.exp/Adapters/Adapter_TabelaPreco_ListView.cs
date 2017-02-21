@@ -49,7 +49,6 @@ namespace weblayer.venda.android.exp.Adapters
 
             row.FindViewById<TextView>(Resource.Id.txtCodigoTabelaPreco).Text = "Código da Tabela: " + mItems[position].id_codigo;
             row.FindViewById<TextView>(Resource.Id.txtDescricaoTabelaPreco).Text = "Descrição da Tabela: " + mItems[position].ds_descricao;
-            row.FindViewById<TextView>(Resource.Id.txtValorTabelaPreco).Text = "Valor da Tabela: " + mItems[position].vl_valor.ToString("##,##0.00");
             row.FindViewById<TextView>(Resource.Id.txtDescontoMaxTabelaPreco).Text = "Desconto Máximo: " + mItems[position].vl_descontomaximo.ToString("##,##0.00");
 
             return row;

@@ -31,11 +31,24 @@ namespace weblayer.venda.core.Dal
 
         public void Delete(Produto entidade)
         {
-            var TabelasPreco = new TabelaPrecoRepository().GetByProd(entidade.id);
-            if (TabelasPreco.Count > 0)
+            string msgErro = "";
+
+            var ProdutoTabelaPreco = new ProdutoTabelaPrecoRepository().GetByProd(entidade.id);
+            var ped_item = new PedidoItemRepository().GetByProd(entidade.id);
+
+            if (ProdutoTabelaPreco == true)
             {
-                throw new Exception("O produto não pode ser excluído pois existem tabelas de preço vinculadas a ele!");
+                msgErro = "Tabelas de Preço e ";
             }
+
+            if (ped_item == true)
+            {
+                msgErro = msgErro + "Pedidos   ";
+            }
+
+            if (msgErro.Length > 0)
+                throw new Exception($"O produto não pode ser excluído pois existem {msgErro.Left(msgErro.Length - 3)} vinculadas a ele!");
+
 
             Database.GetConnection().Delete(entidade);
         }

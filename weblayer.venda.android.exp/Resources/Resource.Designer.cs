@@ -799,74 +799,56 @@ namespace weblayer.venda.android.exp
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0a0044
-			public const int Cancelado = 2131361860;
+			// aapt resource value: 0x7f0a0042
+			public const int Entregue = 2131361858;
 			
-			// aapt resource value: 0x7f0a0048
-			public const int Entregue = 2131361864;
-			
-			// aapt resource value: 0x7f0a0046
-			public const int Faturado = 2131361862;
+			// aapt resource value: 0x7f0a0041
+			public const int Faturado = 2131361857;
 			
 			// aapt resource value: 0x7f0a0040
 			public const int Finalizado = 2131361856;
 			
-			// aapt resource value: 0x7f0a0043
-			public const int NaoProcessado = 2131361859;
-			
 			// aapt resource value: 0x7f0a003f
 			public const int Orcamento = 2131361855;
 			
-			// aapt resource value: 0x7f0a0047
-			public const int ParcEntregue = 2131361863;
+			// aapt resource value: 0x7f0a0043
+			public const int abc_background_cache_hint_selector_material_dark = 2131361859;
+			
+			// aapt resource value: 0x7f0a0044
+			public const int abc_background_cache_hint_selector_material_light = 2131361860;
 			
 			// aapt resource value: 0x7f0a0045
-			public const int ParcFaturado = 2131361861;
+			public const int abc_btn_colored_borderless_text_material = 2131361861;
 			
-			// aapt resource value: 0x7f0a0042
-			public const int ParcProcessado = 2131361858;
+			// aapt resource value: 0x7f0a0046
+			public const int abc_btn_colored_text_material = 2131361862;
 			
-			// aapt resource value: 0x7f0a0041
-			public const int Sincronizado = 2131361857;
+			// aapt resource value: 0x7f0a0047
+			public const int abc_color_highlight_material = 2131361863;
+			
+			// aapt resource value: 0x7f0a0048
+			public const int abc_hint_foreground_material_dark = 2131361864;
 			
 			// aapt resource value: 0x7f0a0049
-			public const int abc_background_cache_hint_selector_material_dark = 2131361865;
-			
-			// aapt resource value: 0x7f0a004a
-			public const int abc_background_cache_hint_selector_material_light = 2131361866;
-			
-			// aapt resource value: 0x7f0a004b
-			public const int abc_btn_colored_borderless_text_material = 2131361867;
-			
-			// aapt resource value: 0x7f0a004c
-			public const int abc_btn_colored_text_material = 2131361868;
-			
-			// aapt resource value: 0x7f0a004d
-			public const int abc_color_highlight_material = 2131361869;
-			
-			// aapt resource value: 0x7f0a004e
-			public const int abc_hint_foreground_material_dark = 2131361870;
-			
-			// aapt resource value: 0x7f0a004f
-			public const int abc_hint_foreground_material_light = 2131361871;
+			public const int abc_hint_foreground_material_light = 2131361865;
 			
 			// aapt resource value: 0x7f0a0001
 			public const int abc_input_method_navigation_guard = 2131361793;
 			
-			// aapt resource value: 0x7f0a0050
-			public const int abc_primary_text_disable_only_material_dark = 2131361872;
+			// aapt resource value: 0x7f0a004a
+			public const int abc_primary_text_disable_only_material_dark = 2131361866;
 			
-			// aapt resource value: 0x7f0a0051
-			public const int abc_primary_text_disable_only_material_light = 2131361873;
+			// aapt resource value: 0x7f0a004b
+			public const int abc_primary_text_disable_only_material_light = 2131361867;
 			
-			// aapt resource value: 0x7f0a0052
-			public const int abc_primary_text_material_dark = 2131361874;
+			// aapt resource value: 0x7f0a004c
+			public const int abc_primary_text_material_dark = 2131361868;
 			
-			// aapt resource value: 0x7f0a0053
-			public const int abc_primary_text_material_light = 2131361875;
+			// aapt resource value: 0x7f0a004d
+			public const int abc_primary_text_material_light = 2131361869;
 			
-			// aapt resource value: 0x7f0a0054
-			public const int abc_search_url_text = 2131361876;
+			// aapt resource value: 0x7f0a004e
+			public const int abc_search_url_text = 2131361870;
 			
 			// aapt resource value: 0x7f0a0002
 			public const int abc_search_url_text_normal = 2131361794;
@@ -877,32 +859,32 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0a0004
 			public const int abc_search_url_text_selected = 2131361796;
 			
+			// aapt resource value: 0x7f0a004f
+			public const int abc_secondary_text_material_dark = 2131361871;
+			
+			// aapt resource value: 0x7f0a0050
+			public const int abc_secondary_text_material_light = 2131361872;
+			
+			// aapt resource value: 0x7f0a0051
+			public const int abc_tint_btn_checkable = 2131361873;
+			
+			// aapt resource value: 0x7f0a0052
+			public const int abc_tint_default = 2131361874;
+			
+			// aapt resource value: 0x7f0a0053
+			public const int abc_tint_edittext = 2131361875;
+			
+			// aapt resource value: 0x7f0a0054
+			public const int abc_tint_seek_thumb = 2131361876;
+			
 			// aapt resource value: 0x7f0a0055
-			public const int abc_secondary_text_material_dark = 2131361877;
+			public const int abc_tint_spinner = 2131361877;
 			
 			// aapt resource value: 0x7f0a0056
-			public const int abc_secondary_text_material_light = 2131361878;
+			public const int abc_tint_switch_thumb = 2131361878;
 			
 			// aapt resource value: 0x7f0a0057
-			public const int abc_tint_btn_checkable = 2131361879;
-			
-			// aapt resource value: 0x7f0a0058
-			public const int abc_tint_default = 2131361880;
-			
-			// aapt resource value: 0x7f0a0059
-			public const int abc_tint_edittext = 2131361881;
-			
-			// aapt resource value: 0x7f0a005a
-			public const int abc_tint_seek_thumb = 2131361882;
-			
-			// aapt resource value: 0x7f0a005b
-			public const int abc_tint_spinner = 2131361883;
-			
-			// aapt resource value: 0x7f0a005c
-			public const int abc_tint_switch_thumb = 2131361884;
-			
-			// aapt resource value: 0x7f0a005d
-			public const int abc_tint_switch_track = 2131361885;
+			public const int abc_tint_switch_track = 2131361879;
 			
 			// aapt resource value: 0x7f0a0005
 			public const int accent_material_dark = 2131361797;
@@ -1075,11 +1057,11 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0a0038
 			public const int switch_thumb_disabled_material_light = 2131361848;
 			
-			// aapt resource value: 0x7f0a005e
-			public const int switch_thumb_material_dark = 2131361886;
+			// aapt resource value: 0x7f0a0058
+			public const int switch_thumb_material_dark = 2131361880;
 			
-			// aapt resource value: 0x7f0a005f
-			public const int switch_thumb_material_light = 2131361887;
+			// aapt resource value: 0x7f0a0059
+			public const int switch_thumb_material_light = 2131361881;
 			
 			// aapt resource value: 0x7f0a0039
 			public const int switch_thumb_normal_material_dark = 2131361849;
@@ -1660,133 +1642,76 @@ namespace weblayer.venda.android.exp
 			public const int BarrinhaAmarela = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int BarrinhaAmarelaParcial = 2130837588;
+			public const int BarrinhaCinzaClaro = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int BarrinhaAzul = 2130837589;
+			public const int BarrinhaCinzaEscuro = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int BarrinhaAzulParcial = 2130837590;
+			public const int BarrinhaVerde = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int BarrinhaCinzaClaro = 2130837591;
+			public const int BolaAmarela = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int BarrinhaCinzaEscuro = 2130837592;
+			public const int BolaCinza = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int BarrinhaRoxa = 2130837593;
+			public const int BolaCinzaEscura = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int BarrinhaVerde = 2130837594;
+			public const int BolaVerde = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int BarrinhaVerdeParcial = 2130837595;
+			public const int EditTextStyle = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int BarrinhaVermelha = 2130837596;
+			public const int notification_action_background = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int BarrinhaVermelhaParcial = 2130837597;
+			public const int notification_bg = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int BolaAmarela = 2130837598;
+			public const int notification_bg_low = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int BolaAmarelaParcial = 2130837599;
+			public const int notification_bg_low_normal = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int BolaAzul = 2130837600;
+			public const int notification_bg_low_pressed = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int BolaCinza = 2130837601;
+			public const int notification_bg_normal = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int BolaCinzaEscura = 2130837602;
+			public const int notification_bg_normal_pressed = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int BolaRoxo = 2130837603;
-			
-			// aapt resource value: 0x7f020064
-			public const int BolaVerde = 2130837604;
-			
-			// aapt resource value: 0x7f020065
-			public const int BolaVerdeParcial = 2130837605;
-			
-			// aapt resource value: 0x7f020066
-			public const int BolaVermelha = 2130837606;
-			
-			// aapt resource value: 0x7f020067
-			public const int BolaVermelhaParcial = 2130837607;
-			
-			// aapt resource value: 0x7f020068
-			public const int EditTextStyle = 2130837608;
-			
-			// aapt resource value: 0x7f020069
-			public const int notification_action_background = 2130837609;
+			public const int notification_icon_background = 2130837603;
 			
 			// aapt resource value: 0x7f02006a
-			public const int notification_bg = 2130837610;
+			public const int notification_template_icon_bg = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int notification_bg_low = 2130837611;
+			public const int notification_template_icon_low_bg = 2130837611;
 			
-			// aapt resource value: 0x7f02006c
-			public const int notification_bg_low_normal = 2130837612;
+			// aapt resource value: 0x7f020064
+			public const int notification_tile_bg = 2130837604;
 			
-			// aapt resource value: 0x7f02006d
-			public const int notification_bg_low_pressed = 2130837613;
+			// aapt resource value: 0x7f020065
+			public const int notify_panel_notification_icon_bg = 2130837605;
 			
-			// aapt resource value: 0x7f02006e
-			public const int notification_bg_normal = 2130837614;
+			// aapt resource value: 0x7f020066
+			public const int Status_Orcamento = 2130837606;
 			
-			// aapt resource value: 0x7f02006f
-			public const int notification_bg_normal_pressed = 2130837615;
+			// aapt resource value: 0x7f020067
+			public const int StatusEntregue = 2130837607;
 			
-			// aapt resource value: 0x7f020070
-			public const int notification_icon_background = 2130837616;
+			// aapt resource value: 0x7f020068
+			public const int StatusFaturado = 2130837608;
 			
-			// aapt resource value: 0x7f02007d
-			public const int notification_template_icon_bg = 2130837629;
-			
-			// aapt resource value: 0x7f02007e
-			public const int notification_template_icon_low_bg = 2130837630;
-			
-			// aapt resource value: 0x7f020071
-			public const int notification_tile_bg = 2130837617;
-			
-			// aapt resource value: 0x7f020072
-			public const int notify_panel_notification_icon_bg = 2130837618;
-			
-			// aapt resource value: 0x7f020073
-			public const int Status_Orcamento = 2130837619;
-			
-			// aapt resource value: 0x7f020074
-			public const int StatusCancelado = 2130837620;
-			
-			// aapt resource value: 0x7f020075
-			public const int StatusEntregue = 2130837621;
-			
-			// aapt resource value: 0x7f020076
-			public const int StatusFaturado = 2130837622;
-			
-			// aapt resource value: 0x7f020077
-			public const int StatusFinalizado = 2130837623;
-			
-			// aapt resource value: 0x7f020078
-			public const int StatusNaoProcessado = 2130837624;
-			
-			// aapt resource value: 0x7f020079
-			public const int StatusParcEntregue = 2130837625;
-			
-			// aapt resource value: 0x7f02007a
-			public const int StatusParcFaturado = 2130837626;
-			
-			// aapt resource value: 0x7f02007b
-			public const int StatusParcProcessado = 2130837627;
-			
-			// aapt resource value: 0x7f02007c
-			public const int StatusSincronizado = 2130837628;
+			// aapt resource value: 0x7f020069
+			public const int StatusFinalizado = 2130837609;
 			
 			static Drawable()
 			{
@@ -1801,11 +1726,11 @@ namespace weblayer.venda.android.exp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b00ce
-			public const int action0 = 2131427534;
+			// aapt resource value: 0x7f0b00cb
+			public const int action0 = 2131427531;
 			
-			// aapt resource value: 0x7f0b00e4
-			public const int action_adicionar = 2131427556;
+			// aapt resource value: 0x7f0b00e1
+			public const int action_adicionar = 2131427553;
 			
 			// aapt resource value: 0x7f0b0047
 			public const int action_bar = 2131427399;
@@ -1828,23 +1753,23 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0024
 			public const int action_bar_title = 2131427364;
 			
-			// aapt resource value: 0x7f0b00cb
-			public const int action_container = 2131427531;
+			// aapt resource value: 0x7f0b00c8
+			public const int action_container = 2131427528;
 			
 			// aapt resource value: 0x7f0b0048
 			public const int action_context_bar = 2131427400;
 			
+			// aapt resource value: 0x7f0b00e0
+			public const int action_deletar = 2131427552;
+			
+			// aapt resource value: 0x7f0b00cf
+			public const int action_divider = 2131427535;
+			
 			// aapt resource value: 0x7f0b00e3
-			public const int action_deletar = 2131427555;
+			public const int action_help = 2131427555;
 			
-			// aapt resource value: 0x7f0b00d2
-			public const int action_divider = 2131427538;
-			
-			// aapt resource value: 0x7f0b00e6
-			public const int action_help = 2131427558;
-			
-			// aapt resource value: 0x7f0b00cc
-			public const int action_image = 2131427532;
+			// aapt resource value: 0x7f0b00c9
+			public const int action_image = 2131427529;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int action_menu_divider = 2131427330;
@@ -1861,20 +1786,20 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0026
 			public const int action_mode_close_button = 2131427366;
 			
-			// aapt resource value: 0x7f0b00e7
-			public const int action_sair = 2131427559;
+			// aapt resource value: 0x7f0b00e4
+			public const int action_sair = 2131427556;
+			
+			// aapt resource value: 0x7f0b00df
+			public const int action_salvar = 2131427551;
 			
 			// aapt resource value: 0x7f0b00e2
-			public const int action_salvar = 2131427554;
+			public const int action_sobre = 2131427554;
 			
-			// aapt resource value: 0x7f0b00e5
-			public const int action_sobre = 2131427557;
+			// aapt resource value: 0x7f0b00ca
+			public const int action_text = 2131427530;
 			
-			// aapt resource value: 0x7f0b00cd
-			public const int action_text = 2131427533;
-			
-			// aapt resource value: 0x7f0b00db
-			public const int actions = 2131427547;
+			// aapt resource value: 0x7f0b00d8
+			public const int actions = 2131427544;
 			
 			// aapt resource value: 0x7f0b0027
 			public const int activity_chooser_view_content = 2131427367;
@@ -1897,14 +1822,14 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0074
 			public const int btnAdicionar = 2131427444;
 			
-			// aapt resource value: 0x7f0b00ca
-			public const int btnEntendi = 2131427530;
+			// aapt resource value: 0x7f0b00c7
+			public const int btnEntendi = 2131427527;
 			
-			// aapt resource value: 0x7f0b0094
-			public const int btnEntrar = 2131427476;
+			// aapt resource value: 0x7f0b0092
+			public const int btnEntrar = 2131427474;
 			
-			// aapt resource value: 0x7f0b00a8
-			public const int btnExcluirPedidoItem = 2131427496;
+			// aapt resource value: 0x7f0b00a6
+			public const int btnExcluirPedidoItem = 2131427494;
 			
 			// aapt resource value: 0x7f0b0075
 			public const int btnFinalizar = 2131427445;
@@ -1912,35 +1837,35 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0073
 			public const int btnItensPedido = 2131427443;
 			
-			// aapt resource value: 0x7f0b00a6
-			public const int btnLimparPedidoItem = 2131427494;
-			
-			// aapt resource value: 0x7f0b00a3
-			public const int btnMais = 2131427491;
+			// aapt resource value: 0x7f0b00a4
+			public const int btnLimparPedidoItem = 2131427492;
 			
 			// aapt resource value: 0x7f0b00a1
-			public const int btnMenos = 2131427489;
+			public const int btnMais = 2131427489;
 			
-			// aapt resource value: 0x7f0b00a4
-			public const int btnSalvar = 2131427492;
+			// aapt resource value: 0x7f0b009f
+			public const int btnMenos = 2131427487;
 			
-			// aapt resource value: 0x7f0b00a7
-			public const int btnSalvarAtualizar = 2131427495;
+			// aapt resource value: 0x7f0b00a2
+			public const int btnSalvar = 2131427490;
 			
 			// aapt resource value: 0x7f0b00a5
-			public const int btnSalvarOutro = 2131427493;
+			public const int btnSalvarAtualizar = 2131427493;
+			
+			// aapt resource value: 0x7f0b00a3
+			public const int btnSalvarOutro = 2131427491;
 			
 			// aapt resource value: 0x7f0b002e
 			public const int buttonPanel = 2131427374;
 			
-			// aapt resource value: 0x7f0b00cf
-			public const int cancel_action = 2131427535;
+			// aapt resource value: 0x7f0b00cc
+			public const int cancel_action = 2131427532;
 			
 			// aapt resource value: 0x7f0b003e
 			public const int checkbox = 2131427390;
 			
-			// aapt resource value: 0x7f0b00d7
-			public const int chronometer = 2131427543;
+			// aapt resource value: 0x7f0b00d4
+			public const int chronometer = 2131427540;
 			
 			// aapt resource value: 0x7f0b001e
 			public const int collapseActionView = 2131427358;
@@ -1969,23 +1894,23 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0057
 			public const int edtFiltro = 2131427415;
 			
-			// aapt resource value: 0x7f0b00a9
-			public const int edtInformarFiltro2 = 2131427497;
-			
-			// aapt resource value: 0x7f0b0093
-			public const int edtSenha = 2131427475;
-			
-			// aapt resource value: 0x7f0b008f
-			public const int edtServidor = 2131427471;
+			// aapt resource value: 0x7f0b00a7
+			public const int edtInformarFiltro2 = 2131427495;
 			
 			// aapt resource value: 0x7f0b0091
-			public const int edtUsuario = 2131427473;
+			public const int edtSenha = 2131427473;
+			
+			// aapt resource value: 0x7f0b008d
+			public const int edtServidor = 2131427469;
+			
+			// aapt resource value: 0x7f0b008f
+			public const int edtUsuario = 2131427471;
 			
 			// aapt resource value: 0x7f0b001b
 			public const int end = 2131427355;
 			
-			// aapt resource value: 0x7f0b00e1
-			public const int end_padder = 2131427553;
+			// aapt resource value: 0x7f0b00de
+			public const int end_padder = 2131427550;
 			
 			// aapt resource value: 0x7f0b0028
 			public const int expand_activities_button = 2131427368;
@@ -2002,8 +1927,8 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b002c
 			public const int icon = 2131427372;
 			
-			// aapt resource value: 0x7f0b00dc
-			public const int icon_group = 2131427548;
+			// aapt resource value: 0x7f0b00d9
+			public const int icon_group = 2131427545;
 			
 			// aapt resource value: 0x7f0b001f
 			public const int ifRoom = 2131427359;
@@ -2011,20 +1936,17 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0029
 			public const int image = 2131427369;
 			
-			// aapt resource value: 0x7f0b00c4
-			public const int img2 = 2131427524;
+			// aapt resource value: 0x7f0b00c3
+			public const int img2 = 2131427523;
 			
-			// aapt resource value: 0x7f0b00c6
-			public const int img3 = 2131427526;
+			// aapt resource value: 0x7f0b00c5
+			public const int img4 = 2131427525;
 			
-			// aapt resource value: 0x7f0b00c8
-			public const int img4 = 2131427528;
+			// aapt resource value: 0x7f0b00af
+			public const int imgView = 2131427503;
 			
-			// aapt resource value: 0x7f0b00b1
-			public const int imgView = 2131427505;
-			
-			// aapt resource value: 0x7f0b00d8
-			public const int info = 2131427544;
+			// aapt resource value: 0x7f0b00d5
+			public const int info = 2131427541;
 			
 			// aapt resource value: 0x7f0b005f
 			public const int lblCNPJ = 2131427423;
@@ -2044,11 +1966,11 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b006b
 			public const int lblDataEmissao = 2131427435;
 			
-			// aapt resource value: 0x7f0b009e
-			public const int lblDesconto = 2131427486;
+			// aapt resource value: 0x7f0b009c
+			public const int lblDesconto = 2131427484;
 			
-			// aapt resource value: 0x7f0b008a
-			public const int lblDescontoMaxTabelaPreco = 2131427466;
+			// aapt resource value: 0x7f0b0088
+			public const int lblDescontoMaxTabelaPreco = 2131427464;
 			
 			// aapt resource value: 0x7f0b0086
 			public const int lblDescricaoTabelaPreco = 2131427462;
@@ -2056,8 +1978,8 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0065
 			public const int lblIdCliente = 2131427429;
 			
-			// aapt resource value: 0x7f0b0098
-			public const int lblIdProduto = 2131427480;
+			// aapt resource value: 0x7f0b0096
+			public const int lblIdProduto = 2131427478;
 			
 			// aapt resource value: 0x7f0b0076
 			public const int lblIdProdutoTbl = 2131427446;
@@ -2080,8 +2002,8 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b005d
 			public const int lblNomeFantasia = 2131427421;
 			
-			// aapt resource value: 0x7f0b00a0
-			public const int lblQuantidade = 2131427488;
+			// aapt resource value: 0x7f0b009e
+			public const int lblQuantidade = 2131427486;
 			
 			// aapt resource value: 0x7f0b005b
 			public const int lblRazaoSocial = 2131427419;
@@ -2095,8 +2017,8 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0080
 			public const int lblUnidadeMedida = 2131427456;
 			
-			// aapt resource value: 0x7f0b009a
-			public const int lblValorLista = 2131427482;
+			// aapt resource value: 0x7f0b0098
+			public const int lblValorLista = 2131427480;
 			
 			// aapt resource value: 0x7f0b0082
 			public const int lblValorProd = 2131427458;
@@ -2104,59 +2026,56 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b007a
 			public const int lblValorTabProd = 2131427450;
 			
-			// aapt resource value: 0x7f0b0088
-			public const int lblValorTabelaPreco = 2131427464;
-			
 			// aapt resource value: 0x7f0b0069
 			public const int lblValorTotal = 2131427433;
 			
-			// aapt resource value: 0x7f0b009c
-			public const int lblValorVenda = 2131427484;
+			// aapt resource value: 0x7f0b009a
+			public const int lblValorVenda = 2131427482;
 			
-			// aapt resource value: 0x7f0b00dd
-			public const int line1 = 2131427549;
+			// aapt resource value: 0x7f0b00da
+			public const int line1 = 2131427546;
 			
-			// aapt resource value: 0x7f0b00df
-			public const int line3 = 2131427551;
+			// aapt resource value: 0x7f0b00dc
+			public const int line3 = 2131427548;
 			
-			// aapt resource value: 0x7f0b008d
-			public const int linearLayout1 = 2131427469;
+			// aapt resource value: 0x7f0b008b
+			public const int linearLayout1 = 2131427467;
 			
 			// aapt resource value: 0x7f0b0009
 			public const int listMode = 2131427337;
 			
-			// aapt resource value: 0x7f0b00ac
-			public const int listViewProdutos = 2131427500;
-			
 			// aapt resource value: 0x7f0b00aa
-			public const int listViewProdutos2 = 2131427498;
+			public const int listViewProdutos = 2131427498;
+			
+			// aapt resource value: 0x7f0b00a8
+			public const int listViewProdutos2 = 2131427496;
+			
+			// aapt resource value: 0x7f0b00ab
+			public const int listViewProdutosPedido = 2131427499;
 			
 			// aapt resource value: 0x7f0b00ad
-			public const int listViewProdutosPedido = 2131427501;
-			
-			// aapt resource value: 0x7f0b00af
-			public const int listViewTabelaPrecos = 2131427503;
+			public const int listViewTabelaPrecos = 2131427501;
 			
 			// aapt resource value: 0x7f0b002b
 			public const int list_item = 2131427371;
 			
-			// aapt resource value: 0x7f0b008c
-			public const int listviewHome = 2131427468;
+			// aapt resource value: 0x7f0b008a
+			public const int listviewHome = 2131427466;
 			
-			// aapt resource value: 0x7f0b0097
-			public const int listviewPedido = 2131427479;
+			// aapt resource value: 0x7f0b0095
+			public const int listviewPedido = 2131427477;
 			
-			// aapt resource value: 0x7f0b00ae
-			public const int listviewSobre = 2131427502;
+			// aapt resource value: 0x7f0b00ac
+			public const int listviewSobre = 2131427500;
 			
 			// aapt resource value: 0x7f0b0058
 			public const int lstViewCliente = 2131427416;
 			
-			// aapt resource value: 0x7f0b00ab
-			public const int lstViewProdTabPreco = 2131427499;
+			// aapt resource value: 0x7f0b00a9
+			public const int lstViewProdTabPreco = 2131427497;
 			
-			// aapt resource value: 0x7f0b00d1
-			public const int media_actions = 2131427537;
+			// aapt resource value: 0x7f0b00ce
+			public const int media_actions = 2131427534;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int middle = 2131427356;
@@ -2173,14 +2092,14 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b000a
 			public const int normal = 2131427338;
 			
-			// aapt resource value: 0x7f0b00da
-			public const int notification_background = 2131427546;
+			// aapt resource value: 0x7f0b00d7
+			public const int notification_background = 2131427543;
 			
-			// aapt resource value: 0x7f0b00d4
-			public const int notification_main_column = 2131427540;
+			// aapt resource value: 0x7f0b00d1
+			public const int notification_main_column = 2131427537;
 			
-			// aapt resource value: 0x7f0b00d3
-			public const int notification_main_column_container = 2131427539;
+			// aapt resource value: 0x7f0b00d0
+			public const int notification_main_column_container = 2131427536;
 			
 			// aapt resource value: 0x7f0b0030
 			public const int parentPanel = 2131427376;
@@ -2194,11 +2113,11 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0040
 			public const int radio = 2131427392;
 			
-			// aapt resource value: 0x7f0b00d9
-			public const int right_icon = 2131427545;
+			// aapt resource value: 0x7f0b00d6
+			public const int right_icon = 2131427542;
 			
-			// aapt resource value: 0x7f0b00d5
-			public const int right_side = 2131427541;
+			// aapt resource value: 0x7f0b00d2
+			public const int right_side = 2131427538;
 			
 			// aapt resource value: 0x7f0b0015
 			public const int screen = 2131427349;
@@ -2287,8 +2206,8 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0018
 			public const int src_over = 2131427352;
 			
-			// aapt resource value: 0x7f0b00d0
-			public const int status_bar_latest_event_content = 2131427536;
+			// aapt resource value: 0x7f0b00cd
+			public const int status_bar_latest_event_content = 2131427533;
 			
 			// aapt resource value: 0x7f0b0041
 			public const int submenuarrow = 2131427393;
@@ -2299,11 +2218,11 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b000b
 			public const int tabMode = 2131427339;
 			
-			// aapt resource value: 0x7f0b00e0
-			public const int text = 2131427552;
+			// aapt resource value: 0x7f0b00dd
+			public const int text = 2131427549;
 			
-			// aapt resource value: 0x7f0b00de
-			public const int text2 = 2131427550;
+			// aapt resource value: 0x7f0b00db
+			public const int text2 = 2131427547;
 			
 			// aapt resource value: 0x7f0b0035
 			public const int textSpacerNoButtons = 2131427381;
@@ -2311,8 +2230,8 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0034
 			public const int textSpacerNoTitle = 2131427380;
 			
-			// aapt resource value: 0x7f0b00d6
-			public const int time = 2131427542;
+			// aapt resource value: 0x7f0b00d3
+			public const int time = 2131427539;
 			
 			// aapt resource value: 0x7f0b002d
 			public const int title = 2131427373;
@@ -2344,8 +2263,8 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0072
 			public const int txtCodigoPedido = 2131427442;
 			
-			// aapt resource value: 0x7f0b00bf
-			public const int txtCodigoProduto = 2131427519;
+			// aapt resource value: 0x7f0b00bd
+			public const int txtCodigoProduto = 2131427517;
 			
 			// aapt resource value: 0x7f0b0085
 			public const int txtCodigoTabelaPreco = 2131427461;
@@ -2353,56 +2272,53 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b006c
 			public const int txtDataEmissao = 2131427436;
 			
-			// aapt resource value: 0x7f0b00b5
-			public const int txtData_Emissao = 2131427509;
+			// aapt resource value: 0x7f0b00b3
+			public const int txtData_Emissao = 2131427507;
 			
-			// aapt resource value: 0x7f0b00bc
-			public const int txtDescProdutoTblPreco = 2131427516;
+			// aapt resource value: 0x7f0b00ba
+			public const int txtDescProdutoTblPreco = 2131427514;
 			
-			// aapt resource value: 0x7f0b00bd
-			public const int txtDescTabelaPrecoTblPrecos = 2131427517;
+			// aapt resource value: 0x7f0b00bb
+			public const int txtDescTabelaPrecoTblPrecos = 2131427515;
 			
-			// aapt resource value: 0x7f0b009f
-			public const int txtDesconto = 2131427487;
+			// aapt resource value: 0x7f0b009d
+			public const int txtDesconto = 2131427485;
 			
-			// aapt resource value: 0x7f0b008b
-			public const int txtDescontoMaxTabelaPreco = 2131427467;
+			// aapt resource value: 0x7f0b0089
+			public const int txtDescontoMaxTabelaPreco = 2131427465;
 			
 			// aapt resource value: 0x7f0b0087
 			public const int txtDescricaoTabelaPreco = 2131427463;
 			
-			// aapt resource value: 0x7f0b0099
-			public const int txtIdProduto = 2131427481;
+			// aapt resource value: 0x7f0b0097
+			public const int txtIdProduto = 2131427479;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int txtIdProdutoPedidoItem = 2131427510;
+			// aapt resource value: 0x7f0b00b4
+			public const int txtIdProdutoPedidoItem = 2131427508;
 			
-			// aapt resource value: 0x7f0b00ba
-			public const int txtIdProdutoTblPreco = 2131427514;
+			// aapt resource value: 0x7f0b00b8
+			public const int txtIdProdutoTblPreco = 2131427512;
 			
-			// aapt resource value: 0x7f0b00bb
-			public const int txtIdTabelaPrecoTblPrecos = 2131427515;
+			// aapt resource value: 0x7f0b00b9
+			public const int txtIdTabelaPrecoTblPrecos = 2131427513;
 			
-			// aapt resource value: 0x7f0b00b2
-			public const int txtId_Cliente = 2131427506;
+			// aapt resource value: 0x7f0b00b0
+			public const int txtId_Cliente = 2131427504;
 			
-			// aapt resource value: 0x7f0b00b3
-			public const int txtId_Vendedor = 2131427507;
+			// aapt resource value: 0x7f0b00b1
+			public const int txtId_Vendedor = 2131427505;
 			
 			// aapt resource value: 0x7f0b0068
 			public const int txtIdvendedor = 2131427432;
 			
-			// aapt resource value: 0x7f0b00c5
-			public const int txtLegenda2 = 2131427525;
+			// aapt resource value: 0x7f0b00c4
+			public const int txtLegenda2 = 2131427524;
 			
-			// aapt resource value: 0x7f0b00c7
-			public const int txtLegenda3 = 2131427527;
+			// aapt resource value: 0x7f0b00c6
+			public const int txtLegenda4 = 2131427526;
 			
-			// aapt resource value: 0x7f0b00c9
-			public const int txtLegenda4 = 2131427529;
-			
-			// aapt resource value: 0x7f0b0095
-			public const int txtMensagem = 2131427477;
+			// aapt resource value: 0x7f0b0093
+			public const int txtMensagem = 2131427475;
 			
 			// aapt resource value: 0x7f0b0070
 			public const int txtMsgNF = 2131427440;
@@ -2416,74 +2332,74 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b005e
 			public const int txtNomeFantasia = 2131427422;
 			
-			// aapt resource value: 0x7f0b00c0
-			public const int txtNomeProduto = 2131427520;
+			// aapt resource value: 0x7f0b00be
+			public const int txtNomeProduto = 2131427518;
 			
-			// aapt resource value: 0x7f0b0096
-			public const int txtNovidades = 2131427478;
+			// aapt resource value: 0x7f0b0094
+			public const int txtNovidades = 2131427476;
 			
-			// aapt resource value: 0x7f0b00a2
-			public const int txtQuantidade = 2131427490;
+			// aapt resource value: 0x7f0b00a0
+			public const int txtQuantidade = 2131427488;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int txtQuantidadePedidoItem = 2131427512;
+			// aapt resource value: 0x7f0b00b6
+			public const int txtQuantidadePedidoItem = 2131427510;
 			
 			// aapt resource value: 0x7f0b005c
 			public const int txtRazaoSocial = 2131427420;
 			
-			// aapt resource value: 0x7f0b0092
-			public const int txtSenha = 2131427474;
+			// aapt resource value: 0x7f0b0090
+			public const int txtSenha = 2131427472;
 			
-			// aapt resource value: 0x7f0b008e
-			public const int txtServidor = 2131427470;
+			// aapt resource value: 0x7f0b008c
+			public const int txtServidor = 2131427468;
 			
 			// aapt resource value: 0x7f0b0064
 			public const int txtStatusPedido = 2131427428;
 			
-			// aapt resource value: 0x7f0b00b0
-			public const int txtTabelaPrecoCli = 2131427504;
+			// aapt resource value: 0x7f0b00ae
+			public const int txtTabelaPrecoCli = 2131427502;
 			
-			// aapt resource value: 0x7f0b00c3
-			public const int txtTitulo = 2131427523;
+			// aapt resource value: 0x7f0b00c2
+			public const int txtTitulo = 2131427522;
 			
-			// aapt resource value: 0x7f0b00c1
-			public const int txtUniMedidaProduto = 2131427521;
+			// aapt resource value: 0x7f0b00bf
+			public const int txtUniMedidaProduto = 2131427519;
 			
-			// aapt resource value: 0x7f0b0090
-			public const int txtUsuario = 2131427472;
+			// aapt resource value: 0x7f0b008e
+			public const int txtUsuario = 2131427470;
 			
-			// aapt resource value: 0x7f0b009b
-			public const int txtValorLista = 2131427483;
+			// aapt resource value: 0x7f0b0099
+			public const int txtValorLista = 2131427481;
 			
-			// aapt resource value: 0x7f0b00b7
-			public const int txtValorPedidoItem = 2131427511;
+			// aapt resource value: 0x7f0b00b5
+			public const int txtValorPedidoItem = 2131427509;
 			
-			// aapt resource value: 0x7f0b00be
-			public const int txtValorPrecos = 2131427518;
+			// aapt resource value: 0x7f0b00bc
+			public const int txtValorPrecos = 2131427516;
 			
 			// aapt resource value: 0x7f0b0083
 			public const int txtValorProd = 2131427459;
 			
-			// aapt resource value: 0x7f0b00c2
-			public const int txtValorProduto = 2131427522;
+			// aapt resource value: 0x7f0b00c0
+			public const int txtValorProduto = 2131427520;
 			
 			// aapt resource value: 0x7f0b007b
 			public const int txtValorTabProd = 2131427451;
 			
-			// aapt resource value: 0x7f0b0089
-			public const int txtValorTabelaPreco = 2131427465;
+			// aapt resource value: 0x7f0b00c1
+			public const int txtValorTabelaPreco = 2131427521;
 			
 			// aapt resource value: 0x7f0b006a
 			public const int txtValorTotal = 2131427434;
 			
-			// aapt resource value: 0x7f0b00b9
-			public const int txtValorTotalPedidoItem = 2131427513;
+			// aapt resource value: 0x7f0b00b7
+			public const int txtValorTotalPedidoItem = 2131427511;
 			
-			// aapt resource value: 0x7f0b009d
-			public const int txtValorVenda = 2131427485;
+			// aapt resource value: 0x7f0b009b
+			public const int txtValorVenda = 2131427483;
 			
-			// aapt resource value: 0x7f0b00b4
-			public const int txtValor_Total = 2131427508;
+			// aapt resource value: 0x7f0b00b2
+			public const int txtValor_Total = 2131427506;
 			
 			// aapt resource value: 0x7f0b0008
 			public const int up = 2131427336;

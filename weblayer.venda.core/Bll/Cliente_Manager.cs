@@ -33,7 +33,7 @@ namespace weblayer.venda.core.Bll
                 erros = erros + "\n O código do cliente é inválido! Ele deve ter no mínimo 1 caracter!";
 
             if (obj.ds_NomeFantasia.Length < 10)
-                erros = erros + "\n A descrição do produto deve ter no mínimo 10 caracteres!";
+                erros = erros + "\n A descrição do cliente deve ter no mínimo 10 caracteres!";
 
             //TODO: Devidas exceções
 
@@ -41,7 +41,6 @@ namespace weblayer.venda.core.Bll
                 throw new Exception(erros);
 
             var Repository = new ClienteRepository();
-
             Repository.Save(obj);
 
             Mensagem = $"Cliente {obj.ds_RazaoSocial} atualizado com sucesso";

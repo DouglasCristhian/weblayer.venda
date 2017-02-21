@@ -19,6 +19,24 @@ namespace weblayer.venda.core.Dal
             return Database.GetConnection().Table<ProdutoTabelaPreco>().Where(x => x.id_tabpreco == id_tabelapreco && x.id_produto == id_produto).FirstOrDefault();
         }
 
+        public bool GetByProd(int id_produto)
+        {
+            var item = Database.GetConnection().Table<ProdutoTabelaPreco>().Where(x => x.id_produto == id_produto).FirstOrDefault();
+            if (item != null)
+                return true;
+            else
+                return false;
+        }
+
+        public bool GetByTab(int id_tabpreco)
+        {
+            var item = Database.GetConnection().Table<ProdutoTabelaPreco>().Where(x => x.id_tabpreco == id_tabpreco).FirstOrDefault();
+            if (item != null)
+                return true;
+            else
+                return false;
+        }
+
         public void Save(ProdutoTabelaPreco entidade)
         {
             try

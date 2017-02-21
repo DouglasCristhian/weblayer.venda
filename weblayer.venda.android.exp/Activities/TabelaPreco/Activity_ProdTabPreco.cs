@@ -39,7 +39,6 @@ namespace weblayer.venda.android.exp.Activities
             MenuInflater.Inflate(Resource.Menu.menu_toolbar, menu);
             menu.RemoveItem(Resource.Id.action_salvar);
             menu.RemoveItem(Resource.Id.action_deletar);
-            menu.RemoveItem(Resource.Id.action_adicionar);
             menu.RemoveItem(Resource.Id.action_sobre);
             menu.RemoveItem(Resource.Id.action_help);
             menu.RemoveItem(Resource.Id.action_sair);
@@ -56,6 +55,10 @@ namespace weblayer.venda.android.exp.Activities
                     intent.SetClass(this, typeof(Activity_EditarProdTabelaPreco));
                     StartActivityForResult(intent, 0);
                     break;
+
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
             }
 
             return base.OnOptionsItemSelected(item);

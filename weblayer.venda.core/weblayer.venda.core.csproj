@@ -71,6 +71,7 @@
     <Compile Include="Sinc\WebServiceMock.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

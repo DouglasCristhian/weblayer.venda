@@ -46,6 +46,23 @@ namespace weblayer.venda.android.exp.Activities
             return base.OnCreateOptionsMenu(menu);
         }
 
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
+
+                case Resource.Id.action_adicionar:
+                    Intent intent = new Intent();
+                    intent.SetClass(this, typeof(Activity_EditarCliente));
+                    StartActivityForResult(intent, 0);
+                    return true;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
+
         private void FindViews()
         {
             lstViewClientes = FindViewById<ListView>(Resource.Id.lstViewCliente);

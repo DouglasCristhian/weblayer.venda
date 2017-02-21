@@ -41,6 +41,10 @@ namespace weblayer.venda.android.exp.Activities
                     Fragment_Legendas dialog = new Fragment_Legendas();
                     dialog.Show(transaction, "dialog");
                     break;
+
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
             }
             return base.OnOptionsItemSelected(item);
         }

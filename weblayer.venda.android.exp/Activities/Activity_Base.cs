@@ -1,7 +1,6 @@
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
-using Android.Views;
 
 namespace weblayer.venda.android.exp.Activities
 {
@@ -33,16 +32,16 @@ namespace weblayer.venda.android.exp.Activities
             get;
         }
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Android.Resource.Id.Home:
-                    Finish();
+        //public override bool OnOptionsItemSelected(IMenuItem item)
+        //{
+        //    switch (item.ItemId)
+        //    {
+        //        case Android.Resource.Id.Home:
+        //            //Finish();
 
-                    return true;
-            }
-            return base.OnOptionsItemSelected(item);
-        }
+        //            return true;
+        //    }
+        //    return base.OnOptionsItemSelected(item);
+        //}
     }
 }

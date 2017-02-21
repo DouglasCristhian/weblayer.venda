@@ -46,7 +46,10 @@ namespace weblayer.venda.core.Bll
 
         public void Delete(Produto obj)
         {
+
+
             var Repository = new ProdutoRepository();
+
             Repository.Delete(obj);
 
             Mensagem = $"Produto {obj.ds_nome} excluído com sucesso";

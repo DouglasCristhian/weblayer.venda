@@ -14,20 +14,36 @@ namespace weblayer.venda.core.Dal
             return Database.GetConnection().Table<Cliente>().Where(x => x.id == id).FirstOrDefault();
         }
 
-        public IList<Cliente> GetBytabPreco(int id_tabpreco)
+        public bool GetByTabPreco(int id_tabpreco)
         {
-            return Database.GetConnection().Table<Cliente>().Where(x => x.id_tabelapreco == id_tabpreco).ToList();
+            var item = Database.GetConnection().Table<Cliente>().Where(x => x.id_tabelapreco == id_tabpreco).FirstOrDefault();
+            if (item != null)
+                return true;
+            else
+                return false;
         }
 
         public void Save(Cliente entidade)
         {
             try
             {
-
                 if (entidade.id > 0 && Get(entidade.id) != null)
+                {
+                    PedidoRepository ped = new PedidoRepository();
+                    var pedido = ped.GetPed(entidade);
+                    foreach (var item in pedido)
+                    {
+                        item.ds_cliente = entidade.ds_NomeFantasia;
+                        ped.Save(item);
+                    }
+
+
                     Database.GetConnection().Update(entidade);
+                }
                 else
+                {
                     Database.GetConnection().Insert(entidade);
+                }
             }
             catch (Exception e)
             {
@@ -37,6 +53,18 @@ namespace weblayer.venda.core.Dal
 
         public void Delete(Cliente entidade)
         {
+            string msgerro = "";
+
+            var clientes = new PedidoRepository().GetByCliente(entidade.id);
+
+            if (clientes == true)
+            {
+                msgerro = "Pedidos e ";
+            }
+
+            if (msgerro.Length > 0)
+                throw new Exception($"Cliente não pode ser excluído pois existem {msgerro.Left(msgerro.Length - 3)} vinculados a ela!");
+
             Database.GetConnection().Delete(entidade);
         }
 

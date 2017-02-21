@@ -52,61 +52,27 @@ namespace weblayer.venda.android.exp.Adapters
             row.FindViewById<TextView>(Resource.Id.txtValor_Total).Text = "Valor Total: " + mItems[position].vl_total.ToString("##,##0.00");
             row.FindViewById<TextView>(Resource.Id.txtData_Emissao).Text = "Data de Emissão " + mItems[position].dt_emissao.Value.ToString("dd/MM/yyyy");
 
-            if (mItems[position].fl_status == 0)
-            {
-                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaCinzaClaro);
-            }
-
             if (mItems[position].fl_status == 1)
             {
-                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaCinzaEscuro);
+                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaCinzaClaro);
             }
 
 
             if (mItems[position].fl_status == 2)
             {
-                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaAzul);
+                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaCinzaEscuro);
             }
 
 
             if (mItems[position].fl_status == 3)
             {
-                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaRoxa);
+                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaAmarela);
             }
 
             if (mItems[position].fl_status == 4)
             {
-                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaVermelha);
-            }
-
-            if (mItems[position].fl_status == 5)
-            {
-                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaVermelhaParcial);
-            }
-
-            if (mItems[position].fl_status == 6)
-            {
-                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaAmarela);
-            }
-
-
-            if (mItems[position].fl_status == 7)
-            {
-                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaAmarelaParcial);
-            }
-
-
-            if (mItems[position].fl_status == 8)
-            {
                 row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaVerde);
             }
-
-
-            if (mItems[position].fl_status == 9)
-            {
-                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaVerdeParcial);
-            }
-
 
             return row;
         }

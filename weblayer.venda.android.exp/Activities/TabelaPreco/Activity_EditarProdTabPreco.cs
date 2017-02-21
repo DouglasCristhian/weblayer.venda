@@ -6,6 +6,7 @@ using Android.Widget;
 using System;
 using System.Collections.Generic;
 using weblayer.venda.android.exp.Adapters;
+using weblayer.venda.android.exp.Helpers;
 using weblayer.venda.core.Bll;
 using weblayer.venda.core.Dal;
 using weblayer.venda.core.Model;
@@ -66,19 +67,22 @@ namespace weblayer.venda.android.exp.Activities
             else
                 prodtabpreco = null;
 
-            //BindData();
+            txt_ProdTabPreco.AddTextChangedListener(new CurrencyConverterHelper(txt_ProdTabPreco));
 
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_toolbar, menu);
-            //menu.RemoveItem(Resource.Id.action_salvar);
-            //menu.RemoveItem(Resource.Id.action_deletar);
             menu.RemoveItem(Resource.Id.action_adicionar);
             menu.RemoveItem(Resource.Id.action_sobre);
             menu.RemoveItem(Resource.Id.action_help);
             menu.RemoveItem(Resource.Id.action_sair);
+
+            if (prodtabpreco == null)
+            {
+                menu.RemoveItem(Resource.Id.action_deletar);
+            }
 
             return base.OnCreateOptionsMenu(menu);
         }
@@ -93,6 +97,10 @@ namespace weblayer.venda.android.exp.Activities
 
                 case Resource.Id.action_deletar:
                     Delete();
+                    return true;
+
+                case Android.Resource.Id.Home:
+                    Finish();
                     return true;
             }
             return base.OnOptionsItemSelected(item);
@@ -137,18 +145,10 @@ namespace weblayer.venda.android.exp.Activities
             prodtabpreco.vl_Valor = double.Parse(txt_ProdTabPreco.Text.ToString());
         }
 
-        //private void BindData()
-        //{
-        //    spinIdProduto.Enabled = false;
-        //    spinIdTabPreco.Enabled = false;
-        //    txt_ProdTabPreco.Enabled = false;
-        //}
-
         private bool ValidateViews()
         {
             var validacao = true;
 
-            //A CONSIDERAR
             if (txt_ProdTabPreco.Length() == 0)
             {
                 txt_ProdTabPreco.Error = "Valor inválido!";

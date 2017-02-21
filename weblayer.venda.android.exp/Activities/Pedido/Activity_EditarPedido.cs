@@ -47,12 +47,16 @@ namespace weblayer.venda.android.exp.Activities
             {
                 case Resource.Id.action_salvar:
                     Save();
-
                     return true;
 
                 case Resource.Id.action_deletar:
                     Delete();
                     return true;
+
+                case Android.Resource.Id.Home:
+                    Finish();
+                    break;
+
             }
             return base.OnOptionsItemSelected(item);
         }
@@ -103,10 +107,10 @@ namespace weblayer.venda.android.exp.Activities
 
             if (pedido != null)
             {
-                if (pedido.fl_status != 0 || pedido.fl_status == 4)
+                if (pedido.fl_status != 1)
                 {
                     menu.RemoveItem(Resource.Id.action_salvar);
-                    menu.RemoveItem(Resource.Id.action_deletar);
+                    //menu.RemoveItem(Resource.Id.action_deletar);
                 }
             }
 
@@ -174,38 +178,18 @@ namespace weblayer.venda.android.exp.Activities
             txtMsgPedido.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtMsgNF.SetBackgroundResource(Resource.Drawable.EditTextStyle);
 
-            //txtObservacao.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-
             if (pedido != null)
             {
-                if (pedido.fl_status == 0)
+                if (pedido.fl_status == 1)
                     txtStatusPedido.SetBackgroundResource(Resource.Drawable.Status_Orcamento);
 
-                if (pedido.fl_status == 1)
+                if (pedido.fl_status == 2)
                     txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusFinalizado);
 
-                if (pedido.fl_status == 2)
-                    txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusSincronizado);
-
                 if (pedido.fl_status == 3)
-                    txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusParcProcessado);
-
-                if (pedido.fl_status == 4)
-                    txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusNaoProcessado);
-
-                if (pedido.fl_status == 5)
-                    txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusCancelado);
-
-                if (pedido.fl_status == 6)
-                    txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusParcFaturado);
-
-                if (pedido.fl_status == 7)
                     txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusFaturado);
 
-                if (pedido.fl_status == 8)
-                    txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusParcEntregue);
-
-                if (pedido.fl_status == 9)
+                if (pedido.fl_status == 4)
                     txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusEntregue);
             }
         }
@@ -234,54 +218,22 @@ namespace weblayer.venda.android.exp.Activities
         {
             string status = "";
 
-            if (pedido.fl_status == 0)
+            if (pedido.fl_status == 1)
             {
                 status = "Orçamento";
             }
 
-            if (pedido.fl_status == 1)
+            if (pedido.fl_status == 2)
             {
                 status = "Pedido Finalizado";
             }
 
-            if (pedido.fl_status == 2)
-            {
-                status = "Sincronizado/Em Processamento";
-            }
-
             if (pedido.fl_status == 3)
-            {
-                status = "Parcialmente Processado";
-            }
-
-            if (pedido.fl_status == 4)
-            {
-                status = "Não Processado/Recusado";
-            }
-
-
-            if (pedido.fl_status == 5)
-            {
-                status = "Cancelado";
-            }
-
-
-            if (pedido.fl_status == 6)
-            {
-                status = "Parcialmente Faturado";
-            }
-
-            if (pedido.fl_status == 7)
             {
                 status = "Faturado";
             }
 
-            if (pedido.fl_status == 8)
-            {
-                status = "Parcialmente Entregue";
-            }
-
-            if (pedido.fl_status == 9)
+            if (pedido.fl_status == 4)
             {
                 status = "Entregue";
             }
@@ -335,7 +287,7 @@ namespace weblayer.venda.android.exp.Activities
 
             if (pedido != null)
             {
-                if (pedido.fl_status != 0 && pedido.fl_status != 4)
+                if (pedido.fl_status != 1)
                 {
                     txtid_Codigo.Enabled = false;
                     txtid_Vendedor.Enabled = false;
@@ -548,6 +500,7 @@ namespace weblayer.venda.android.exp.Activities
                 Intent intent = new Intent();
                 intent.PutExtra("mensagem", ped.Mensagem);
                 SetResult(Result.Ok, intent);
+                Finish();
             }
             catch (Exception ex)
             {
