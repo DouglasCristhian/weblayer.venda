@@ -119,6 +119,7 @@
     <Compile Include="Adapters\Adapter_TabelaPreco_ListView.cs" />
     <Compile Include="Adapters\mSpinner.cs" />
     <Compile Include="Fragments\Fragment_Legendas.cs" />
+    <Compile Include="Fragments\Fragment_Status.cs" />
     <Compile Include="Helpers\CurrencyConverterHelper.cs" />
     <Compile Include="Helpers\DatePickerHelper.cs" />
     <Compile Include="Helpers\DialogEventArgs.cs" />
@@ -337,7 +338,9 @@
     <AndroidResource Include="Resources\layout\Activity_Pedido.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_PedidoItem.xml" />
+    <AndroidResource Include="Resources\layout\Activity_PedidoItem.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_PedidoProduto.xml" />
@@ -386,6 +389,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Fragment_Status.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BarrinhaCinzaClaro2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BarrinhaCinzaEscuro2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

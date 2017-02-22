@@ -82,8 +82,8 @@ namespace weblayer.venda.core.Sinc
                     id = item.id,
                     ds_descricao = item.ds_descricao,
                     id_codigo = item.id_codigo,
-                    vl_descontomaximo = item.vl_descontomaximo,
-                    vl_valor = item.vl_descontomaximo,
+                    //vl_descontomaximo = item.vl_descontomaximo,
+                    //vl_valor = item.vl_descontomaximo,
                 };
 
                 baselocal.Save(tabelaprecodatabase);

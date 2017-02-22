@@ -4,7 +4,6 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using System;
-using weblayer.venda.android.exp.Helpers;
 using weblayer.venda.core.Bll;
 using weblayer.venda.core.Model;
 
@@ -72,10 +71,6 @@ namespace weblayer.venda.android.exp.Activities
                 case Resource.Id.action_deletar:
                     Delete();
                     return true;
-
-                case Android.Resource.Id.Home:
-                    Finish();
-                    return true;
             }
 
             return base.OnOptionsItemSelected(item);
@@ -85,16 +80,12 @@ namespace weblayer.venda.android.exp.Activities
         {
             txtCodTabelaPreco.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtDescricaoTabelaPreco.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-            txtDescMaxTabelaPreco.SetBackgroundResource(Resource.Drawable.EditTextStyle);
         }
 
         private void FindViews()
         {
             txtCodTabelaPreco = FindViewById<EditText>(Resource.Id.txtCodigoTabelaPreco);
             txtDescricaoTabelaPreco = FindViewById<EditText>(Resource.Id.txtDescricaoTabelaPreco);
-            txtDescMaxTabelaPreco = FindViewById<EditText>(Resource.Id.txtDescontoMaxTabelaPreco);
-
-            txtDescMaxTabelaPreco.AddTextChangedListener(new CurrencyConverterHelper(txtDescMaxTabelaPreco));
         }
 
         private void BindViews()
@@ -104,7 +95,6 @@ namespace weblayer.venda.android.exp.Activities
 
             txtCodTabelaPreco.Text = tblPreco.id_codigo;
             txtDescricaoTabelaPreco.Text = tblPreco.ds_descricao;
-            txtDescMaxTabelaPreco.Text = tblPreco.vl_descontomaximo.ToString("##,##0.00");
         }
 
         private void BindModel()
@@ -114,7 +104,6 @@ namespace weblayer.venda.android.exp.Activities
 
             tblPreco.id_codigo = txtCodTabelaPreco.Text;
             tblPreco.ds_descricao = txtDescricaoTabelaPreco.Text;
-            tblPreco.vl_descontomaximo = double.Parse(txtDescMaxTabelaPreco.Text);
 
         }
 

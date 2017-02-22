@@ -76,10 +76,6 @@ namespace weblayer.venda.android.exp.Activities
                 case Resource.Id.action_deletar:
                     Delete();
                     return true;
-
-                case Android.Resource.Id.Home:
-                    Finish();
-                    return true;
             }
 
             return base.OnOptionsItemSelected(item);

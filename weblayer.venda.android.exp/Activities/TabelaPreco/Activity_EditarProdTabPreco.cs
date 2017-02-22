@@ -99,9 +99,6 @@ namespace weblayer.venda.android.exp.Activities
                     Delete();
                     return true;
 
-                case Android.Resource.Id.Home:
-                    Finish();
-                    return true;
             }
             return base.OnOptionsItemSelected(item);
         }

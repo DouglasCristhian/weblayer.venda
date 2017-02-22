@@ -42,7 +42,7 @@ namespace weblayer.venda.android.exp.Activities
             ListViewHome = FindViewById<ListView>(Resource.Id.listviewHome);
 
             toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            toolbar.Title = "W/Vendas";
+            toolbar.Title = "W/Vendas Express";
             toolbar.InflateMenu(Resource.Menu.menu_toolbar);
 
             toolbar.Menu.RemoveItem(Resource.Id.action_deletar);

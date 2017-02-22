@@ -60,16 +60,5 @@ namespace weblayer.venda.android.exp.Activities
             return base.OnCreateOptionsMenu(menu);
         }
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Android.Resource.Id.Home:
-                    Finish();
-                    return true;
-            }
-
-            return base.OnOptionsItemSelected(item);
-        }
     }
 }

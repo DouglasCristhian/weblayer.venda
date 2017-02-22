@@ -53,10 +53,6 @@ namespace weblayer.venda.android.exp.Activities
                     Delete();
                     return true;
 
-                case Android.Resource.Id.Home:
-                    Finish();
-                    break;
-
             }
             return base.OnOptionsItemSelected(item);
         }
@@ -297,10 +293,6 @@ namespace weblayer.venda.android.exp.Activities
                     txtMsgPedido.Enabled = false;
                     btnFinalizar.Visibility = ViewStates.Gone;
                     btnAdicionar.Visibility = ViewStates.Gone;
-                    if (txtValor_Total.Text == "0")
-                    {
-                        btnItensPedido.Visibility = ViewStates.Gone;
-                    }
                 }
 
                 if ((pedido.vl_total == 0) || (txtValor_Total.Text == "0,00"))
@@ -422,7 +414,7 @@ namespace weblayer.venda.android.exp.Activities
                     {
                         try
                         {
-                            pedido.fl_status = 1;
+                            pedido.fl_status = 2;
                             Save();
 
 
@@ -500,7 +492,7 @@ namespace weblayer.venda.android.exp.Activities
                 Intent intent = new Intent();
                 intent.PutExtra("mensagem", ped.Mensagem);
                 SetResult(Result.Ok, intent);
-                Finish();
+                // Finish();
             }
             catch (Exception ex)
             {

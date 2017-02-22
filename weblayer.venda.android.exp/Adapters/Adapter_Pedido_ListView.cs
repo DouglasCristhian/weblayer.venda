@@ -54,13 +54,13 @@ namespace weblayer.venda.android.exp.Adapters
 
             if (mItems[position].fl_status == 1)
             {
-                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaCinzaClaro);
+                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaCinzaClaro2);
             }
 
 
             if (mItems[position].fl_status == 2)
             {
-                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaCinzaEscuro);
+                row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaCinzaEscuro2);
             }
 
 

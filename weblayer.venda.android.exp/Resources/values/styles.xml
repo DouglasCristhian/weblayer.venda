@@ -26,4 +26,19 @@
 
   </style>
 
+  <style name="btnFinalizado" parent="Theme.AppCompat.Light">
+    <item name="colorButtonNormal">@color/Finalizado</item>
+    <item name="android:textColor">#FFFFFF</item>
+  </style>
+
+  <style name="btnFaturado" parent="Theme.AppCompat.Light">
+    <item name="colorButtonNormal">@color/Faturado</item>
+    <item name="android:textColor">#FFFFFF</item>
+  </style>
+
+  <style name="btnEntregue" parent="Theme.AppCompat.Light">
+    <item name="colorButtonNormal">@color/Entregue</item>
+    <item name="android:textColor">#FFFFFF</item>
+  </style>
+
 </resources>

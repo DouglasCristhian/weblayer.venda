@@ -82,8 +82,9 @@ namespace weblayer.venda.android.exp.Activities
 
             FindViews();
             SetStyle();
-            BindData();
             BindViews();
+            BindData();
+
         }
 
         private void FindViews()
@@ -180,7 +181,7 @@ namespace weblayer.venda.android.exp.Activities
 
             if (Operacao == "incluir")
             {
-                if (pedido.fl_status == 0 || pedido.fl_status == 4)
+                if (pedido.fl_status == 1)
                 {
                     txtIdProduto.Click += TxtIdProduto_Click;
                     txtValorVenda.Enabled = true;
@@ -192,7 +193,7 @@ namespace weblayer.venda.android.exp.Activities
                 txtIdProduto.Enabled = false;
             }
 
-            if (pedido.fl_status != 0 && pedido.fl_status != 4)
+            if (pedido.fl_status != 1)
             {
                 txtValorVenda.Focusable = false;
                 txtValorVenda.Enabled = false;
@@ -336,7 +337,7 @@ namespace weblayer.venda.android.exp.Activities
             txtValorTotal.Text = go.ToString("#,##0.00");
         }
 
-        private void TxtIdProduto_Click(object sender, EventArgs e)
+        private void TxtIdProduto_Click(object sender, System.EventArgs e)
         {
             //Intent para pegar o produto escolhido e trazer para a activity PedidoItem
             Intent intent = new Intent();

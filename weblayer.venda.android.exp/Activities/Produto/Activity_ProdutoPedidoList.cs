@@ -67,10 +67,6 @@ namespace weblayer.venda.android.exp.Activities
                     intent.PutExtra("JsonCliente", Newtonsoft.Json.JsonConvert.SerializeObject(obj_cliente));
                     StartActivityForResult(intent, 0);
                     break;
-
-                case Android.Resource.Id.Home:
-                    Finish();
-                    return true;
             }
             return base.OnOptionsItemSelected(item);
         }

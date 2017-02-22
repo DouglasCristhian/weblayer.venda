@@ -45,21 +45,5 @@
       android:layout_marginLeft="18dip"
       android:layout_marginRight="18dip"/>
 
-    <TextView
-      android:id="@+id/lblDescontoMaxTabelaPreco"
-      android:layout_marginTop="10dp"
-      android:layout_marginLeft = "18dip"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="Desconto Maximo"/>
-
-    <EditText
-      android:id="@+id/txtDescontoMaxTabelaPreco"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginLeft="18dip"
-      android:layout_marginRight="18dip"
-      android:inputType="number"
-      android:gravity="right"/>
   </LinearLayout>
 </ScrollView>

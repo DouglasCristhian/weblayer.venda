@@ -50,10 +50,6 @@ namespace weblayer.venda.android.exp.Activities
         {
             switch (item.ItemId)
             {
-                case Android.Resource.Id.Home:
-                    Finish();
-                    return true;
-
                 case Resource.Id.action_adicionar:
                     Intent intent = new Intent();
                     intent.SetClass(this, typeof(Activity_EditarCliente));

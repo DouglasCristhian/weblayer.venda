@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:minWidth="300dp"
+    android:minHeight="150dp">
+
+  <TextView
+    android:id="@+id/txtTitulo"
+    android:text="Alterar status do pedido para:"
+    android:layout_marginTop="10dip"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="3dp"
+      android:layout_marginTop="10dip"
+      android:background="#D6D7D7" />
+
+  <Button
+    android:id="@+id/btnFinalizado"
+    android:text="Finalizado"
+    android:theme="@style/btnFinalizado"
+    android:layout_marginTop="28dip"
+    android:gravity="center"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dip"
+    android:layout_marginRight="40dip"/>
+
+  <Button
+    android:id="@+id/btnFaturado"
+    android:text="Faturado"
+    android:textColor="#fff"
+    android:theme="@style/btnFaturado"
+    android:gravity="center"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dip"
+    android:layout_marginRight="40dip"/>
+
+  <Button
+    android:id="@+id/btnEntregue"
+    android:text="Entregue"
+    android:textColor="#fff"
+    android:layout_marginBottom="28dip"
+    android:theme="@style/btnEntregue"
+    android:gravity="center"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dip"
+    android:layout_marginRight="40dip"/>
+  
+</LinearLayout>

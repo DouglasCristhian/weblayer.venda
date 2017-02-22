@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using weblayer.venda.android.exp.Adapters;
 using weblayer.venda.android.exp.Fragments;
 using weblayer.venda.core.Bll;
+using weblayer.venda.core.Dal;
 using weblayer.venda.core.Model;
 
 namespace weblayer.venda.android.exp.Activities
@@ -16,6 +17,7 @@ namespace weblayer.venda.android.exp.Activities
     {
         private ListView lstViewPedido;
         private IList<Pedido> lstPedido;
+        Pedido ped;
 
         protected override int LayoutResource
         {
@@ -41,10 +43,6 @@ namespace weblayer.venda.android.exp.Activities
                     Fragment_Legendas dialog = new Fragment_Legendas();
                     dialog.Show(transaction, "dialog");
                     break;
-
-                case Android.Resource.Id.Home:
-                    Finish();
-                    return true;
             }
             return base.OnOptionsItemSelected(item);
         }
@@ -76,6 +74,55 @@ namespace weblayer.venda.android.exp.Activities
         private void BindViews()
         {
             lstViewPedido.ItemClick += LstViewPedidoItem_ItemClick;
+            lstViewPedido.ItemLongClick += LstViewPedido_ItemLongClick;
+        }
+
+        private void LstViewPedido_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        {
+            var ListViewPedidoItemClick = sender as ListView;
+            var t = lstPedido[e.Position];
+            ped = t;
+
+            if (ped.fl_status == 1)
+                return;
+
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            Fragment_Status dialog = new Fragment_Status();
+            dialog.DialogClosed += Dialog_DialogClosed;
+            dialog.Show(transaction, "dialog");
+        }
+
+        private void Dialog_DialogClosed(object sender, Helpers.DialogEventArgs e)
+        {
+            string retorno = e.ReturnValue;
+            int id = 0;
+
+            if (retorno == "Finalizado")
+            {
+                id = 2;
+            }
+            else if (retorno == "Faturado")
+            {
+                id = 3;
+            }
+            else if (retorno == "Entregue")
+            {
+                id = 4;
+            }
+            else
+                return;
+
+            AtualizarStatusPedido(id);
+        }
+
+        private void AtualizarStatusPedido(int id)
+        {
+            PedidoRepository pedRepo = new PedidoRepository();
+            pedRepo.Get(ped.id);
+            ped.fl_status = id;
+            pedRepo.Save(ped);
+
+            FillList();
         }
 
         private void FillList()
