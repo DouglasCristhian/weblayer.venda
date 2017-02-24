@@ -81,7 +81,7 @@ namespace weblayer.venda.core.Dal
 
         }
 
-        public IList<Pedido> List()
+        public IList<Pedido> List(/*int[] fl_status*/)
         {
             return Database.GetConnection().Table<Pedido>().ToList();
         }

@@ -111,6 +111,7 @@
     <Compile Include="Activities\Activity_Home.cs" />
     <Compile Include="Activities\Activity_Novidades.cs" />
     <Compile Include="Activities\Activity_Sobre.cs" />
+    <Compile Include="Activities\Pedido\Activity_FiltrarPedidos.cs" />
     <Compile Include="Adapters\Adapter_Cliente_ListView.cs" />
     <Compile Include="Adapters\Adapter_PedidoItem_ListView.cs" />
     <Compile Include="Adapters\Adapter_Pedido_ListView.cs" />
@@ -398,6 +399,29 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\BarrinhaCinzaEscuro2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_tune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_tune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_tune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_tune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_tune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_FiltrarPedidos.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_toolbar_Filtro.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

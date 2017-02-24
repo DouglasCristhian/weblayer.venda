@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <include
+      android:id="@+id/toolbar"
+      layout="@layout/toolbar"/>
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="18dip"
+    android:gravity="center_horizontal"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:text="Status do Pedido"/>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <CheckBox
+      android:id="@+id/checkBoxOrcamento"
+      android:scaleX="2.0"
+      android:scaleY="2.0"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+
+    <CheckBox
+     android:id="@+id/checkBoxFinalizado"
+     android:layout_marginLeft="80dip"
+     android:scaleX="2.0"
+     android:scaleY="2.0"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"/>
+
+    <CheckBox
+      android:id="@+id/checkBoxFaturado"
+      android:layout_marginLeft="80dip"
+      android:scaleX="2.0"
+      android:scaleY="2.0"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/checkBoxEntregue"
+        android:layout_marginLeft="80dip"
+        android:scaleX="2.0"
+        android:scaleY="2.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+  </LinearLayout>
+
+</LinearLayout>

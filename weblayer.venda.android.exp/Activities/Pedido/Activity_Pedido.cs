@@ -43,6 +43,12 @@ namespace weblayer.venda.android.exp.Activities
                     Fragment_Legendas dialog = new Fragment_Legendas();
                     dialog.Show(transaction, "dialog");
                     break;
+
+                case Resource.Id.action_filtrar://TESTE
+                    Intent intent2 = new Intent();
+                    intent2.SetClass(this, typeof(Activity_FiltrarPedidos));
+                    StartActivityForResult(intent2, 0);
+                    break;
             }
             return base.OnOptionsItemSelected(item);
         }

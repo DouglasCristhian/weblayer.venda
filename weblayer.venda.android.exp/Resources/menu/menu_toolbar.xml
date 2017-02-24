@@ -10,7 +10,12 @@
     android:id="@+id/action_deletar"
     android:icon="@mipmap/ic_delete"
     app:showAsAction="always"/>
-  
+
+  <item
+    android:id="@+id/action_filtrar"
+    android:icon="@mipmap/ic_tune"
+    app:showAsAction="always"/>
+
   <item
     android:id="@+id/action_adicionar"
     android:icon="@mipmap/ic_add"
@@ -26,9 +31,9 @@
     android:icon="@mipmap/ic_help"
     app:showAsAction="always"/>
 
-
   <item
     android:id="@+id/action_sair"
     android:title="Sair"
     app:showAsAction="never"/>
+
 </menu>
