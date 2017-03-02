@@ -86,6 +86,17 @@ namespace weblayer.venda.core.Dal
             return Database.GetConnection().Table<Pedido>().ToList();
         }
 
+        public IList<Pedido> List(int[] status)
+        {
+            return Database.GetConnection().Table<Pedido>().Where(x => status.Contains(x.fl_status)).ToList();
+
+
+
+
+            //.C == status_Box1 && x.fl_status == status_Box2 && x.fl_status == status_Box3 &&
+            //x.fl_status == status_Box4/* && x.dt_emissao == DateTime.Parse(status_data.ToString()*/).ToList();//.ToList(); 
+        }
+
         public void MakeDataMock()
         {
             if (List().Count > 0)

@@ -15,6 +15,7 @@ namespace weblayer.venda.android.exp.Activities
     [Activity(Label = "Pedidos")]
     public class Activity_Pedido : Activity_Base
     {
+        public static string MyPREFERENCES = "MyPrefs";
         private ListView lstViewPedido;
         private IList<Pedido> lstPedido;
         Pedido ped;
@@ -60,6 +61,7 @@ namespace weblayer.venda.android.exp.Activities
             FindViews();
             BindViews();
             FillList();
+
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -133,6 +135,11 @@ namespace weblayer.venda.android.exp.Activities
 
         private void FillList()
         {
+            var prefs = Application.Context.GetSharedPreferences(MyPREFERENCES, FileCreationMode.WorldReadable);
+            int resultado = prefs.GetInt("Id_DataEmissao", 0);
+
+
+
             lstPedido = new Pedido_Manager().GetPedidos("");
             lstViewPedido.Adapter = new Adapter_Pedido_ListView(this, lstPedido);
         }

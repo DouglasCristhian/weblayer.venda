@@ -1,4 +1,5 @@
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -11,13 +12,15 @@ namespace weblayer.venda.android.exp
     [Activity(MainLauncher = false, Label = "")]
     public class Activity_FiltrarPedidos : Activity_Base
     {
-        private CheckBox checkBoxOrcamento;
-        private CheckBox checkBoxFinalizado;
-        private CheckBox checkBoxFaturado;
-        private CheckBox checkBoxEntregue;
+        public CheckBox checkBoxOrcamento;
+        public CheckBox checkBoxFinalizado;
+        public CheckBox checkBoxFaturado;
+        public CheckBox checkBoxEntregue;
         private Button btnLimparFiltro;
         private Spinner spinnerDataEmissao;
         private List<mSpinner> spinnerDatas;
+        public static string MyPREFERENCES = "MyPrefs";
+        public CheckBox[] lista;
 
         protected override int LayoutResource
         {
@@ -35,8 +38,20 @@ namespace weblayer.venda.android.exp
             BindData();
             SetStyle();
 
+            lista = new CheckBox[4];
+            lista[0] = checkBoxOrcamento;
+            lista[1] = checkBoxFinalizado;
+            lista[2] = checkBoxFaturado;
+            lista[3] = checkBoxEntregue;
+
+            RestoreForm();
+
             spinnerDatas = PopulateSpinner();
             spinnerDataEmissao.Adapter = new ArrayAdapter<mSpinner>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, spinnerDatas);
+
+            var prefs = Application.Context.GetSharedPreferences(MyPREFERENCES, FileCreationMode.WorldReadable);
+            int resultado = prefs.GetInt("Id_DataEmissao", 0);
+            spinnerDataEmissao.SetSelection(getIndexByValue(spinnerDataEmissao, resultado));
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -58,6 +73,7 @@ namespace weblayer.venda.android.exp
         public void BindData()
         {
             btnLimparFiltro.Click += BtnLimparFiltro_Click;
+
         }
 
         private void SetStyle()
@@ -79,7 +95,7 @@ namespace weblayer.venda.android.exp
             switch (item.ItemId)
             {
                 case Resource.Id.action_aceitar:
-                    //SALVAR 
+                    SaveForm();
                     return true;
             }
 
@@ -90,12 +106,82 @@ namespace weblayer.venda.android.exp
         {
             List<mSpinner> minhalista = new List<mSpinner>();
 
-            minhalista.Add(new mSpinner(0, "Selecione o período..."));
+            minhalista.Add(new mSpinner(0, "Todos pedidos emitidos"));
             minhalista.Add(new mSpinner(1, "Pedidos emitidos hoje"));
             minhalista.Add(new mSpinner(2, "Pedidos emitidos esta semana"));
             minhalista.Add(new mSpinner(3, "Pedidos emitidos este mês"));
 
             return minhalista;
         }
+
+        private void RestoreForm()
+        {
+            var prefs = Application.Context.GetSharedPreferences(MyPREFERENCES, FileCreationMode.WorldReadable);
+
+            if (prefs == null)
+            {
+                checkBoxOrcamento.Checked = true;
+                checkBoxFinalizado.Checked = true;
+                checkBoxEntregue.Checked = true;
+                checkBoxFaturado.Checked = true;
+            }
+
+            foreach (CheckBox check in lista)
+            {
+                int result;
+                var pref = Application.Context.GetSharedPreferences(MyPREFERENCES, FileCreationMode.WorldReadable);
+
+                result = prefs.GetInt("CheckBox" + check.Id.ToString(), -1);
+                if (result == 0)
+                {
+                    check.Checked = true;
+                }
+                else
+                {
+                    check.Checked = false;
+                }
+            }
+        }
+
+        private int getIndexByValue(Spinner spinner, long myId)
+        {
+            int index = 0;
+
+            var adapter = (ArrayAdapter<mSpinner>)spinner.Adapter;
+            for (int i = 0; i < spinner.Count; i++)
+            {
+                if (adapter.GetItemId(i) == myId)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            return index;
+        }
+
+        private void SaveForm()
+        {
+            var prefs = Application.Context.GetSharedPreferences(MyPREFERENCES, FileCreationMode.WorldWriteable);
+            var prefEditor = prefs.Edit();
+
+            foreach (CheckBox check in lista)
+            {
+                if (check.Checked == true)
+                {
+                    prefEditor.PutInt("CheckBox" + check.Id.ToString(), 0);
+                }
+                else
+                {
+                    prefEditor.PutInt("CheckBox" + check.Id.ToString(), -1);
+
+                }
+            }
+
+            prefEditor.PutInt("Id_DataEmissao", spinnerDataEmissao.SelectedItemPosition);
+            prefEditor.Commit();
+
+            Toast.MakeText(this, "Preferências de filtro atualizadas", ToastLength.Short).Show();
+        }
+
     }
 }
