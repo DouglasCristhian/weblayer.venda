@@ -104,7 +104,7 @@ namespace weblayer.venda.android.exp.Activities
 
             if (pedido != null)
             {
-                if (pedido.fl_status != 1)
+                if (pedido.fl_status != 0)
                 {
                     menu.RemoveItem(Resource.Id.action_salvar);
                     //menu.RemoveItem(Resource.Id.action_deletar);
@@ -177,16 +177,16 @@ namespace weblayer.venda.android.exp.Activities
 
             if (pedido != null)
             {
-                if (pedido.fl_status == 1)
+                if (pedido.fl_status == 0)
                     txtStatusPedido.SetBackgroundResource(Resource.Drawable.Status_Orcamento);
 
-                if (pedido.fl_status == 2)
+                if (pedido.fl_status == 1)
                     txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusFinalizado);
 
-                if (pedido.fl_status == 3)
+                if (pedido.fl_status == 2)
                     txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusFaturado);
 
-                if (pedido.fl_status == 4)
+                if (pedido.fl_status == 3)
                     txtStatusPedido.SetBackgroundResource(Resource.Drawable.StatusEntregue);
             }
         }
@@ -215,22 +215,22 @@ namespace weblayer.venda.android.exp.Activities
         {
             string status = "";
 
-            if (pedido.fl_status == 1)
+            if (pedido.fl_status == 0)
             {
                 status = "Orçamento";
             }
 
-            if (pedido.fl_status == 2)
+            if (pedido.fl_status == 1)
             {
                 status = "Pedido Finalizado";
             }
 
-            if (pedido.fl_status == 3)
+            if (pedido.fl_status == 2)
             {
                 status = "Faturado";
             }
 
-            if (pedido.fl_status == 4)
+            if (pedido.fl_status == 3)
             {
                 status = "Entregue";
             }
@@ -284,7 +284,7 @@ namespace weblayer.venda.android.exp.Activities
 
             if (pedido != null)
             {
-                if (pedido.fl_status != 1)
+                if (pedido.fl_status != 0)
                 {
                     txtid_Codigo.Enabled = false;
                     txtid_Vendedor.Enabled = false;
@@ -415,7 +415,7 @@ namespace weblayer.venda.android.exp.Activities
                     {
                         try
                         {
-                            pedido.fl_status = 2;
+                            pedido.fl_status = 1;
                             Save();
 
 
@@ -493,7 +493,10 @@ namespace weblayer.venda.android.exp.Activities
                 Intent intent = new Intent();
                 intent.PutExtra("mensagem", ped.Mensagem);
                 SetResult(Result.Ok, intent);
-                // Finish();
+
+                Toast.MakeText(this, "Pedido atualizado!", ToastLength.Short).Show();
+
+                Finish();
             }
             catch (Exception ex)
             {

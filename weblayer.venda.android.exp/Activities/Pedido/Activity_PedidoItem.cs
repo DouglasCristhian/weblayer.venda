@@ -181,7 +181,7 @@ namespace weblayer.venda.android.exp.Activities
 
             if (Operacao == "incluir")
             {
-                if (pedido.fl_status == 1)
+                if (pedido.fl_status == 0)
                 {
                     txtIdProduto.Click += TxtIdProduto_Click;
                     txtValorVenda.Enabled = true;
@@ -193,7 +193,7 @@ namespace weblayer.venda.android.exp.Activities
                 txtIdProduto.Enabled = false;
             }
 
-            if (pedido.fl_status != 1)
+            if (pedido.fl_status != 0)
             {
                 txtValorVenda.Focusable = false;
                 txtValorVenda.Enabled = false;

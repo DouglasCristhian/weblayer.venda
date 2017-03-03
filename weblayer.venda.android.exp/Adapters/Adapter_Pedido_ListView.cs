@@ -52,24 +52,22 @@ namespace weblayer.venda.android.exp.Adapters
             row.FindViewById<TextView>(Resource.Id.txtValor_Total).Text = "Valor Total: " + mItems[position].vl_total.ToString("##,##0.00");
             row.FindViewById<TextView>(Resource.Id.txtData_Emissao).Text = "Data de Emissão " + mItems[position].dt_emissao.Value.ToString("dd/MM/yyyy");
 
-            if (mItems[position].fl_status == 1)
+            if (mItems[position].fl_status == 0)
             {
                 row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaCinzaClaro2);
             }
 
-
-            if (mItems[position].fl_status == 2)
+            if (mItems[position].fl_status == 1)
             {
                 row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaCinzaEscuro2);
             }
 
-
-            if (mItems[position].fl_status == 3)
+            if (mItems[position].fl_status == 2)
             {
                 row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaAmarela);
             }
 
-            if (mItems[position].fl_status == 4)
+            if (mItems[position].fl_status == 3)
             {
                 row.FindViewById<ImageView>(Resource.Id.imgView).SetBackgroundResource(Resource.Drawable.BarrinhaVerde);
             }

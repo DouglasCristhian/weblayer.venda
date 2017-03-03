@@ -3,6 +3,7 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using System;
 using System.Collections.Generic;
 using weblayer.venda.android.exp.Activities;
 using weblayer.venda.android.exp.Adapters;
@@ -19,7 +20,7 @@ namespace weblayer.venda.android.exp
         private Button btnLimparFiltro;
         private Spinner spinnerDataEmissao;
         private List<mSpinner> spinnerDatas;
-        public static string MyPREFERENCES = "MyPrefs";
+        public string MyPREFERENCES = "MyPrefs";
         public CheckBox[] lista;
 
         protected override int LayoutResource
@@ -161,7 +162,7 @@ namespace weblayer.venda.android.exp
 
         private void SaveForm()
         {
-            var prefs = Application.Context.GetSharedPreferences(MyPREFERENCES, FileCreationMode.WorldWriteable);
+            var prefs = Application.Context.GetSharedPreferences("MyPrefs", FileCreationMode.WorldWriteable);
             var prefEditor = prefs.Edit();
 
             foreach (CheckBox check in lista)
@@ -173,7 +174,6 @@ namespace weblayer.venda.android.exp
                 else
                 {
                     prefEditor.PutInt("CheckBox" + check.Id.ToString(), -1);
-
                 }
             }
 
@@ -181,7 +181,46 @@ namespace weblayer.venda.android.exp
             prefEditor.Commit();
 
             Toast.MakeText(this, "Preferências de filtro atualizadas", ToastLength.Short).Show();
-        }
 
+            #region Status
+            string retornoCheckBox = "";
+            if (checkBoxOrcamento.Checked)
+                retornoCheckBox = retornoCheckBox + "0,";
+
+            if (checkBoxFinalizado.Checked)
+                retornoCheckBox = retornoCheckBox + "1,";
+
+            if (checkBoxFaturado.Checked)
+                retornoCheckBox = retornoCheckBox + "2,";
+
+            if (checkBoxEntregue.Checked)
+                retornoCheckBox = retornoCheckBox + "3,";
+            #endregion
+
+            #region DataEmissao
+            string retorno_Data = "";
+            if (spinnerDataEmissao.SelectedItemPosition == 1)
+            {
+                retorno_Data = DateTime.Now.ToString("dd/MM/yyyy");
+            }
+            //else if (spinnerDataEmissao.SelectedItemPosition == 2)
+            //{
+
+            //}
+            //else if (spinnerDataEmissao.SelectedItemPosition == 3)
+            //{
+
+            //}
+            else
+                retorno_Data = "07/06/2016";
+            #endregion
+
+            Intent intent = new Intent();
+            intent.PutExtra("Status", retornoCheckBox);
+            intent.PutExtra("DataEmissao", retorno_Data);
+            SetResult(Result.Ok, intent);
+
+            Finish();
+        }
     }
 }

@@ -81,20 +81,39 @@ namespace weblayer.venda.core.Dal
 
         }
 
-        public IList<Pedido> List(/*int[] fl_status*/)
+        public IList<Pedido> List()
         {
             return Database.GetConnection().Table<Pedido>().ToList();
         }
 
-        public IList<Pedido> List(int[] status)
+        public IList<Pedido> List(string status, string dataemissao)
         {
-            return Database.GetConnection().Table<Pedido>().Where(x => status.Contains(x.fl_status)).ToList();
+            string string_status;
 
+            if ((status == "") || (status == null))
+            {
+                string_status = "";
+            }
+            else
+                string_status = status.TrimEnd(',');
 
+            if ((status != "") && (status != null))
+            {
+                var arr_status = Array.ConvertAll(string_status.Split(','), int.Parse).ToList();
 
+                var result = from x in Database.GetConnection().Table<Pedido>().ToList()
+                             where (arr_status.Contains(x.fl_status))
+                             //&& (dataemissao.ToString().Contains(x.dt_emissao.ToString()))
+                             select x;
 
-            //.C == status_Box1 && x.fl_status == status_Box2 && x.fl_status == status_Box3 &&
-            //x.fl_status == status_Box4/* && x.dt_emissao == DateTime.Parse(status_data.ToString()*/).ToList();//.ToList(); 
+                return result.ToList();
+
+                //return Database.GetConnection().Table<Pedido>().Where(x => arr_status.Contains(x.fl_status)).ToList();
+            }
+            else
+            {
+                return Database.GetConnection().Table<Pedido>().ToList();
+            }
         }
 
         public void MakeDataMock()
@@ -102,10 +121,10 @@ namespace weblayer.venda.core.Dal
             if (List().Count > 0)
                 return;
 
-            Save(new Pedido() { id_codigo = "1", dt_emissao = DateTime.Parse("2016/04/01"), id_cliente = 1, ds_cliente = "UNITY SISTEMAS", id_vendedor = 1, ds_vendedor = "Maria Lina", vl_total = 0.00, ds_MsgPedido = "MensagemPedido1", ds_MsgNF = "MensagemNF1", fl_status = 1 });
-            Save(new Pedido() { id_codigo = "2", dt_emissao = DateTime.Parse("2016/06/07"), id_cliente = 2, ds_cliente = "INVISIBLE TUCS", id_vendedor = 2, ds_vendedor = "Saory Emanoelle", vl_total = 0.00, ds_MsgPedido = "MensagemPedido2", ds_MsgNF = "MensagemNF2", fl_status = 2 });
-            Save(new Pedido() { id_codigo = "3", dt_emissao = DateTime.Parse("2017/03/01"), id_cliente = 1, ds_cliente = "NAUGHTY DOG", id_vendedor = 3, ds_vendedor = "Douglas Christian", vl_total = 0.00, ds_MsgPedido = "MensagemPedido3", ds_MsgNF = "MensagemNF3", fl_status = 3 });
-            Save(new Pedido() { id_codigo = "4", dt_emissao = DateTime.Parse("2017/01/01"), id_cliente = 2, ds_cliente = "BETA_103", id_vendedor = 4, ds_vendedor = "Natali BR", vl_total = 0.00, ds_MsgPedido = "MensagemPedido4", ds_MsgNF = "MensagemNF4", fl_status = 4 });
+            Save(new Pedido() { id_codigo = "1", dt_emissao = DateTime.Parse("2016/04/01"), id_cliente = 1, ds_cliente = "UNITY SISTEMAS", id_vendedor = 1, ds_vendedor = "Maria Lina", vl_total = 0.00, ds_MsgPedido = "MensagemPedido1", ds_MsgNF = "MensagemNF1", fl_status = 0 });
+            Save(new Pedido() { id_codigo = "2", dt_emissao = DateTime.Parse("2016/06/07"), id_cliente = 2, ds_cliente = "INVISIBLE TUCS", id_vendedor = 2, ds_vendedor = "Saory Emanoelle", vl_total = 0.00, ds_MsgPedido = "MensagemPedido2", ds_MsgNF = "MensagemNF2", fl_status = 1 });
+            Save(new Pedido() { id_codigo = "3", dt_emissao = DateTime.Parse("2017/03/01"), id_cliente = 1, ds_cliente = "NAUGHTY DOG", id_vendedor = 3, ds_vendedor = "Douglas Christian", vl_total = 0.00, ds_MsgPedido = "MensagemPedido3", ds_MsgNF = "MensagemNF3", fl_status = 2 });
+            Save(new Pedido() { id_codigo = "4", dt_emissao = DateTime.Parse("2017/01/01"), id_cliente = 2, ds_cliente = "BETA_103", id_vendedor = 4, ds_vendedor = "Natali BR", vl_total = 0.00, ds_MsgPedido = "MensagemPedido4", ds_MsgNF = "MensagemNF4", fl_status = 3 });
         }
     }
 }

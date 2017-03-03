@@ -15,9 +15,11 @@ namespace weblayer.venda.android.exp.Activities
     [Activity(Label = "Pedidos")]
     public class Activity_Pedido : Activity_Base
     {
-        public static string MyPREFERENCES = "MyPrefs";
+        //public static string MyPREFERENCES = "MyPrefs";
         private ListView lstViewPedido;
         private IList<Pedido> lstPedido;
+        private string status;
+        private string dataEmissao;
         Pedido ped;
 
         protected override int LayoutResource
@@ -60,8 +62,6 @@ namespace weblayer.venda.android.exp.Activities
 
             FindViews();
             BindViews();
-            FillList();
-
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -83,6 +83,50 @@ namespace weblayer.venda.android.exp.Activities
         {
             lstViewPedido.ItemClick += LstViewPedidoItem_ItemClick;
             lstViewPedido.ItemLongClick += LstViewPedido_ItemLongClick;
+
+            Filtro_Checkboxes();
+        }
+
+        private void Filtro_Checkboxes()
+        {
+            var prefs = Application.Context.GetSharedPreferences("MyPrefs", FileCreationMode.WorldWriteable);
+            var prefEditor = prefs.Edit();
+
+            int valor = prefs.GetInt("CheckBox2131427464", -1);
+            if (valor == 0)
+            {
+                status = status + "0,";
+            }
+
+            int valor1 = prefs.GetInt("CheckBox2131427466", -1);
+            if (valor1 == 0)
+            {
+                status = status + "1,";
+            }
+
+            int valor2 = prefs.GetInt("CheckBox2131427468", -1);
+            if (valor2 == 0)
+            {
+                status = status + "2,";
+            }
+
+            int valor3 = prefs.GetInt("CheckBox2131427470", -1);
+            if (valor3 == 0)
+            {
+                status = status + "3,";
+            }
+
+            if ((status == "") || (status == null))
+            {
+                status = "";
+            }
+
+            FillList(status, dataEmissao);
+        }
+
+        private void Filtro_DataEmissao()
+        {
+
         }
 
         private void LstViewPedido_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
@@ -91,7 +135,7 @@ namespace weblayer.venda.android.exp.Activities
             var t = lstPedido[e.Position];
             ped = t;
 
-            if (ped.fl_status == 1)
+            if (ped.fl_status == 0)
                 return;
 
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
@@ -130,17 +174,12 @@ namespace weblayer.venda.android.exp.Activities
             ped.fl_status = id;
             pedRepo.Save(ped);
 
-            FillList();
+            FillList(status, dataEmissao);
         }
 
-        private void FillList()
+        private void FillList(string status, string dataemissao)
         {
-            var prefs = Application.Context.GetSharedPreferences(MyPREFERENCES, FileCreationMode.WorldReadable);
-            int resultado = prefs.GetInt("Id_DataEmissao", 0);
-
-
-
-            lstPedido = new Pedido_Manager().GetPedidos("");
+            lstPedido = new Pedido_Manager().GetPedidos(status, dataemissao);
             lstViewPedido.Adapter = new Adapter_Pedido_ListView(this, lstPedido);
         }
 
@@ -167,7 +206,10 @@ namespace weblayer.venda.android.exp.Activities
                     Toast.MakeText(this, mensagem, ToastLength.Short).Show();
                 }
 
-                FillList();
+                status = data.GetStringExtra("Status");
+                dataEmissao = data.GetStringExtra("DataEmissao");
+
+                FillList(status, dataEmissao);
             }
         }
     }
