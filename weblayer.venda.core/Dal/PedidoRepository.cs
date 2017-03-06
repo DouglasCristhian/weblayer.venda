@@ -88,59 +88,86 @@ namespace weblayer.venda.core.Dal
 
         public IList<Pedido> List(string status, int fl_data)
         {
-            string string_status;
+
+            var predicate = PredicateBuilder.False<Pedido>();
 
             //se data = 0, todos
             //se data = 1, pedidosdodia
             //se data = 2, pedidosdasemana
             //se data = 3, pedidosdomes
 
-            if (fl_data == 0)
+            predicate = predicate.And(x => (x.id) > 0);
+            
+            if (!string.IsNullOrWhiteSpace(status))
             {
-                string_status = "0";
+                var string_status = status.TrimEnd(',');
+
+                //var arr_status = Array.ConvertAll(string_status.Split(','), int.Parse).ToList();
+                //predicate = predicate.And(x => (arr_status.Contains(x.fl_status)));
             }
 
-            if (fl_data == 1)
+            if (fl_data > 0)
             {
-                string_status = "1";
+
+                DateTime intervalo_inicio;
+                DateTime intervalo_fim;
+
+                predicate = predicate.And(x => (x.dt_emissao >=DateTime.Now));
+
             }
 
-
-            if (fl_data == 2)
-            {
-                string_status = "2";
-            }
+            var result = from x in Database.GetConnection().Table<Pedido>().Where(predicate) select x;
+                         
+            return result.ToList();
 
 
-            if (fl_data == 3)
-            {
-                string_status = "3";
-            }
+            //string string_status;
+            //if (fl_data == 0)
+            //{
+            //    string_status = "0";
+            //}
 
-            if ((status == "") || (status == null))
-            {
-                string_status = "";
-            }
-            else
-                string_status = status.TrimEnd(',');
+            //if (fl_data == 1)
+            //{
+            //    string_status = "1";
+            //}
 
-            if ((status != "") && (status != null))
-            {
-                var arr_status = Array.ConvertAll(string_status.Split(','), int.Parse).ToList();
 
-                var result = from x in Database.GetConnection().Table<Pedido>().ToList()
-                             where (arr_status.Contains(x.fl_status))
-                             //&& (dataemissao.ToString().Contains(x.dt_emissao.ToString()))
-                             select x;
+            //if (fl_data == 2)
+            //{
+            //    string_status = "2";
+            //}
 
-                return result.ToList();
 
-                //return Database.GetConnection().Table<Pedido>().Where(x => arr_status.Contains(x.fl_status)).ToList();
-            }
-            else
-            {
-                return Database.GetConnection().Table<Pedido>().ToList();
-            }
+            //if (fl_data == 3)
+            //{
+            //    string_status = "3";
+            //}
+
+            //if ((status == "") || (status == null))
+            //{
+            //    string_status = "";
+            //}
+            //else
+            //    string_status = status.TrimEnd(',');
+
+            //if ((status != "") && (status != null))
+            //{
+            //    var arr_status = Array.ConvertAll(string_status.Split(','), int.Parse).ToList();
+
+            //    var result = from x in Database.GetConnection().Table<Pedido>().ToList()
+            //                 where (arr_status.Contains(x.fl_status))
+            //                 //&& (dataemissao.ToString().Contains(x.dt_emissao.ToString()))
+            //                 select x;
+
+            //    return result.ToList();
+
+            //    //return Database.GetConnection().Table<Pedido>().Where(x => arr_status.Contains(x.fl_status)).ToList();
+            //}
+            //else
+            //{
+            //    return Database.GetConnection().Table<Pedido>().ToList();
+            //}
         }
 
         public void MakeDataMock()

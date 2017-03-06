@@ -37,6 +37,10 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
+    <Reference Include="PredicateExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PredicateExtensions.1.0.0\lib\PredicateExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +57,7 @@
     <Compile Include="Dal\Database.cs" />
     <Compile Include="Dal\PedidoItemRepository.cs" />
     <Compile Include="Dal\PedidoRepository.cs" />
+    <Compile Include="Dal\PredicateBuilder.cs" />
     <Compile Include="Dal\ProdutoRepository.cs" />
     <Compile Include="Dal\ProdutoTabelaPrecoRepository.cs" />
     <Compile Include="Dal\TabelaPrecoRepository.cs" />
@@ -75,7 +80,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="LICENSE.md" />
     <None Include="packages.config" />
+    <None Include="readme.md" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
