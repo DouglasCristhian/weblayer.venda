@@ -3,7 +3,6 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using System;
 using System.Collections.Generic;
 using weblayer.venda.android.exp.Activities;
 using weblayer.venda.android.exp.Adapters;
@@ -22,6 +21,7 @@ namespace weblayer.venda.android.exp
         private List<mSpinner> spinnerDatas;
         public string MyPREFERENCES = "MyPrefs";
         public CheckBox[] lista;
+        string datacerta;
 
         protected override int LayoutResource
         {
@@ -74,7 +74,6 @@ namespace weblayer.venda.android.exp
         public void BindData()
         {
             btnLimparFiltro.Click += BtnLimparFiltro_Click;
-
         }
 
         private void SetStyle()
@@ -198,21 +197,21 @@ namespace weblayer.venda.android.exp
             #endregion
 
             #region DataEmissao
-            string retorno_Data = "";
+            int retorno_Data = 0;
             if (spinnerDataEmissao.SelectedItemPosition == 1)
             {
-                retorno_Data = DateTime.Now.ToString("dd/MM/yyyy");
+                retorno_Data = 1;
             }
-            //else if (spinnerDataEmissao.SelectedItemPosition == 2)
-            //{
-
-            //}
-            //else if (spinnerDataEmissao.SelectedItemPosition == 3)
-            //{
-
-            //}
-            else
-                retorno_Data = "07/06/2016";
+            else if (spinnerDataEmissao.SelectedItemPosition == 2)
+            {
+                retorno_Data = 2;
+            }
+            else if (spinnerDataEmissao.SelectedItemPosition == 3)
+            {
+                retorno_Data = 3;
+            }
+            //else
+            //    retorno_Data = 0;
             #endregion
 
             Intent intent = new Intent();

@@ -19,7 +19,7 @@ namespace weblayer.venda.android.exp.Activities
         private ListView lstViewPedido;
         private IList<Pedido> lstPedido;
         private string status;
-        private string dataEmissao;
+        private int dataEmissao;
         Pedido ped;
 
         protected override int LayoutResource
@@ -92,6 +92,9 @@ namespace weblayer.venda.android.exp.Activities
             var prefs = Application.Context.GetSharedPreferences("MyPrefs", FileCreationMode.WorldWriteable);
             var prefEditor = prefs.Edit();
 
+            int data = prefs.GetInt("Id_DataEmissao", 0);
+            dataEmissao = data;
+
             int valor = prefs.GetInt("CheckBox2131427464", -1);
             if (valor == 0)
             {
@@ -151,15 +154,15 @@ namespace weblayer.venda.android.exp.Activities
 
             if (retorno == "Finalizado")
             {
-                id = 2;
+                id = 1;
             }
             else if (retorno == "Faturado")
             {
-                id = 3;
+                id = 2;
             }
             else if (retorno == "Entregue")
             {
-                id = 4;
+                id = 3;
             }
             else
                 return;
@@ -177,7 +180,7 @@ namespace weblayer.venda.android.exp.Activities
             FillList(status, dataEmissao);
         }
 
-        private void FillList(string status, string dataemissao)
+        private void FillList(string status, int dataemissao)
         {
             lstPedido = new Pedido_Manager().GetPedidos(status, dataemissao);
             lstViewPedido.Adapter = new Adapter_Pedido_ListView(this, lstPedido);
@@ -207,8 +210,7 @@ namespace weblayer.venda.android.exp.Activities
                 }
 
                 status = data.GetStringExtra("Status");
-                dataEmissao = data.GetStringExtra("DataEmissao");
-
+                dataEmissao = data.GetIntExtra("DataEmissao", 0);
                 FillList(status, dataEmissao);
             }
         }

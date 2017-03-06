@@ -28,5 +28,13 @@ namespace weblayer.venda.android.exp.Helpers
             DateTime selectedDate = new DateTime(year, monthOfYear + 1, dayOfMonth);
             _dateSelectedHandler(selectedDate);
         }
+
+        //public static DateTime DataCerta()
+        //{
+        //    DateTime currently = DateTime.Now;
+        //    DateTime selectedDate = new DateTime(currently.Year, currently.Month, currently.Day);
+        //    //frag._dateSelectedHandler = onDateSelected;
+        //    return selectedDate;
+        //}
     }
 }

@@ -13,7 +13,7 @@ namespace weblayer.venda.core.Bll
             return new PedidoRepository().Get(id);
         }
 
-        public IList<Pedido> GetPedidos(string filtro, string dataemissao)
+        public IList<Pedido> GetPedidos(string filtro, int dataemissao)
         {
             return new PedidoRepository().List(filtro, dataemissao);
         }

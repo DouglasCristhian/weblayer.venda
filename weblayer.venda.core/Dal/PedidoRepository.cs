@@ -86,9 +86,36 @@ namespace weblayer.venda.core.Dal
             return Database.GetConnection().Table<Pedido>().ToList();
         }
 
-        public IList<Pedido> List(string status, string dataemissao)
+        public IList<Pedido> List(string status, int fl_data)
         {
             string string_status;
+
+            //se data = 0, todos
+            //se data = 1, pedidosdodia
+            //se data = 2, pedidosdasemana
+            //se data = 3, pedidosdomes
+
+            if (fl_data == 0)
+            {
+                string_status = "0";
+            }
+
+            if (fl_data == 1)
+            {
+                string_status = "1";
+            }
+
+
+            if (fl_data == 2)
+            {
+                string_status = "2";
+            }
+
+
+            if (fl_data == 3)
+            {
+                string_status = "3";
+            }
 
             if ((status == "") || (status == null))
             {
