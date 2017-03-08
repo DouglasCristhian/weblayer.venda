@@ -89,36 +89,29 @@ namespace weblayer.venda.core.Dal
         public IList<Pedido> List(string status, int fl_data)
         {
 
-            var predicate = PredicateBuilder.False<Pedido>();
+
 
             //se data = 0, todos
             //se data = 1, pedidosdodia
             //se data = 2, pedidosdasemana
             //se data = 3, pedidosdomes
 
-            predicate = predicate.And(x => (x.id) > 0);
+            DateTime intervalo_inicio = new DateTime(1900, 01, 01);
+            DateTime intervalo_fim = new DateTime(2020, 01, 01);
+
+            var string_status = status.TrimEnd(',');
+
+
+            if (string.IsNullOrWhiteSpace(status))
+                string_status = "0,1,3";
             
-            if (!string.IsNullOrWhiteSpace(status))
-            {
-                var string_status = status.TrimEnd(',');
 
-                //var arr_status = Array.ConvertAll(string_status.Split(','), int.Parse).ToList();
-                //predicate = predicate.And(x => (arr_status.Contains(x.fl_status)));
-            }
+            var result = Database.GetConnection().Query<Pedido>($@"SELECT * FROM Pedidos where fl_status in ({string_status}) and dt_emissao>=@intervalo_inicio and dt_emissao<=@intervalo_fim", intervalo_inicio, intervalo_fim);
 
-            if (fl_data > 0)
-            {
-
-                DateTime intervalo_inicio;
-                DateTime intervalo_fim;
-
-                predicate = predicate.And(x => (x.dt_emissao >=DateTime.Now));
-
-            }
-
-            var result = from x in Database.GetConnection().Table<Pedido>().Where(predicate) select x;
-                         
             return result.ToList();
+
+            //var result = from x in Database.GetConnection().Table<Pedido>() select x;
+            //return result.ToList();
 
 
             //string string_status;
