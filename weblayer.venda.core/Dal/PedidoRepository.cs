@@ -87,9 +87,16 @@ namespace weblayer.venda.core.Dal
 
         public IList<Pedido> ListFiltro(string status, int fl_data)
         {
-            IEnumerable<Pedido> result_data;
-            DateTime? intervalo_inicio = null;
-            DateTime? intervalo_fim = null;
+
+
+            //Valores default
+            DateTime intervalo_inicio = new DateTime(1900, 01, 01);
+            DateTime intervalo_fim = new DateTime(2020, 01, 01);
+
+            var string_status = status.TrimEnd(',');
+
+            if (string.IsNullOrWhiteSpace(status))
+                string_status = "0,1,2,3";
 
             if (fl_data == 1)
             {
@@ -108,73 +115,13 @@ namespace weblayer.venda.core.Dal
                 intervalo_inicio = DateHelper.GetStartOfCurrentMonth();
                 intervalo_fim = DateHelper.GetEndOfCurrentMonth();
             }
+                        
+            var result = Database.GetConnection().Query<Pedido>($@"SELECT * FROM Pedidos Where fl_status in ({string_status}) and dt_emissao>=@intervalo_inicio and dt_emissao<=@intervalo_fim", intervalo_inicio, intervalo_fim);
 
-            if (fl_data == 0)
-            {
-                intervalo_inicio = null;
-                intervalo_fim = null;
-            }
-
-            result_data = FilterByStatus(status, intervalo_inicio, intervalo_fim);
-            return result_data.ToList();
+            return result.ToList();
+            
         }
-
-        private IEnumerable<Pedido> FilterByStatus(string status, DateTime? inicio, DateTime? fim)
-        {
-            string string_status;
-            if ((string.IsNullOrWhiteSpace(status)))
-            {
-                string_status = "";
-            }
-            else
-                string_status = status.TrimEnd(',');
-
-            if (inicio == null && fim == null)
-            {
-                if ((!string.IsNullOrWhiteSpace(status)))
-                {
-                    var arr_status = Array.ConvertAll(string_status.Split(','), int.Parse).ToList();
-
-                    var result2 = from x in Database.GetConnection().Table<Pedido>().
-                                Where(x => arr_status.Contains(x.fl_status))
-                                  select x;
-                    return result2;
-                }
-                else
-                {
-                    var result2 = from x in Database.GetConnection().Table<Pedido>().ToList()
-                                  select x;
-                    return result2;
-                }
-            }
-            else if (inicio != null && fim != null)
-            {
-                if ((!string.IsNullOrWhiteSpace(status)))
-                {
-                    var arr_status = Array.ConvertAll(string_status.Split(','), int.Parse).ToList();
-
-                    var result2 = from x in Database.GetConnection().Table<Pedido>().
-                                Where(x => x.dt_emissao >= inicio && x.dt_emissao <= fim).ToList().Where(x => arr_status.Contains(x.fl_status))
-                                  select x;
-                    return result2;
-                }
-                else
-                {
-                    var result2 = from x in Database.GetConnection().Table<Pedido>().
-                               Where(x => x.dt_emissao >= inicio && x.dt_emissao <= fim).ToList()
-                                  select x;
-                    return result2;
-                }
-            }
-            else
-            {
-                var result2 = from x in Database.GetConnection().Table<Pedido>().ToList()
-                              select x;
-
-                return result2;
-
-            }
-        }
+        
 
         public void MakeDataMock()
         {
