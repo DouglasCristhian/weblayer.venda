@@ -122,6 +122,7 @@
     <Compile Include="Fragments\Fragment_Legendas.cs" />
     <Compile Include="Fragments\Fragment_Status.cs" />
     <Compile Include="Helpers\CurrencyConverterHelper.cs" />
+    <Compile Include="Helpers\DateHelper.cs" />
     <Compile Include="Helpers\DatePickerHelper.cs" />
     <Compile Include="Helpers\DialogEventArgs.cs" />
     <Compile Include="Helpers\MaskHelper.cs" />
@@ -337,7 +338,9 @@
     <AndroidResource Include="Resources\layout\Activity_Novidades.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_Pedido.xml" />
+    <AndroidResource Include="Resources\layout\Activity_Pedido.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_PedidoItem.xml">

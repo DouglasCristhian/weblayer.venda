@@ -18,6 +18,7 @@ namespace weblayer.venda.android.exp.Activities
         //public static string MyPREFERENCES = "MyPrefs";
         private ListView lstViewPedido;
         private IList<Pedido> lstPedido;
+        private TextView txtPedidos;
         private string status;
         private int dataEmissao;
         Pedido ped;
@@ -77,12 +78,18 @@ namespace weblayer.venda.android.exp.Activities
         private void FindViews()
         {
             lstViewPedido = FindViewById<ListView>(Resource.Id.listviewPedido);
+            txtPedidos = FindViewById<TextView>(Resource.Id.txtPedidos);
         }
 
         private void BindViews()
         {
             lstViewPedido.ItemClick += LstViewPedidoItem_ItemClick;
             lstViewPedido.ItemLongClick += LstViewPedido_ItemLongClick;
+
+            if (lstPedido != null)
+            {
+                txtPedidos.Visibility = ViewStates.Gone;
+            }
 
             Filtro_Checkboxes();
         }
@@ -183,7 +190,18 @@ namespace weblayer.venda.android.exp.Activities
         private void FillList(string status, int dataemissao)
         {
             lstPedido = new Pedido_Manager().GetPedidos(status, dataemissao);
-            lstViewPedido.Adapter = new Adapter_Pedido_ListView(this, lstPedido);
+
+            if (lstPedido.Count == 0)
+            {
+                lstViewPedido.Adapter = new Adapter_Pedido_ListView(this, lstPedido);
+                txtPedidos.Visibility = ViewStates.Visible;
+                txtPedidos.Text = "Não há pedidos que correspondam aos filtros de pesquisa";
+            }
+            else
+            {
+                txtPedidos.Visibility = ViewStates.Gone;
+                lstViewPedido.Adapter = new Adapter_Pedido_ListView(this, lstPedido);
+            }
         }
 
         private void LstViewPedidoItem_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

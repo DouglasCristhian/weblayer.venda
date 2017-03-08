@@ -48,8 +48,8 @@ namespace weblayer.venda.android.exp.Activities
             {
                 case Android.Resource.Id.Home:
                     Finish();
-
-                    return true;
+                    break;
+                    //return true;
             }
             return base.OnOptionsItemSelected(item);
         }

@@ -457,7 +457,7 @@ namespace weblayer.venda.android.exp.Activities
                 {
                     Toast.MakeText(this, mensagem, ToastLength.Short).Show();
                 }
-                //Atualizar o obj de pedido
+
                 pedido = new Pedido_Manager().Get(pedido.id);
                 BindViews();
 
@@ -493,8 +493,6 @@ namespace weblayer.venda.android.exp.Activities
                 Intent intent = new Intent();
                 intent.PutExtra("mensagem", ped.Mensagem);
                 SetResult(Result.Ok, intent);
-
-                Toast.MakeText(this, "Pedido atualizado!", ToastLength.Short).Show();
 
                 Finish();
             }

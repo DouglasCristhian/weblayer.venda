@@ -60,6 +60,7 @@
     <Compile Include="Dal\ProdutoRepository.cs" />
     <Compile Include="Dal\ProdutoTabelaPrecoRepository.cs" />
     <Compile Include="Dal\TabelaPrecoRepository.cs" />
+    <Compile Include="DateHelper.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Pedido.cs" />
     <Compile Include="Model\PedidoItem.cs" />

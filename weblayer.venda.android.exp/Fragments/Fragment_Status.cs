@@ -67,7 +67,6 @@ namespace weblayer.venda.android.exp.Fragments
             base.OnActivityCreated(savedInstanceState);
         }
 
-
         public override void OnDismiss(IDialogInterface dialog)
         {
             base.OnDismiss(dialog);

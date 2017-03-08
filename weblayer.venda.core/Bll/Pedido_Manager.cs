@@ -15,7 +15,7 @@ namespace weblayer.venda.core.Bll
 
         public IList<Pedido> GetPedidos(string filtro, int dataemissao)
         {
-            return new PedidoRepository().List(filtro, dataemissao);
+            return new PedidoRepository().ListFiltro(filtro, dataemissao);
         }
 
         public IList<Pedido> GetPedidoUnico(string filtro)

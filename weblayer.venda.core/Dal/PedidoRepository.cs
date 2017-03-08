@@ -8,7 +8,6 @@ namespace weblayer.venda.core.Dal
     public class PedidoRepository
     {
         private double vl_totalitens;
-
         public string Mensage { get; set; }
 
         public Pedido Get(int id)
@@ -86,81 +85,95 @@ namespace weblayer.venda.core.Dal
             return Database.GetConnection().Table<Pedido>().ToList();
         }
 
-        public IList<Pedido> List(string status, int fl_data)
+        public IList<Pedido> ListFiltro(string status, int fl_data)
         {
+            IEnumerable<Pedido> result_data;
+            DateTime? intervalo_inicio = null;
+            DateTime? intervalo_fim = null;
 
+            if (fl_data == 1)
+            {
+                intervalo_inicio = DateHelper.GetStartOfDay(DateTime.Today);
+                intervalo_fim = DateHelper.GetEndOfDay(DateTime.Today);
+            }
 
+            if (fl_data == 2)
+            {
+                intervalo_inicio = DateHelper.GetStartOfCurrentWeek();
+                intervalo_fim = DateHelper.GetEndOfCurrentWeek();
+            }
 
-            //se data = 0, todos
-            //se data = 1, pedidosdodia
-            //se data = 2, pedidosdasemana
-            //se data = 3, pedidosdomes
+            if (fl_data == 3)
+            {
+                intervalo_inicio = DateHelper.GetStartOfCurrentMonth();
+                intervalo_fim = DateHelper.GetEndOfCurrentMonth();
+            }
 
-            DateTime intervalo_inicio = new DateTime(1900, 01, 01);
-            DateTime intervalo_fim = new DateTime(2020, 01, 01);
+            if (fl_data == 0)
+            {
+                intervalo_inicio = null;
+                intervalo_fim = null;
+            }
 
-            var string_status = status.TrimEnd(',');
+            result_data = FilterByStatus(status, intervalo_inicio, intervalo_fim);
+            return result_data.ToList();
+        }
 
+        private IEnumerable<Pedido> FilterByStatus(string status, DateTime? inicio, DateTime? fim)
+        {
+            string string_status;
+            if ((string.IsNullOrWhiteSpace(status)))
+            {
+                string_status = "";
+            }
+            else
+                string_status = status.TrimEnd(',');
 
-            if (string.IsNullOrWhiteSpace(status))
-                string_status = "0,1,3";
-            
+            if (inicio == null && fim == null)
+            {
+                if ((!string.IsNullOrWhiteSpace(status)))
+                {
+                    var arr_status = Array.ConvertAll(string_status.Split(','), int.Parse).ToList();
 
-            var result = Database.GetConnection().Query<Pedido>($@"SELECT * FROM Pedidos where fl_status in ({string_status}) and dt_emissao>=@intervalo_inicio and dt_emissao<=@intervalo_fim", intervalo_inicio, intervalo_fim);
+                    var result2 = from x in Database.GetConnection().Table<Pedido>().
+                                Where(x => arr_status.Contains(x.fl_status))
+                                  select x;
+                    return result2;
+                }
+                else
+                {
+                    var result2 = from x in Database.GetConnection().Table<Pedido>().ToList()
+                                  select x;
+                    return result2;
+                }
+            }
+            else if (inicio != null && fim != null)
+            {
+                if ((!string.IsNullOrWhiteSpace(status)))
+                {
+                    var arr_status = Array.ConvertAll(string_status.Split(','), int.Parse).ToList();
 
-            return result.ToList();
+                    var result2 = from x in Database.GetConnection().Table<Pedido>().
+                                Where(x => x.dt_emissao >= inicio && x.dt_emissao <= fim).ToList().Where(x => arr_status.Contains(x.fl_status))
+                                  select x;
+                    return result2;
+                }
+                else
+                {
+                    var result2 = from x in Database.GetConnection().Table<Pedido>().
+                               Where(x => x.dt_emissao >= inicio && x.dt_emissao <= fim).ToList()
+                                  select x;
+                    return result2;
+                }
+            }
+            else
+            {
+                var result2 = from x in Database.GetConnection().Table<Pedido>().ToList()
+                              select x;
 
-            //var result = from x in Database.GetConnection().Table<Pedido>() select x;
-            //return result.ToList();
+                return result2;
 
-
-            //string string_status;
-            //if (fl_data == 0)
-            //{
-            //    string_status = "0";
-            //}
-
-            //if (fl_data == 1)
-            //{
-            //    string_status = "1";
-            //}
-
-
-            //if (fl_data == 2)
-            //{
-            //    string_status = "2";
-            //}
-
-
-            //if (fl_data == 3)
-            //{
-            //    string_status = "3";
-            //}
-
-            //if ((status == "") || (status == null))
-            //{
-            //    string_status = "";
-            //}
-            //else
-            //    string_status = status.TrimEnd(',');
-
-            //if ((status != "") && (status != null))
-            //{
-            //    var arr_status = Array.ConvertAll(string_status.Split(','), int.Parse).ToList();
-
-            //    var result = from x in Database.GetConnection().Table<Pedido>().ToList()
-            //                 where (arr_status.Contains(x.fl_status))
-            //                 //&& (dataemissao.ToString().Contains(x.dt_emissao.ToString()))
-            //                 select x;
-
-            //    return result.ToList();
-
-            //    //return Database.GetConnection().Table<Pedido>().Where(x => arr_status.Contains(x.fl_status)).ToList();
-            //}
-            //else
-            //{
-            //    return Database.GetConnection().Table<Pedido>().ToList();
-            //}
+            }
         }
 
         public void MakeDataMock()
@@ -169,9 +182,9 @@ namespace weblayer.venda.core.Dal
                 return;
 
             Save(new Pedido() { id_codigo = "1", dt_emissao = DateTime.Parse("2016/04/01"), id_cliente = 1, ds_cliente = "UNITY SISTEMAS", id_vendedor = 1, ds_vendedor = "Maria Lina", vl_total = 0.00, ds_MsgPedido = "MensagemPedido1", ds_MsgNF = "MensagemNF1", fl_status = 0 });
-            Save(new Pedido() { id_codigo = "2", dt_emissao = DateTime.Parse("2016/06/07"), id_cliente = 2, ds_cliente = "INVISIBLE TUCS", id_vendedor = 2, ds_vendedor = "Saory Emanoelle", vl_total = 0.00, ds_MsgPedido = "MensagemPedido2", ds_MsgNF = "MensagemNF2", fl_status = 1 });
-            Save(new Pedido() { id_codigo = "3", dt_emissao = DateTime.Parse("2017/03/01"), id_cliente = 1, ds_cliente = "NAUGHTY DOG", id_vendedor = 3, ds_vendedor = "Douglas Christian", vl_total = 0.00, ds_MsgPedido = "MensagemPedido3", ds_MsgNF = "MensagemNF3", fl_status = 2 });
-            Save(new Pedido() { id_codigo = "4", dt_emissao = DateTime.Parse("2017/01/01"), id_cliente = 2, ds_cliente = "BETA_103", id_vendedor = 4, ds_vendedor = "Natali BR", vl_total = 0.00, ds_MsgPedido = "MensagemPedido4", ds_MsgNF = "MensagemNF4", fl_status = 3 });
+            Save(new Pedido() { id_codigo = "2", dt_emissao = DateTime.Parse("2017/03/01"), id_cliente = 2, ds_cliente = "INVISIBLE TUCS", id_vendedor = 2, ds_vendedor = "Saory Emanoelle", vl_total = 0.00, ds_MsgPedido = "MensagemPedido2", ds_MsgNF = "MensagemNF2", fl_status = 1 });
+            Save(new Pedido() { id_codigo = "3", dt_emissao = DateTime.Parse("2017/03/07"), id_cliente = 1, ds_cliente = "NAUGHTY DOG", id_vendedor = 3, ds_vendedor = "Douglas Christian", vl_total = 0.00, ds_MsgPedido = "MensagemPedido3", ds_MsgNF = "MensagemNF3", fl_status = 2 });
+            Save(new Pedido() { id_codigo = "4", dt_emissao = DateTime.Parse("2017/03/10"), id_cliente = 2, ds_cliente = "BETA_103", id_vendedor = 4, ds_vendedor = "Natali BR", vl_total = 0.00, ds_MsgPedido = "MensagemPedido4", ds_MsgNF = "MensagemNF4", fl_status = 3 });
         }
     }
 }
