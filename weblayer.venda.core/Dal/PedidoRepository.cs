@@ -116,7 +116,7 @@ namespace weblayer.venda.core.Dal
                 intervalo_fim = DateHelper.GetEndOfCurrentMonth();
             }
                         
-            var result = Database.GetConnection().Query<Pedido>($@"SELECT * FROM Pedidos Where fl_status in ({string_status}) and dt_emissao>=@intervalo_inicio and dt_emissao<=@intervalo_fim", intervalo_inicio, intervalo_fim);
+            var result = Database.GetConnection().Query<Pedido>($@"SELECT * FROM Pedidos Where fl_status in ({string_status}) and dt_emissao>=@intervalo_inicio and dt_emissao<=@intervalo_fim ", intervalo_inicio, intervalo_fim);
 
             return result.ToList();
             
