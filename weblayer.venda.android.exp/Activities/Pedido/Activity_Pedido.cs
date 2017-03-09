@@ -102,25 +102,25 @@ namespace weblayer.venda.android.exp.Activities
             int data = prefs.GetInt("Id_DataEmissao", 0);
             dataEmissao = data;
 
-            int valor = prefs.GetInt("CheckBox2131427464", -1);
+            int valor = prefs.GetInt("CheckBox0", -1);
             if (valor == 0)
             {
                 status = status + "0,";
             }
 
-            int valor1 = prefs.GetInt("CheckBox2131427466", -1);
+            int valor1 = prefs.GetInt("CheckBox1", -1);
             if (valor1 == 0)
             {
                 status = status + "1,";
             }
 
-            int valor2 = prefs.GetInt("CheckBox2131427468", -1);
+            int valor2 = prefs.GetInt("CheckBox2", -1);
             if (valor2 == 0)
             {
                 status = status + "2,";
             }
 
-            int valor3 = prefs.GetInt("CheckBox2131427470", -1);
+            int valor3 = prefs.GetInt("CheckBox3", -1);
             if (valor3 == 0)
             {
                 status = status + "3,";

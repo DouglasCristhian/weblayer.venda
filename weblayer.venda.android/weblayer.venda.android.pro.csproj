@@ -102,6 +102,7 @@
     <Compile Include="Activities\Activity_Novidades.cs" />
     <Compile Include="Activities\Activity_Sobre.cs" />
     <Compile Include="Activities\Pedido\Activity_EditarPedido.cs" />
+    <Compile Include="Activities\Pedido\Activity_FiltrarPedidos.cs" />
     <Compile Include="Activities\Pedido\Activity_Pedido.cs" />
     <Compile Include="Activities\Pedido\Activity_PedidoItem.cs" />
     <Compile Include="Activities\Pedido\Activity_PedidoProduto.cs" />
@@ -235,7 +236,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\ic_settings.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_FiltrarPedidos.xml" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-mdpi\ic_add.png" />
   </ItemGroup>
@@ -448,6 +451,24 @@
       <Project>{0AA9D10F-5744-450E-9AE2-F415C1579959}</Project>
       <Name>weblayer.venda.core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_toolbar_Filtro.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_tune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_tune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_tune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_tune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_tune.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

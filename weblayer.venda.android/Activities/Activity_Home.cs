@@ -74,6 +74,7 @@ namespace weblayer.venda.android.Activities
             toolbar.Menu.RemoveItem(Resource.Id.action_adicionar);
             toolbar.Menu.RemoveItem(Resource.Id.action_salvar);
             toolbar.Menu.RemoveItem(Resource.Id.action_help);
+            toolbar.Menu.RemoveItem(Resource.Id.action_filtrar);
         }
 
         private void BindData()

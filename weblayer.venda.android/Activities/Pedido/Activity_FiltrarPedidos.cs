@@ -4,24 +4,28 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using System.Collections.Generic;
-using weblayer.venda.android.exp.Activities;
-using weblayer.venda.android.exp.Adapters;
+using weblayer.venda.android.Adapters;
 
-namespace weblayer.venda.android.exp
+namespace weblayer.venda.android.Activities
 {
     [Activity(MainLauncher = false, Label = "")]
     public class Activity_FiltrarPedidos : Activity_Base
     {
         public CheckBox checkBoxOrcamento;
         public CheckBox checkBoxFinalizado;
+        public CheckBox checkBoxSincronizado;
+        public CheckBox checkBoxParcProcessado;
+        public CheckBox checkBoxNaoProcessado;
+        public CheckBox checkBoxCancelado;
+        public CheckBox checkBoxParcFaturado;
         public CheckBox checkBoxFaturado;
+        public CheckBox checkBoxParcEntregue;
         public CheckBox checkBoxEntregue;
         private Button btnLimparFiltro;
         private Spinner spinnerDataEmissao;
         private List<mSpinner> spinnerDatas;
         public string MyPREFERENCES = "MyPrefs";
         public CheckBox[] lista;
-        string datacerta;
 
         protected override int LayoutResource
         {
@@ -38,12 +42,7 @@ namespace weblayer.venda.android.exp
             FindViews();
             BindData();
             SetStyle();
-
-            lista = new CheckBox[4];
-            lista[0] = checkBoxOrcamento;
-            lista[1] = checkBoxFinalizado;
-            lista[2] = checkBoxFaturado;
-            lista[3] = checkBoxEntregue;
+            CheckBoxList();
 
             RestoreForm();
 
@@ -55,6 +54,21 @@ namespace weblayer.venda.android.exp
             spinnerDataEmissao.SetSelection(getIndexByValue(spinnerDataEmissao, resultado));
         }
 
+        public void CheckBoxList()
+        {
+            lista = new CheckBox[10];
+            lista[0] = checkBoxOrcamento;
+            lista[1] = checkBoxFinalizado;
+            lista[2] = checkBoxSincronizado;
+            lista[3] = checkBoxParcProcessado;
+            lista[4] = checkBoxNaoProcessado;
+            lista[5] = checkBoxCancelado;
+            lista[6] = checkBoxParcFaturado;
+            lista[7] = checkBoxFaturado;
+            lista[8] = checkBoxParcEntregue;
+            lista[9] = checkBoxEntregue;
+        }
+
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_toolbar_Filtro, menu);
@@ -64,11 +78,20 @@ namespace weblayer.venda.android.exp
         public void FindViews()
         {
             btnLimparFiltro = FindViewById<Button>(Resource.Id.btnFinalizar);
+            spinnerDataEmissao = FindViewById<Spinner>(Resource.Id.spinnerDataEmissao);
+
             checkBoxOrcamento = FindViewById<CheckBox>(Resource.Id.checkBoxOrcamento);
             checkBoxFinalizado = FindViewById<CheckBox>(Resource.Id.checkBoxFinalizado);
+            checkBoxSincronizado = FindViewById<CheckBox>(Resource.Id.checkBoxSincronizado);
+            checkBoxParcProcessado = FindViewById<CheckBox>(Resource.Id.checkBoxParcProcessado);
+
+            checkBoxNaoProcessado = FindViewById<CheckBox>(Resource.Id.checkBoxNaoProcessado);
+            checkBoxCancelado = FindViewById<CheckBox>(Resource.Id.checkBoxCancelado);
+            checkBoxParcFaturado = FindViewById<CheckBox>(Resource.Id.checkBoxParcFaturado);
+
             checkBoxFaturado = FindViewById<CheckBox>(Resource.Id.checkBoxFaturado);
+            checkBoxParcEntregue = FindViewById<CheckBox>(Resource.Id.checkBoxParcEntregue);
             checkBoxEntregue = FindViewById<CheckBox>(Resource.Id.checkBoxEntregue);
-            spinnerDataEmissao = FindViewById<Spinner>(Resource.Id.spinnerDataEmissao);
         }
 
         public void BindData()
@@ -85,8 +108,15 @@ namespace weblayer.venda.android.exp
         {
             checkBoxOrcamento.Checked = false;
             checkBoxFinalizado.Checked = false;
+            checkBoxSincronizado.Checked = false;
+            checkBoxParcProcessado.Checked = false;
+            checkBoxNaoProcessado.Checked = false;
+            checkBoxCancelado.Checked = false;
+            checkBoxParcFaturado.Checked = false;
             checkBoxFaturado.Checked = false;
+            checkBoxParcEntregue.Checked = false;
             checkBoxEntregue.Checked = false;
+
             spinnerDataEmissao.SetSelection(0);
         }
 
@@ -178,8 +208,6 @@ namespace weblayer.venda.android.exp
             prefEditor.PutInt("Id_DataEmissao", spinnerDataEmissao.SelectedItemPosition);
             prefEditor.Commit();
 
-            Toast.MakeText(this, "Preferências de filtro atualizadas", ToastLength.Short).Show();
-
             #region Status
             string retornoCheckBox = "";
             if (checkBoxOrcamento.Checked)
@@ -188,11 +216,29 @@ namespace weblayer.venda.android.exp
             if (checkBoxFinalizado.Checked)
                 retornoCheckBox = retornoCheckBox + "1,";
 
-            if (checkBoxFaturado.Checked)
+            if (checkBoxSincronizado.Checked)
                 retornoCheckBox = retornoCheckBox + "2,";
 
-            if (checkBoxEntregue.Checked)
+            if (checkBoxParcProcessado.Checked)
                 retornoCheckBox = retornoCheckBox + "3,";
+
+            if (checkBoxNaoProcessado.Checked)
+                retornoCheckBox = retornoCheckBox + "4,";
+
+            if (checkBoxCancelado.Checked)
+                retornoCheckBox = retornoCheckBox + "5,";
+
+            if (checkBoxParcFaturado.Checked)
+                retornoCheckBox = retornoCheckBox + "6,";
+
+            if (checkBoxFaturado.Checked)
+                retornoCheckBox = retornoCheckBox + "7,";
+
+            if (checkBoxParcEntregue.Checked)
+                retornoCheckBox = retornoCheckBox + "8,";
+
+            if (checkBoxEntregue.Checked)
+                retornoCheckBox = retornoCheckBox + "9,";
             #endregion
 
             #region DataEmissao
@@ -217,6 +263,8 @@ namespace weblayer.venda.android.exp
             intent.PutExtra("Status", retornoCheckBox);
             intent.PutExtra("DataEmissao", retorno_Data);
             SetResult(Result.Ok, intent);
+
+            Toast.MakeText(this, "Preferências de filtro atualizadas", ToastLength.Short).Show();
 
             Finish();
         }
