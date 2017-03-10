@@ -7,7 +7,7 @@ using weblayer.venda.core.Sinc;
 
 namespace weblayer.venda.android.Activities
 {
-    [Activity(MainLauncher = true)]
+    [Activity(MainLauncher = false)]
     public class Activity_Home : Activity
     {
         Android.Support.V7.Widget.Toolbar toolbar;

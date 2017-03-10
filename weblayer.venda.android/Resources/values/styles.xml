@@ -5,7 +5,6 @@
 
   </style>
 
-
   <style name="ParentMaterialTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <!--Tema pai para todos devices (Pre ou pro Lollipop-->
     <item name="colorPrimary">@color/colorPrimary</item>

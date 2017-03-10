@@ -18,6 +18,7 @@ namespace weblayer.venda.android.Activities
         private IList<Pedido> lstPedido;
         private int dataEmissao;
         private string status = "";
+        private TextView txtPedidos;
 
         protected override int LayoutResource
         {
@@ -61,7 +62,6 @@ namespace weblayer.venda.android.Activities
             FindViews();
             BindViews();
             Filtro_Checkboxes();
-            //FillList(status, dataEmissao);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -78,6 +78,7 @@ namespace weblayer.venda.android.Activities
         private void FindViews()
         {
             lstViewPedido = FindViewById<ListView>(Resource.Id.listviewPedido);
+            txtPedidos = FindViewById<TextView>(Resource.Id.txtPedidos);
         }
 
         private void Filtro_Checkboxes()
@@ -158,12 +159,30 @@ namespace weblayer.venda.android.Activities
         private void BindViews()
         {
             lstViewPedido.ItemClick += LstViewPedidoItem_ItemClick;
+
+            if (lstPedido != null)
+            {
+                txtPedidos.Visibility = ViewStates.Gone;
+            }
+
+            Filtro_Checkboxes();
         }
 
         private void FillList(string filtro, int dataemissao)
         {
-            lstPedido = new Pedido_Manager().GetPedidos(filtro, dataemissao);
-            lstViewPedido.Adapter = new Adapter_Pedido_ListView(this, lstPedido);
+            lstPedido = new Pedido_Manager().GetPedidos(status, dataemissao);
+
+            if (lstPedido.Count == 0)
+            {
+                lstViewPedido.Adapter = new Adapter_Pedido_ListView(this, lstPedido);
+                txtPedidos.Visibility = ViewStates.Visible;
+                txtPedidos.Text = "Não há pedidos que correspondam aos filtros de pesquisa";
+            }
+            else
+            {
+                txtPedidos.Visibility = ViewStates.Gone;
+                lstViewPedido.Adapter = new Adapter_Pedido_ListView(this, lstPedido);
+            }
         }
 
         private void LstViewPedidoItem_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

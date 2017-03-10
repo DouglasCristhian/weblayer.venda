@@ -8,7 +8,7 @@ using weblayer.venda.android.Adapters;
 
 namespace weblayer.venda.android.Activities
 {
-    [Activity(MainLauncher = false, Label = "")]
+    [Activity(MainLauncher = true, Label = "")]
     public class Activity_FiltrarPedidos : Activity_Base
     {
         public CheckBox checkBoxOrcamento;
@@ -102,6 +102,11 @@ namespace weblayer.venda.android.Activities
         private void SetStyle()
         {
             spinnerDataEmissao.SetBackgroundResource(Resource.Drawable.EditTextStyle);
+
+            if (checkBoxNaoProcessado.Checked)
+            {
+                checkBoxNaoProcessado.SetBackgroundResource(Resource.Drawable.CHECKBOX_CANCELADO1);
+            }
         }
 
         private void BtnLimparFiltro_Click(object sender, System.EventArgs e)
