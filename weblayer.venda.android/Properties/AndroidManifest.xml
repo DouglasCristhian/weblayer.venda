@@ -4,6 +4,6 @@
   <application
   android:label="W/Vendas Pro"
   android:theme="@style/MaterialTheme"
-  android:icon="@mipmap/ic_launcher2">
+  android:icon="@mipmap/ic_launcher">
   </application>
 </manifest>
