@@ -107,7 +107,6 @@ namespace weblayer.venda.android.exp.Activities
                 if (pedido.fl_status != 0)
                 {
                     menu.RemoveItem(Resource.Id.action_salvar);
-                    //menu.RemoveItem(Resource.Id.action_deletar);
                 }
             }
 
@@ -494,7 +493,7 @@ namespace weblayer.venda.android.exp.Activities
                 intent.PutExtra("mensagem", ped.Mensagem);
                 SetResult(Result.Ok, intent);
 
-                Finish();
+                //Finish();
             }
             catch (Exception ex)
             {

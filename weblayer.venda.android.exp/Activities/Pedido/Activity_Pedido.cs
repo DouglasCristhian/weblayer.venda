@@ -228,8 +228,15 @@ namespace weblayer.venda.android.exp.Activities
                 }
 
                 status = data.GetStringExtra("Status");
-                dataEmissao = data.GetIntExtra("DataEmissao", 0);
-                FillList(status, dataEmissao);
+                if (status == null)
+                {
+                    Filtro_Checkboxes();
+                }
+                else if (status != null)
+                {
+                    dataEmissao = data.GetIntExtra("DataEmissao", 0);
+                    FillList(status, dataEmissao);
+                }
             }
         }
     }

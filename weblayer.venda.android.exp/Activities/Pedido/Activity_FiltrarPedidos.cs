@@ -21,7 +21,6 @@ namespace weblayer.venda.android.exp
         private List<mSpinner> spinnerDatas;
         public string MyPREFERENCES = "MyPrefs";
         public CheckBox[] lista;
-        string datacerta;
 
         protected override int LayoutResource
         {

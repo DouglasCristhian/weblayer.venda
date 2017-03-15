@@ -61,7 +61,6 @@ namespace weblayer.venda.android.Activities
 
             FindViews();
             BindViews();
-            Filtro_Checkboxes();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -211,10 +210,14 @@ namespace weblayer.venda.android.Activities
                 status = data.GetStringExtra("Status");
                 if (status == null)
                 {
-                    status = "";
+                    Filtro_Checkboxes();
                 }
-                dataEmissao = data.GetIntExtra("DataEmissao", 0);
-                FillList(status, dataEmissao);
+                else if (status != null)
+                {
+                    dataEmissao = data.GetIntExtra("DataEmissao", 0);
+                    FillList(status, dataEmissao);
+                }
+
             }
         }
     }
