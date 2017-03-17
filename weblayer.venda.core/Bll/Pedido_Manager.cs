@@ -52,7 +52,5 @@ namespace weblayer.venda.core.Bll
 
             Mensagem = $"Pedido {obj.id_codigo} excluído com sucesso";
         }
-
-
     }
 }

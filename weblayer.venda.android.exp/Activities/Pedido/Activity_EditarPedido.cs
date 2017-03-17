@@ -11,6 +11,7 @@ using weblayer.venda.android.exp.Helpers;
 using weblayer.venda.core.Bll;
 using weblayer.venda.core.Dal;
 using weblayer.venda.core.Model;
+using Uri = Android.Net.Uri;
 
 namespace weblayer.venda.android.exp.Activities
 {
@@ -27,6 +28,7 @@ namespace weblayer.venda.android.exp.Activities
         private TextView lblStatusPedido;
         private Button btnAdicionar;
         private Button btnItensPedido;
+        private Button btnGerarPDF;
         private Button btnFinalizar;
         private Pedido pedido;
         private string idcliente;
@@ -47,6 +49,8 @@ namespace weblayer.venda.android.exp.Activities
             {
                 case Resource.Id.action_salvar:
                     Save();
+                    if (ValidateViews())
+                        Finish();
                     return true;
 
                 case Resource.Id.action_deletar:
@@ -157,6 +161,7 @@ namespace weblayer.venda.android.exp.Activities
             txtStatusPedido = FindViewById<TextView>(Resource.Id.txtStatusPedido);
             btnAdicionar = FindViewById<Button>(Resource.Id.btnAdicionar);
             btnItensPedido = FindViewById<Button>(Resource.Id.btnItensPedido);
+            btnGerarPDF = FindViewById<Button>(Resource.Id.btnGerarPDF);
             btnFinalizar = FindViewById<Button>(Resource.Id.btnFinalizar);
 
             txtDataEmissao.SetBackgroundColor(Android.Graphics.Color.LightGray);
@@ -252,7 +257,6 @@ namespace weblayer.venda.android.exp.Activities
             var idcli = tblclientespinner[spinnerClientes.SelectedItemPosition];
             pedido.id_cliente = idcli.Id();
             pedido.dt_emissao = datahora;
-            //pedido.ds_observacao = txtObservacao.Text;
             pedido.ds_MsgNF = txtMsgNF.Text.ToString();
             pedido.ds_MsgPedido = txtMsgPedido.Text.ToString();
         }
@@ -265,6 +269,7 @@ namespace weblayer.venda.android.exp.Activities
             {
                 txtDataEmissao.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 txtDataEmissao.Click += EventtxtDataEmissao_Click;
+                btnGerarPDF.Visibility = ViewStates.Gone;
                 txtStatusPedido.Visibility = ViewStates.Gone;
                 lblStatusPedido.Visibility = ViewStates.Gone;
 
@@ -300,16 +305,20 @@ namespace weblayer.venda.android.exp.Activities
                     btnFinalizar.Visibility = ViewStates.Gone;
                     btnItensPedido.Visibility = ViewStates.Gone;
                     spinnerClientes.Enabled = true;
+                    btnGerarPDF.Visibility = ViewStates.Gone;
                 }
                 else if ((pedido.vl_total != 0) || (txtValor_Total.Text != "0,00"))
                 {
                     spinnerClientes.Enabled = false;
+                    btnGerarPDF.Enabled = true;
+                    btnGerarPDF.Visibility = ViewStates.Visible;
                 }
             }
 
             txtValor_Total.Enabled = false;
             btnAdicionar.Click += BtnAdicionar_Click;
             btnFinalizar.Click += BtnFinalizar_Click;
+            btnGerarPDF.Click += BtnGerarPDF_Click;
             txtValor_Total.Click += TxtValor_Total_Click;
             btnItensPedido.Click += TxtValor_Total_Click;
 
@@ -385,6 +394,34 @@ namespace weblayer.venda.android.exp.Activities
             intent.PutExtra("JsonPedido", Newtonsoft.Json.JsonConvert.SerializeObject(pedido));
             intent.PutExtra("JsonCliente", Newtonsoft.Json.JsonConvert.SerializeObject(obj_cliente));
             StartActivityForResult(intent, 0);
+        }
+
+        private void BtnGerarPDF_Click(object sender, EventArgs e)
+        {
+            PDFGeneratorHelper helper = new PDFGeneratorHelper();
+            string path = helper.GeneratePDF(pedido);
+
+            SendPDFToEmail(pedido);
+
+            //Java.IO.File file = new Java.IO.File(path);
+            //Intent intent = new Intent(Intent.ActionView);
+            //intent.SetDataAndType(Android.Net.Uri.FromFile(file), "application/pdf");
+            //StartActivity(intent);
+        }
+
+        private void SendPDFToEmail(Pedido pedido)
+        {
+            Intent intent = new Intent(Intent.ActionSend);
+            intent.SetType("application/pdf");
+
+            Java.IO.File file = new Java.IO.File((Android.OS.Environment.ExternalStorageDirectory + "/W Venda - PDFs"), "Pedido " + pedido.id_codigo.ToString() + ", Cliente " + pedido.ds_cliente.ToString() + ".pdf");
+
+            intent.PutExtra(Intent.ExtraSubject, "Pedido " + pedido.id_cliente.ToString() + ", Cliente " + pedido.ds_cliente.ToString() + ", " + DateTime.Parse(pedido.dt_emissao.ToString()) + ".pdf");
+            intent.PutExtra(Intent.ExtraStream, Uri.FromFile(file));
+            //intent.PutExtra(Intent.ExtraText, "Pedido " + pedido.id_cliente.ToString() + ", Cliente " + pedido.ds_cliente.ToString() + ", " + DateTime.Parse(pedido.dt_emissao.ToString()) + ".pdf");
+            //intent.PutExtra(Intent.ExtraStream, Uri.FromFile(file));
+            Intent.CreateChooser(intent, "Enviar por Email");
+            StartActivity(intent);
         }
 
         private void BtnFinalizar_Click(object sender, EventArgs e)
@@ -465,12 +502,14 @@ namespace weblayer.venda.android.exp.Activities
                     btnFinalizar.Visibility = ViewStates.Gone;
                     btnItensPedido.Visibility = ViewStates.Gone;
                     spinnerClientes.Enabled = true;
+                    btnGerarPDF.Visibility = ViewStates.Gone;
                 }
                 else if (pedido.vl_total != 0)
                 {
                     spinnerClientes.Enabled = false;
                     btnFinalizar.Visibility = ViewStates.Visible;
                     btnItensPedido.Visibility = ViewStates.Visible;
+                    btnGerarPDF.Visibility = ViewStates.Visible;
                 }
 
                 Intent intent = new Intent();

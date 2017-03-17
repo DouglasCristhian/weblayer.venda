@@ -152,24 +152,6 @@
        android:layout_marginLeft = "18dip"
        android:layout_marginRight = "18dip"/>
 
-    <!--<TextView
-       android:id="@+id/lblObservacao"
-       android:layout_height="wrap_content"
-       android:layout_width="match_parent"
-       android:textSize="18sp"
-       android:layout_marginTop="10dp"
-       android:layout_marginLeft = "18dip"
-       android:layout_marginRight = "18dip"
-       android:text="Observacões:"/>
-
-    <EditText
-       android:id="@+id/txtObservacao"
-       android:layout_height="wrap_content"
-       android:layout_width="match_parent"
-       android:layout_marginTop="3dp"
-       android:layout_marginLeft = "18dip"
-       android:layout_marginRight = "18dip"/>-->
-
     <TextView
        android:id="@+id/lblCodigoPedido"
        android:layout_marginTop="15dip"
@@ -180,7 +162,6 @@
        android:textSize="18sp"
        android:text="Código do pedido no cliente"/>
 
-
     <EditText
        android:id="@+id/txtCodigoPedido"
        android:layout_height="wrap_content"
@@ -188,8 +169,7 @@
        android:layout_marginTop="3dp"
        android:layout_marginLeft = "18dip"
        android:layout_marginRight = "18dip"
-       android:layout_marginBottom="3dp"/>  
-    
+       android:layout_marginBottom="3dp"/>     
 
     <Button
        android:id="@+id/btnItensPedido"
@@ -208,6 +188,14 @@
        android:layout_marginLeft = "18dip"
        android:layout_marginRight = "18dip"/>
     
+    <Button
+       android:id="@+id/btnGerarPDF"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:text="Exportar"
+       android:layout_marginLeft = "18dip"
+       android:layout_marginRight = "18dip"/>
+      
     <Button
        android:id="@+id/btnFinalizar"
        android:layout_height="wrap_content"

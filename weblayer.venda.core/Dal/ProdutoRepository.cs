@@ -68,9 +68,9 @@ namespace weblayer.venda.core.Dal
             if (List().Count > 0)
                 return;
 
-            Save(new Produto() { id_codigo = "1111", ds_nome = "LAPIS DE COR AMARELO", ds_unimedida = "CX", vl_Venda = 6.30, vl_Lista = 6.30 });
-            Save(new Produto() { id_codigo = "2222", ds_nome = "LAPIS DE COR VERMELHO", ds_unimedida = "PCT", vl_Venda = 5.25, vl_Lista = 5.25 });
-            Save(new Produto() { id_codigo = "3333", ds_nome = "LAPIS DE COR AZUL", ds_unimedida = "CX", vl_Venda = 8, vl_Lista = 8 });
+            Save(new Produto() { id_codigo = "1111", ds_nome = "LAPIS DE COR AMARELO", ds_unimedida = "CX", vl_Venda = 1.25, vl_Lista = 6.30 });
+            Save(new Produto() { id_codigo = "2222", ds_nome = "LAPIS DE COR VERMELHO", ds_unimedida = "PCT", vl_Venda = 2.5, vl_Lista = 5.25 });
+            Save(new Produto() { id_codigo = "3333", ds_nome = "LAPIS DE COR AZUL", ds_unimedida = "CX", vl_Venda = 3.45, vl_Lista = 8 });
         }
     }
 }

@@ -9,10 +9,6 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
-    <include
-      android:id="@+id/toolbar"
-      layout="@layout/toolbar"/>
-
     <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -24,118 +20,93 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_height="70dip"
+        android:weightSum="1">
 
       <RelativeLayout
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="10dip"
-          android:layout_marginRight="10dip"
-          android:orientation="vertical">
+          android:layout_marginLeft="20dip"
+          android:layout_marginRight="20dip"
+          android:orientation="vertical"
+          android:layout_marginBottom="8dip"
+          android:layout_marginTop="8dip">
 
         <CheckBox
           android:id="@+id/checkBoxOrcamento"
-          android:layout_marginLeft="20dip"
-          android:buttonTint="@color/Orcamento"
-          android:layout_marginTop="3dip"
+          android:layout_marginLeft="8dip"
+          android:layout_marginTop="8dip"
           android:scaleX="2.0"
           android:scaleY="2.0"
           android:layout_width="wrap_content"
-          android:layout_height="wrap_content"/>
-
-        <TextView
-           android:id="@+id/txtCheckBoxOrcamento"
-           android:text="    Orçamento\n              "
-           android:layout_marginTop="10dip"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_below="@+id/checkBoxOrcamento"
-           android:textSize="10dip"/>
+          android:layout_height="wrap_content"
+            android:layout_marginBottom="8dip"
+            android:layout_marginRight="8dip" />
 
       </RelativeLayout>
 
       <RelativeLayout
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="10dip"
-          android:layout_marginRight="10dip">
+          android:layout_marginLeft="20dip"
+          android:layout_marginRight="20dip"
+          android:layout_marginBottom="8dip"
+          android:layout_marginTop="8dip">
 
         <CheckBox
          android:id="@+id/checkBoxFinalizado"
-         android:layout_marginLeft="20dip"
-         android:layout_marginTop="3dip"
-         android:buttonTint="@color/Finalizado"
+         android:layout_marginLeft="8dip"
+         android:layout_marginTop="8dip"
          android:scaleX="2.0"
          android:scaleY="2.0"
          android:layout_width="wrap_content"
-         android:layout_height="wrap_content"/>
-
-        <TextView
-        android:id="@+id/txtCheckBoxFinalizado"
-        android:text="     Finalizado\n"
-        android:layout_marginTop="10dip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxFinalizado"
-        android:textSize="10dip"/>
+         android:layout_height="wrap_content"
+            android:layout_marginBottom="8dip"
+            android:layout_marginRight="8dip" />
 
       </RelativeLayout>
 
       <RelativeLayout
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="10dip"
-          android:layout_marginRight="10dip">
+          android:layout_marginLeft="20dip"
+          android:layout_marginRight="20dip"
+          android:layout_marginTop="8dip"
+          android:layout_marginBottom="8dip">
 
         <CheckBox
          android:id="@+id/checkBoxSincronizado"
-         android:layout_marginLeft="20dip"
-         android:layout_marginTop="3dip"
-         android:buttonTint="@color/Sincronizado"
+         android:layout_marginLeft="8dip"
+         android:layout_marginTop="8dip"
          android:scaleX="2.0"
          android:scaleY="2.0"
          android:layout_width="wrap_content"
-         android:layout_height="wrap_content"/>
-
-        <TextView
-        android:id="@+id/txtCheckBoxSincronizado"
-        android:text="  Sincronizado\n        "
-        android:layout_marginTop="10dip"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxSincronizado"
-        android:textSize="10dip"/>
+         android:layout_height="wrap_content"
+            android:layout_marginRight="8dip"
+            android:layout_marginBottom="8dip" />
 
       </RelativeLayout>
 
       <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="10dip"
-    android:layout_marginRight="10dip">
+    android:layout_marginLeft="20dip"
+    android:layout_marginRight="20dip"
+          android:layout_marginTop="8dip"
+          android:layout_marginBottom="8dip">
 
         <CheckBox
          android:id="@+id/checkBoxParcProcessado"
-         android:layout_marginLeft="20dip"
-         android:layout_marginTop="3dip"
-         android:buttonTint="@color/ParcProcessado"
+         android:layout_marginLeft="8dip"
+         android:layout_marginTop="8dip"
          android:scaleX="2.0"
          android:scaleY="2.0"
          android:layout_width="wrap_content"
-         android:layout_height="wrap_content"/>
-
-        <TextView
-        android:id="@+id/txtCheckBoxParcProcessado"
-        android:text="  Parcialmente\n    Processado"
-        android:layout_marginTop="10dip"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxParcProcessado"
-        android:textSize="10dip"/>
+         android:layout_height="wrap_content"
+            android:layout_marginRight="8dip"
+            android:layout_marginBottom="8dip" />
 
       </RelativeLayout>
 
@@ -143,118 +114,198 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_height="15dip">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="         Orçamento             Finalizado        Sincronizado      Parcialmente"
+          android:textSize="12dip"
+          android:textAppearance="@style/TextAppearance.AppCompat" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="20dip"
+        android:gravity="center">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="                                                                                                   Processado"
+          android:textSize="12dip"
+          android:textAppearance="@style/TextAppearance.AppCompat" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_height="70dip"
+        android:layout_marginTop="15dip">
 
       <RelativeLayout
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="5dip"
-          android:layout_marginRight="10dip"
-          android:orientation="vertical">
-
-        <CheckBox
-          android:id="@+id/checkBoxNaoProcessado"
           android:layout_marginLeft="20dip"
-          android:buttonTint="@color/NaoProcessado"
-          android:layout_marginTop="3dip"
-          android:scaleX="2.0"
-          android:scaleY="2.0"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"/>
+          android:layout_marginRight="20dip"
+          android:orientation="vertical"
+          android:layout_marginBottom="8dip"
+          android:layout_marginTop="8dip">
 
-        <TextView
-           android:id="@+id/txtCheckBoxNaoProcessado"
-           android:text="         Não\n Processado"
-           android:layout_marginTop="10dip"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_below="@+id/checkBoxNaoProcessado"
-           android:textSize="10dip"/>
+        <CheckBox
+            android:id="@+id/checkBoxNaoProcessado"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="8dip"
+            android:scaleX="2.0"
+            android:scaleY="2.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dip"
+            android:layout_marginRight="8dip" />
 
       </RelativeLayout>
 
       <RelativeLayout
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="10dip"
-          android:layout_marginRight="10dip">
+          android:layout_marginLeft="20dip"
+          android:layout_marginRight="20dip"
+          android:layout_marginBottom="8dip"
+          android:layout_marginTop="8dip">
 
         <CheckBox
-         android:id="@+id/checkBoxCancelado"
-         android:layout_marginLeft="20dip"
-         android:layout_marginTop="3dip"
-         android:buttonTint="@color/Cancelado"
-         android:scaleX="2.0"
-         android:scaleY="2.0"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"/>
-
-        <TextView
-        android:id="@+id/txtCheckBoxCancelado"
-        android:text="    Cancelado\n"
-        android:layout_marginTop="10dip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxCancelado"
-        android:textSize="10dip"/>
+            android:id="@+id/checkBoxCancelado"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="8dip"
+            android:scaleX="2.0"
+            android:scaleY="2.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dip"
+            android:layout_marginRight="8dip" />
 
       </RelativeLayout>
 
       <RelativeLayout
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="10dip"
-          android:layout_marginRight="10dip">
+          android:layout_marginLeft="20dip"
+          android:layout_marginRight="20dip"
+          android:layout_marginTop="8dip"
+          android:layout_marginBottom="8dip">
 
         <CheckBox
-         android:id="@+id/checkBoxParcFaturado"
-         android:layout_marginLeft="20dip"
-         android:layout_marginTop="3dip"
-         android:buttonTint="@color/ParcFaturado"
-         android:scaleX="2.0"
-         android:scaleY="2.0"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"/>
-
-        <TextView
-        android:id="@+id/txtCheckBoxParcFaturado"
-        android:text="  Parcialmente\n      Faturado"
-        android:layout_marginTop="10dip"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxParcFaturado"
-        android:textSize="10dip"/>
+            android:id="@+id/checkBoxParcFaturado"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="8dip"
+            android:scaleX="2.0"
+            android:scaleY="2.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dip"
+            android:layout_marginBottom="8dip" />
 
       </RelativeLayout>
 
       <RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dip"
-    android:layout_marginRight="10dip">
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="20dip"
+          android:layout_marginRight="20dip"
+          android:layout_marginTop="8dip"
+          android:layout_marginBottom="8dip">
 
         <CheckBox
-         android:id="@+id/checkBoxFaturado"
-         android:layout_marginLeft="20dip"
-         android:layout_marginTop="3dip"
-         android:buttonTint="@color/ParcFaturado"
-         android:scaleX="2.0"
-         android:scaleY="2.0"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"/>
+            android:id="@+id/checkBoxFaturado"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="8dip"
+            android:scaleX="2.0"
+            android:scaleY="2.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dip"
+            android:layout_marginBottom="8dip" />
+      </RelativeLayout>
 
-        <TextView
-        android:id="@+id/txtCheckBoxFaturado"
-        android:text="      Faturado\n          "
-        android:layout_marginTop="10dip"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxFaturado"
-        android:textSize="10dip"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="15dip">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="                Não                 Cancelado        Parcialmente          Faturado"
+          android:textSize="12dip"
+          android:textAppearance="@style/TextAppearance.AppCompat" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="20dip"
+        android:gravity="center">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="           Processado                                        Faturado                         "
+          android:textSize="12dip"
+          android:textAppearance="@style/TextAppearance.AppCompat" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_height="70dip"
+        android:layout_marginTop="15dip">
+
+      <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="20dip"
+          android:layout_marginRight="20dip"
+          android:orientation="vertical"
+          android:layout_marginBottom="8dip"
+          android:layout_marginTop="8dip">
+
+        <CheckBox
+            android:id="@+id/checkBoxParcEntregue"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="8dip"
+            android:scaleX="2.0"
+            android:scaleY="2.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dip"
+            android:layout_marginRight="8dip" />
+
+      </RelativeLayout>
+
+      <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="20dip"
+          android:layout_marginRight="20dip"
+          android:layout_marginBottom="8dip"
+          android:layout_marginTop="8dip">
+
+        <CheckBox
+            android:id="@+id/checkBoxEntregue"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:scaleX="2.0"
+            android:scaleY="2.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginRight="10dip" />
 
       </RelativeLayout>
 
@@ -262,73 +313,36 @@
 
     <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="100dp"
-      android:gravity="center"
-      android:orientation="horizontal">
+      android:orientation="horizontal"
+      android:layout_height="20dip"
+      android:gravity="center">
 
-      <RelativeLayout
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginLeft="10dip"
-       android:layout_marginRight="10dip">
-
-        
-        <CheckBox
-         android:id="@+id/checkBoxParcEntregue"
-         android:layout_marginLeft="18dip"
-         android:layout_marginTop="3dip"
-         android:buttonTint="@color/ParcEntregue"
-         android:scaleX="2.0"
-         android:scaleY="2.0"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"/>
-
-        <TextView
-        android:id="@+id/txtCheckBoxParcEntregue"
-        android:text="  Parcialmente\n      Entregue"
-        android:layout_marginTop="10dip"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxParcEntregue"
-        android:textSize="10dip"/>
+        android:text="                                     Parcialmente          Entregue"
+        android:textSize="12dip"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+  </LinearLayout>
 
-      </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="20dip"
+        android:gravity="center">
 
-      <RelativeLayout
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginLeft="10dip"
-       android:layout_marginRight="10dip">
-
-        <CheckBox
-         android:id="@+id/checkBoxEntregue"
-         android:layout_marginLeft="20dip"
-         android:layout_marginTop="3dip"
-         android:buttonTint="@color/Entregue"
-         android:scaleX="2.0"
-         android:scaleY="2.0"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"/>
-
-        <TextView
-        android:id="@+id/txtCheckBoxEntregue"
-        android:text="       Entregue\n        "
-        android:layout_marginTop="10dip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_below="@+id/checkBoxEntregue"
-        android:textSize="10dip"/>
-
-      </RelativeLayout>
-
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="                                          Entregue"
+          android:textSize="12dip"
+          android:textAppearance="@style/TextAppearance.AppCompat" />
     </LinearLayout>
 
     <View
-        android:layout_width="fill_parent"
-        android:layout_height="3dp"
-        android:layout_marginTop="10dip"
-        android:background="#D6D7D7" />
+      android:layout_width="fill_parent"
+      android:layout_height="3dp"
+      android:background="#D6D7D7" />
 
     <TextView
       android:layout_width="match_parent"
@@ -366,3 +380,4 @@
 
   </LinearLayout>
 </ScrollView>
+

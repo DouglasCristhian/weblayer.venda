@@ -8,7 +8,7 @@ using weblayer.venda.android.Adapters;
 
 namespace weblayer.venda.android.Activities
 {
-    [Activity(MainLauncher = false, Label = "")]
+    [Activity(MainLauncher = true, Label = "")]
     public class Activity_FiltrarPedidos : Activity_Base
     {
         public CheckBox checkBoxOrcamento;

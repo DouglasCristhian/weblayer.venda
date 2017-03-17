@@ -1,5 +1,5 @@
-using System;
 using SQLite;
+using System;
 
 namespace weblayer.venda.core.Model
 {
@@ -10,25 +10,28 @@ namespace weblayer.venda.core.Model
         public int id { get; set; }
 
         [MaxLength(20), NotNull]
-        public string id_codigo { get; set;}
+        public string id_codigo { get; set; }
 
         [NotNull]
-        public virtual DateTime? dt_emissao { get; set;}
+        public virtual DateTime? dt_emissao { get; set; }
 
         [MaxLength(20), NotNull]
-        public int id_cliente { get; set;}
+        public int id_cliente { get; set; }
 
         [MaxLength(200), NotNull]
-        public string ds_cliente { get; set;}
+        public string ds_cliente { get; set; }
 
         [MaxLength(20), NotNull]
-        public int id_vendedor { get; set;}
+        public int id_vendedor { get; set; }
 
         [MaxLength(200), NotNull]
-        public string ds_vendedor { get; set;}
+        public string ds_vendedor { get; set; }
 
         [MaxLength(20)]
-        public double vl_total { get; set;}
+        public double vl_total { get; set; }
+
+        [MaxLength(200), NotNull]
+        public int vl_volume { get; set; }
 
         [MaxLength(200)]
         public string ds_observacao { get; set; }
@@ -40,5 +43,7 @@ namespace weblayer.venda.core.Model
         public string ds_MsgNF { get; set; }
 
         public int fl_status { get; set; }
+
+        public double vl_descontoTotal { get; set; }
     }
 }

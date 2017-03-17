@@ -18,6 +18,11 @@ namespace weblayer.venda.core.Dal
                 return false;
         }
 
+        public IList<PedidoItem> ListPedItem(int id_pedido)
+        {
+            return Database.GetConnection().Table<PedidoItem>().Where(x => x.id_pedido == id_pedido).ToList();
+        }
+
         public void Save(PedidoItem entidade)
         {
             try
@@ -64,9 +69,17 @@ namespace weblayer.venda.core.Dal
             if (List().Count > 0)
                 return;
 
+            Save(new PedidoItem() { id_pedido = 1, id_produto = 3, ds_produto = "LAPIS DE COR AZUL", nr_quantidade = 7, vl_Lista = 5.00, vl_Venda = 7, vl_Desconto = 0 });
             Save(new PedidoItem() { id_pedido = 2, id_produto = 1, ds_produto = "LAPIS DE COR AMARELO", nr_quantidade = 5, vl_Lista = 5.00, vl_Venda = 4, vl_Desconto = 1 });
+            Save(new PedidoItem() { id_pedido = 2, id_produto = 3, ds_produto = "LAPIS DE COR AZUL", nr_quantidade = 3, vl_Lista = 5.00, vl_Venda = 4, vl_Desconto = 1 });
             Save(new PedidoItem() { id_pedido = 3, id_produto = 2, ds_produto = "LAPIS DE COR VERMELHO", nr_quantidade = 6, vl_Lista = 10.00, vl_Venda = 8, vl_Desconto = 2 });
             Save(new PedidoItem() { id_pedido = 4, id_produto = 3, ds_produto = "LAPIS DE COR AZUL", nr_quantidade = 7, vl_Lista = 5.00, vl_Venda = 7, vl_Desconto = 0 });
+            Save(new PedidoItem() { id_pedido = 5, id_produto = 1, ds_produto = "LAPIS DE COR AMARELO", nr_quantidade = 5, vl_Lista = 5.00, vl_Venda = 4, vl_Desconto = 1 });
+            Save(new PedidoItem() { id_pedido = 6, id_produto = 2, ds_produto = "LAPIS DE COR VERMELHO", nr_quantidade = 6, vl_Lista = 10.00, vl_Venda = 8, vl_Desconto = 2 });
+            Save(new PedidoItem() { id_pedido = 7, id_produto = 3, ds_produto = "LAPIS DE COR AZUL", nr_quantidade = 7, vl_Lista = 5.00, vl_Venda = 7, vl_Desconto = 0 });
+            Save(new PedidoItem() { id_pedido = 8, id_produto = 1, ds_produto = "LAPIS DE COR AMARELO", nr_quantidade = 5, vl_Lista = 5.00, vl_Venda = 4, vl_Desconto = 1 });
+            Save(new PedidoItem() { id_pedido = 9, id_produto = 2, ds_produto = "LAPIS DE COR VERMELHO", nr_quantidade = 6, vl_Lista = 10.00, vl_Venda = 8, vl_Desconto = 2 });
+
         }
     }
 }
