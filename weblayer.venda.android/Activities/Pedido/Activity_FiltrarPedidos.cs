@@ -8,7 +8,7 @@ using weblayer.venda.android.Adapters;
 
 namespace weblayer.venda.android.Activities
 {
-    [Activity(MainLauncher = true, Label = "")]
+    [Activity(MainLauncher = false, Label = "")]
     public class Activity_FiltrarPedidos : Activity_Base
     {
         public CheckBox checkBoxOrcamento;
@@ -21,6 +21,7 @@ namespace weblayer.venda.android.Activities
         public CheckBox checkBoxFaturado;
         public CheckBox checkBoxParcEntregue;
         public CheckBox checkBoxEntregue;
+        public ListView teste;
         private Button btnLimparFiltro;
         private Spinner spinnerDataEmissao;
         private List<mSpinner> spinnerDatas;
@@ -31,13 +32,14 @@ namespace weblayer.venda.android.Activities
         {
             get
             {
-                return Resource.Layout.Activity_FiltrarPedidos;
+                return Resource.Layout.Activity_FIltrarPedidos2;
             }
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            CheckBoxList();
 
             FindViews();
             BindData();
