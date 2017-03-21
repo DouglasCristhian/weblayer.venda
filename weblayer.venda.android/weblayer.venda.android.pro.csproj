@@ -46,6 +46,10 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="iTextSharpLGPL-MonoForAndroid, Version=4.1.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.iTextSharpLGPL.0.1.0\lib\MonoAndroid10\iTextSharpLGPL-MonoForAndroid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -92,6 +96,10 @@
       <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.25.1.1\lib\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="XamiTextSharpLGPL.Droid, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.iTextSharpLGPL.0.1.0\lib\MonoAndroid10\XamiTextSharpLGPL.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\Activity_Base.cs" />
@@ -125,6 +133,7 @@
     <Compile Include="Helpers\DatePickerHelper.cs" />
     <Compile Include="Helpers\DialogEventArgs.cs" />
     <Compile Include="Helpers\MaskHelper.cs" />
+    <Compile Include="Helpers\PDFGeneratorHelper.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -67,9 +67,9 @@ namespace weblayer.venda.core.Dal
             if (List().Count > 0)
                 return;
 
-            Save(new ProdutoTabelaPreco() { id_produto = 1, id_tabpreco = 1, vl_Valor = 15.00 });
-            Save(new ProdutoTabelaPreco() { id_produto = 2, id_tabpreco = 1, vl_Valor = 20.00 });
-            Save(new ProdutoTabelaPreco() { id_produto = 3, id_tabpreco = 2, vl_Valor = 25.00 });
+            Save(new ProdutoTabelaPreco() { id_produto = 1, id_tabpreco = 1, vl_Valor = 5.25 });
+            Save(new ProdutoTabelaPreco() { id_produto = 2, id_tabpreco = 1, vl_Valor = 11.75 });
+            Save(new ProdutoTabelaPreco() { id_produto = 3, id_tabpreco = 2, vl_Valor = 15.00 });
         }
 
     }

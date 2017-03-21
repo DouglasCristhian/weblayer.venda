@@ -70,7 +70,6 @@ namespace weblayer.venda.core.Dal
                 return;
 
             Save(new PedidoItem() { id_pedido = 1, id_produto = 3, ds_produto = "LAPIS DE COR AZUL", nr_quantidade = 7, vl_Lista = 5.00, vl_Venda = 7, vl_Desconto = 0 });
-            Save(new PedidoItem() { id_pedido = 2, id_produto = 1, ds_produto = "LAPIS DE COR AMARELO", nr_quantidade = 5, vl_Lista = 5.00, vl_Venda = 4, vl_Desconto = 1 });
             Save(new PedidoItem() { id_pedido = 2, id_produto = 3, ds_produto = "LAPIS DE COR AZUL", nr_quantidade = 3, vl_Lista = 5.00, vl_Venda = 4, vl_Desconto = 1 });
             Save(new PedidoItem() { id_pedido = 3, id_produto = 2, ds_produto = "LAPIS DE COR VERMELHO", nr_quantidade = 6, vl_Lista = 10.00, vl_Venda = 8, vl_Desconto = 2 });
             Save(new PedidoItem() { id_pedido = 4, id_produto = 3, ds_produto = "LAPIS DE COR AZUL", nr_quantidade = 7, vl_Lista = 5.00, vl_Venda = 7, vl_Desconto = 0 });

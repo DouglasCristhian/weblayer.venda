@@ -415,11 +415,9 @@ namespace weblayer.venda.android.exp.Activities
             intent.SetType("*/*");
 
             Java.IO.File file = new Java.IO.File((Android.OS.Environment.ExternalStorageDirectory + "/W Venda - PDFs"), "Pedido " + pedido.id_codigo.ToString() + ", Cliente " + pedido.ds_cliente.ToString() + ".pdf");
-            intent.PutExtra(Intent.ExtraSubject, "Pedido " + pedido.id_cliente.ToString() + ", Cliente " + pedido.ds_cliente.ToString() + ", " + DateTime.Parse(pedido.dt_emissao.ToString()) + ".pdf");
+            intent.PutExtra(Intent.ExtraSubject, "Cliente " + pedido.ds_cliente.ToString() + ", Emissão: " + pedido.dt_emissao.Value.ToString("dd/MM/yyyy") + " " + DateTime.Now.ToString("HH:mm"));
             intent.PutExtra(Intent.ExtraStream, Uri.FromFile(file));
-            intent.PutExtra(Intent.ExtraText, "Eita nóis");
-            //intent.PutExtra("CONTENT_TYPE", "application/pdf; text/plain");
-           // Intent.CreateChooser(intent, "Enviar por Email");
+            intent.PutExtra(Intent.ExtraText, "Cliente " + pedido.ds_cliente.ToString() + ", Emissão: " + pedido.dt_emissao.Value.ToString("dd/MM/yyyy") + " " + DateTime.Now.ToString("HH:mm"));
             StartActivity(intent);
         }
 
@@ -502,6 +500,7 @@ namespace weblayer.venda.android.exp.Activities
                     btnItensPedido.Visibility = ViewStates.Gone;
                     spinnerClientes.Enabled = true;
                     btnGerarPDF.Visibility = ViewStates.Gone;
+                    btnItensPedido.Visibility = ViewStates.Visible;
                 }
                 else if (pedido.vl_total != 0)
                 {

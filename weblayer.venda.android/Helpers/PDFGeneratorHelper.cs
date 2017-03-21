@@ -1,11 +1,11 @@
-Ôªøusing iTextSharp.text;
+using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Collections.Generic;
 using System.IO;
 using weblayer.venda.core.Dal;
 using weblayer.venda.core.Model;
 
-namespace weblayer.venda.android.exp.Helpers
+namespace weblayer.venda.android.Helpers
 {
     public class PDFGeneratorHelper
     {
@@ -20,7 +20,7 @@ namespace weblayer.venda.android.exp.Helpers
             listaPedItem = repo.ListPedItem(pedido.id);
 
             #region DefinirDiretorioEDoc
-            var directory = new Java.IO.File(Android.OS.Environment.ExternalStorageDirectory, "W Venda - PDFs").ToString();
+            var directory = new Java.IO.File(Android.OS.Environment.ExternalStorageDirectory, "W Venda Pro - PDFs").ToString();
             if (!Directory.Exists(directory))
             {
                 Directory.CreateDirectory(directory);
@@ -151,7 +151,7 @@ namespace weblayer.venda.android.exp.Helpers
         {
             Paragraph paragraph = new Paragraph("Cliente: " + pedido.ds_cliente
                                             + "\n\nVendedor: " + pedido.ds_vendedor
-                                              + "\n\nData de Emiss√£o: " + pedido.dt_emissao.Value.ToString("dd/MM/yyyy"));
+                                              + "\n\nData de Emiss„o: " + pedido.dt_emissao.Value.ToString("dd/MM/yyyy"));
             paragraph.IndentationLeft = 50f;
 
             return paragraph;
@@ -165,7 +165,7 @@ namespace weblayer.venda.android.exp.Helpers
 
             Paragraph paragraph = new Paragraph("Valor Total: " + pedido.vl_total.ToString("##,##0.00")
                                             + "\n\nValor Desconto: " + pedido.vl_descontoTotal.ToString("##,##0.00")
-                                              + "\n\nValor L√≠quido: " + ValorLiquido.ToString("##,##0.00")
+                                              + "\n\nValor LÌquido: " + ValorLiquido.ToString("##,##0.00")
                                               + "\n\nVolume: " + pedido.vl_volume
                                               + "\n\nMensagem Pedido: " + pedido.ds_MsgPedido
                                               + "\n\nMensagem NF: " + pedido.ds_MsgNF);

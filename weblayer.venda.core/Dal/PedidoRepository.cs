@@ -7,7 +7,7 @@ namespace weblayer.venda.core.Dal
 {
     public class PedidoRepository
     {
-        private double vl_totalitens;
+        //private double vl_totalitens;
         public string Mensage { get; set; }
 
         public Pedido Get(int id)
@@ -37,22 +37,20 @@ namespace weblayer.venda.core.Dal
                 {
                     var repoCli = new ClienteRepository();
                     var cliente = repoCli.Get(entidade.id_cliente).id;
-                    IList<PedidoItem> ItensPedido = new PedidoItemRepository().ListPedItem(entidade.id);
                     int vl_volumeTotal = 0;
                     double vl_descontoTotal = 0;
+                    double vl_totalitens = 0;
 
                     var repoitem = new PedidoItemRepository();
                     var itens = repoitem.List(entidade.id);
 
                     foreach (var item in itens)
-                        vl_totalitens += item.nr_quantidade * item.vl_Venda;
-
-                    foreach (var item in ItensPedido)
                     {
+                        vl_totalitens += item.nr_quantidade * item.vl_Venda;
                         vl_volumeTotal += item.nr_quantidade;
                         vl_descontoTotal += item.vl_Desconto;
-                    }
 
+                    }
 
                     entidade.id_cliente = cliente;
                     entidade.vl_total = vl_totalitens;
