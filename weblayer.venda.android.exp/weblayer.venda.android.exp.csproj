@@ -17,7 +17,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -50,10 +50,11 @@
       <HintPath>..\packages\Xam.iTextSharpLGPL.0.1.0\lib\MonoAndroid10\iTextSharpLGPL-MonoForAndroid.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -102,7 +103,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activities\Activity_Base.cs" />
+    <Compile Include="Activities\Menu\Activity_Base.cs" />
+    <Compile Include="Activities\Menu\Activity_Webview.cs" />
     <Compile Include="Activities\TabelaPreco\Activity_EditarProdTabPreco.cs" />
     <Compile Include="Activities\TabelaPreco\Activity_EditarTabelaPreco.cs" />
     <Compile Include="Activities\TabelaPreco\Activity_ProdTabPreco.cs" />
@@ -116,9 +118,9 @@
     <Compile Include="Activities\Pedido\Activity_PedidoProduto.cs" />
     <Compile Include="Activities\Cliente\Activity_Cliente.cs" />
     <Compile Include="Activities\Cliente\Activity_EditarCliente.cs" />
-    <Compile Include="Activities\Activity_Home.cs" />
-    <Compile Include="Activities\Activity_Novidades.cs" />
-    <Compile Include="Activities\Activity_Sobre.cs" />
+    <Compile Include="Activities\Menu\Activity_Home.cs" />
+    <Compile Include="Activities\Menu\Activity_Novidades.cs" />
+    <Compile Include="Activities\Menu\Activity_Sobre.cs" />
     <Compile Include="Activities\Pedido\Activity_FiltrarPedidos.cs" />
     <Compile Include="Adapters\Adapter_Cliente_ListView.cs" />
     <Compile Include="Adapters\Adapter_PedidoItem_ListView.cs" />
@@ -302,7 +304,9 @@
     <AndroidResource Include="Resources\layout\Activity_EditarProdTabelaPreco.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_EditarProduto.xml" />
+    <AndroidResource Include="Resources\layout\Activity_EditarProduto.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_EditarTabelaPreco.xml" />
@@ -423,6 +427,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_Webview.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

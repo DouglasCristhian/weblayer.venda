@@ -56,7 +56,7 @@ namespace weblayer.venda.core.Dal
 
         public IList<TabelaPreco> List()
         {
-            return Database.GetConnection().Table<TabelaPreco>().ToList();
+            return Database.GetConnection().Table<TabelaPreco>().OrderBy(x => x.id).ToList();
         }
 
         public void MakeDataMock()

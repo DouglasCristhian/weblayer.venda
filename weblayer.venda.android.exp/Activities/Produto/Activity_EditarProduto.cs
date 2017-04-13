@@ -89,6 +89,7 @@ namespace weblayer.venda.android.exp.Activities
             menu.RemoveItem(Resource.Id.action_sair);
             menu.RemoveItem(Resource.Id.action_adicionar);
             menu.RemoveItem(Resource.Id.action_filtrar);
+            menu.RemoveItem(Resource.Id.action_legenda);
 
             if (prod == null)
             {
@@ -115,7 +116,6 @@ namespace weblayer.venda.android.exp.Activities
             txtCodigoProd.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtNomeProd.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtValorProd.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-            spinUniMedidaProd.SetBackgroundResource(Resource.Drawable.EditTextStyle);
         }
 
         private void BindView()

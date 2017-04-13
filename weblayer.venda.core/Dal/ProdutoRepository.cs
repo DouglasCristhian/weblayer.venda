@@ -60,7 +60,7 @@ namespace weblayer.venda.core.Dal
 
         public IList<Produto> ListFiltro(string filtro)
         {
-            return Database.GetConnection().Table<Produto>().Where(x => x.ds_nome.Contains(filtro)).ToList();
+            return Database.GetConnection().Table<Produto>().Where(x => x.ds_nome.Contains(filtro)).OrderBy(x => x.id_codigo).ToList();
         }
 
         public void MakeDataMock()

@@ -128,7 +128,7 @@ namespace weblayer.venda.core.Dal
             var result = Database.GetConnection().Query<Pedido>($@"SELECT * FROM Pedidos Where fl_status in ({string_status}) and 
             dt_emissao>=@intervalo_inicio and dt_emissao<=@intervalo_fim", intervalo_inicio, intervalo_fim);
 
-            return result.ToList();
+            return result.OrderBy(x => -x.id).ToList();
         }
 
         public void MakeDataMock()
@@ -141,10 +141,10 @@ namespace weblayer.venda.core.Dal
             Save(new Pedido() { id_codigo = "3", dt_emissao = DateTime.Parse("2017/03/05"), id_cliente = 1, ds_cliente = "NAUGHTY DOG", id_vendedor = 3, ds_vendedor = "Douglas Christian", vl_total = 0.00, vl_descontoTotal = 0, vl_volume = 6, ds_MsgPedido = "MensagemPedido3", ds_MsgNF = "MensagemNF3", fl_status = 2 });
             Save(new Pedido() { id_codigo = "4", dt_emissao = DateTime.Parse("2017/03/11"), id_cliente = 2, ds_cliente = "BETA_103", id_vendedor = 4, ds_vendedor = "Natali BR", vl_total = 0.00, vl_descontoTotal = 0, vl_volume = 7, ds_MsgPedido = "MensagemPedido4", ds_MsgNF = "MensagemNF4", fl_status = 3 });
             Save(new Pedido() { id_codigo = "5", dt_emissao = DateTime.Parse("2017/03/15"), id_cliente = 2, ds_cliente = "INVISIBLE TUCS", id_vendedor = 2, ds_vendedor = "Saory Emanoelle", vl_total = 0.00, vl_descontoTotal = 0, vl_volume = 5, ds_MsgPedido = "MensagemPedido5", ds_MsgNF = "MensagemNF5", fl_status = 2 });
-            Save(new Pedido() { id_codigo = "6", dt_emissao = DateTime.Parse("2017/03/01"), id_cliente = 1, ds_cliente = "NAUGHTY DOG", id_vendedor = 3, ds_vendedor = "Douglas Christian", vl_total = 0.00, vl_descontoTotal = 0, vl_volume = 6, ds_MsgPedido = "MensagemPedido6", ds_MsgNF = "MensagemNF6", fl_status = 2 });
-            Save(new Pedido() { id_codigo = "7", dt_emissao = DateTime.Parse("2017/01/08"), id_cliente = 2, ds_cliente = "BETA_103", id_vendedor = 4, ds_vendedor = "Natali BR", vl_total = 0.00, vl_descontoTotal = 0, vl_volume = 7, ds_MsgPedido = "MensagemPedido7", ds_MsgNF = "MensagemNF7", fl_status = 3 });
+            Save(new Pedido() { id_codigo = "6", dt_emissao = DateTime.Parse("2017/03/01"), id_cliente = 1, ds_cliente = "NAUGHTY DOG", id_vendedor = 3, ds_vendedor = "Douglas Christian", vl_total = 0.00, vl_descontoTotal = 0, vl_volume = 6, ds_MsgPedido = "MensagemPedido6", ds_MsgNF = "MensagemNF6", fl_status = 3 });
+            Save(new Pedido() { id_codigo = "7", dt_emissao = DateTime.Parse("2017/01/08"), id_cliente = 2, ds_cliente = "BETA_103", id_vendedor = 4, ds_vendedor = "Natali BR", vl_total = 0.00, vl_descontoTotal = 0, vl_volume = 7, ds_MsgPedido = "MensagemPedido7", ds_MsgNF = "MensagemNF7", fl_status = 2 });
             Save(new Pedido() { id_codigo = "8", dt_emissao = DateTime.Parse("2017/02/16"), id_cliente = 2, ds_cliente = "INVISIBLE TUCS", id_vendedor = 2, ds_vendedor = "Saory Emanoelle", vl_total = 0.00, vl_descontoTotal = 0, vl_volume = 5, ds_MsgPedido = "MensagemPedido8", ds_MsgNF = "MensagemNF8", fl_status = 1 });
-            Save(new Pedido() { id_codigo = "9", dt_emissao = DateTime.Parse("2017/02/27"), id_cliente = 1, ds_cliente = "NAUGHTY DOG", id_vendedor = 3, ds_vendedor = "Douglas Christian", vl_total = 0.00, vl_descontoTotal = 0, vl_volume = 6, ds_MsgPedido = "MensagemPedido9", ds_MsgNF = "MensagemNF9", fl_status = 1 });
+            Save(new Pedido() { id_codigo = "9", dt_emissao = DateTime.Parse("2017/02/27"), id_cliente = 1, ds_cliente = "NAUGHTY DOG", id_vendedor = 3, ds_vendedor = "Douglas Christian", vl_total = 0.00, vl_descontoTotal = 0, vl_volume = 6, ds_MsgPedido = "MensagemPedido9", ds_MsgNF = "MensagemNF9", fl_status = 0 });
         }
     }
 }

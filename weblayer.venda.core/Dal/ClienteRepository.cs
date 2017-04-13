@@ -75,7 +75,7 @@ namespace weblayer.venda.core.Dal
 
         public IList<Cliente> ListFiltro(string filtro)
         {
-            return Database.GetConnection().Table<Cliente>().Where(x => x.ds_NomeFantasia.StartsWith(filtro)).ToList();
+            return Database.GetConnection().Table<Cliente>().Where(x => x.ds_NomeFantasia.StartsWith(filtro) || x.ds_RazaoSocial.StartsWith(filtro)).OrderBy(x => x.id).ToList();
         }
 
         public void MakeDataMock()

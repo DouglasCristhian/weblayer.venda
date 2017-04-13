@@ -1,4 +1,5 @@
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Widget;
 using System.Collections.Generic;
@@ -31,6 +32,11 @@ namespace weblayer.venda.android.exp.Activities
                     StartActivity(typeof(Activity_Sobre));
                     break;
 
+                case Resource.Id.action_help:
+                    StartActivity(typeof(Activity_WebView));
+                    //Intent intent = new Intent(this, typeof(Activity_WebView));
+                    break;
+
                 case Resource.Id.action_sair:
                     Finish();
                     break;
@@ -48,8 +54,8 @@ namespace weblayer.venda.android.exp.Activities
             toolbar.Menu.RemoveItem(Resource.Id.action_deletar);
             toolbar.Menu.RemoveItem(Resource.Id.action_adicionar);
             toolbar.Menu.RemoveItem(Resource.Id.action_salvar);
-            toolbar.Menu.RemoveItem(Resource.Id.action_help);
             toolbar.Menu.RemoveItem(Resource.Id.action_filtrar);
+            toolbar.Menu.RemoveItem(Resource.Id.action_legenda);
         }
 
         private void BindData()

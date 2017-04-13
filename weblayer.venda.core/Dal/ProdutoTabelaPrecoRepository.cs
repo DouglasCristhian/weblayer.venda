@@ -59,7 +59,7 @@ namespace weblayer.venda.core.Dal
 
         public IList<ProdutoTabelaPreco> List()
         {
-            return Database.GetConnection().Table<ProdutoTabelaPreco>().ToList();
+            return Database.GetConnection().Table<ProdutoTabelaPreco>().OrderBy(x => x.id).ToList();
         }
 
         public void MakeDataMock()

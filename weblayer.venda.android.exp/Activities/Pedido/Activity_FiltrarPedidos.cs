@@ -36,7 +36,6 @@ namespace weblayer.venda.android.exp
 
             FindViews();
             BindData();
-            SetStyle();
 
             lista = new CheckBox[4];
             lista[0] = checkBoxOrcamento;
@@ -73,11 +72,6 @@ namespace weblayer.venda.android.exp
         public void BindData()
         {
             btnLimparFiltro.Click += BtnLimparFiltro_Click;
-        }
-
-        private void SetStyle()
-        {
-            spinnerDataEmissao.SetBackgroundResource(Resource.Drawable.EditTextStyle);
         }
 
         private void BtnLimparFiltro_Click(object sender, System.EventArgs e)

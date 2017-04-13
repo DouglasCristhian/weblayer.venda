@@ -6,18 +6,18 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{65280AF4-566A-4062-A946-8AC77CD75548}</ProjectGuid>
+    <ProjectGuid>{9908A77F-7E99-4442-BFB5-B595B3DB82C3}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>weblayer.venda.android</RootNamespace>
-    <AssemblyName>weblayer.venda.android</AssemblyName>
+    <RootNamespace>weblayer.venda.android.exp</RootNamespace>
+    <AssemblyName>weblayer.venda.android.exp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -50,10 +50,11 @@
       <HintPath>..\packages\Xam.iTextSharpLGPL.0.1.0\lib\MonoAndroid10\iTextSharpLGPL-MonoForAndroid.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -103,24 +104,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\Activity_Base.cs" />
-    <Compile Include="Activities\Cliente\Activity_EditarCliente.cs" />
-    <Compile Include="Activities\Cliente\Activity_Cliente.cs" />
-    <Compile Include="Activities\Activity_Home.cs" />
-    <Compile Include="Activities\Activity_Login.cs" />
-    <Compile Include="Activities\Activity_Novidades.cs" />
-    <Compile Include="Activities\Activity_Sobre.cs" />
-    <Compile Include="Activities\Pedido\Activity_EditarPedido.cs" />
-    <Compile Include="Activities\Pedido\Activity_FiltrarPedidos.cs" />
-    <Compile Include="Activities\Pedido\Activity_Pedido.cs" />
-    <Compile Include="Activities\Pedido\Activity_PedidoItem.cs" />
-    <Compile Include="Activities\Pedido\Activity_PedidoProduto.cs" />
-    <Compile Include="Activities\Produto\Activity_EditarProduto.cs" />
-    <Compile Include="Activities\Produto\Activity_Produto.cs" />
-    <Compile Include="Activities\Produto\Activity_ProdutoPedidoList.cs" />
     <Compile Include="Activities\TabelaPreco\Activity_EditarProdTabPreco.cs" />
     <Compile Include="Activities\TabelaPreco\Activity_EditarTabelaPreco.cs" />
     <Compile Include="Activities\TabelaPreco\Activity_ProdTabPreco.cs" />
     <Compile Include="Activities\TabelaPreco\Activity_TabelaPreco.cs" />
+    <Compile Include="Activities\Produto\Activity_EditarProduto.cs" />
+    <Compile Include="Activities\Produto\Activity_Produto.cs" />
+    <Compile Include="Activities\Produto\Activity_ProdutoPedidoList.cs" />
+    <Compile Include="Activities\Pedido\Activity_EditarPedido.cs" />
+    <Compile Include="Activities\Pedido\Activity_Pedido.cs" />
+    <Compile Include="Activities\Pedido\Activity_PedidoItem.cs" />
+    <Compile Include="Activities\Pedido\Activity_PedidoProduto.cs" />
+    <Compile Include="Activities\Cliente\Activity_Cliente.cs" />
+    <Compile Include="Activities\Cliente\Activity_EditarCliente.cs" />
+    <Compile Include="Activities\Activity_Home.cs" />
+    <Compile Include="Activities\Activity_Novidades.cs" />
+    <Compile Include="Activities\Activity_Sobre.cs" />
+    <Compile Include="Activities\Pedido\Activity_FiltrarPedidos.cs" />
     <Compile Include="Adapters\Adapter_Cliente_ListView.cs" />
     <Compile Include="Adapters\Adapter_PedidoItem_ListView.cs" />
     <Compile Include="Adapters\Adapter_Pedido_ListView.cs" />
@@ -129,7 +129,9 @@
     <Compile Include="Adapters\Adapter_TabelaPreco_ListView.cs" />
     <Compile Include="Adapters\mSpinner.cs" />
     <Compile Include="Fragments\Fragment_Legendas.cs" />
+    <Compile Include="Fragments\Fragment_Status.cs" />
     <Compile Include="Helpers\CurrencyConverterHelper.cs" />
+    <Compile Include="Helpers\DateHelper.cs" />
     <Compile Include="Helpers\DatePickerHelper.cs" />
     <Compile Include="Helpers\DialogEventArgs.cs" />
     <Compile Include="Helpers\MaskHelper.cs" />
@@ -144,64 +146,23 @@
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values\Strings.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_add.png" />
+    <AndroidResource Include="Resources\layout\Activity_EditarClientes.xml" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_delete.png" />
+    <ProjectReference Include="..\weblayer.venda.core\weblayer.venda.core.csproj">
+      <Project>{0AA9D10F-5744-450E-9AE2-F415C1579959}</Project>
+      <Name>weblayer.venda.core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_help.png" />
+    <AndroidResource Include="Resources\layout-v21\toolbar.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_settings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_help.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_settings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_help.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\menu\menu_toolbar.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\ic_add.png" />
@@ -222,11 +183,6 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_FiltrarPedidos.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-mdpi\ic_add.png" />
   </ItemGroup>
   <ItemGroup>
@@ -245,58 +201,133 @@
     <AndroidResource Include="Resources\mipmap-mdpi\ic_settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_Login.xml" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_add.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_delete.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_help.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\menu\menu_toolbar.xml" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_refresh.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout-v21\toolbar.xml" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_save.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\toolbar.xml" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_Home.xml" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_add.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_Novidades.xml" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_delete.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_Sobre.xml" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_help.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Fragment_Legendas.xml" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_refresh.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_EditarPedidos.xml" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_save.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_EditarProduto.xml" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BarrinhaAmarela.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BarrinhaCinzaClaro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BarrinhaCinzaEscuro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BarrinhaVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BolaAmarela.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BolaCinza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BolaCinzaEscura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BolaVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\EditTextStyle.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Status_Orcamento.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\StatusEntregue.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\StatusFaturado.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\StatusFinalizado.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_Clientes.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_EditarClientes.xml" />
+    <AndroidResource Include="Resources\layout\Activity_EditarPedidos.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_EditarProdTabelaPreco.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_EditarProduto.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_EditarTabelaPreco.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_Pedido.xml" />
+    <AndroidResource Include="Resources\layout\Activity_Home.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_PedidoItem.xml" />
+    <AndroidResource Include="Resources\layout\Activity_Login.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_Novidades.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_Pedido.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_PedidoItem.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_PedidoProduto.xml" />
@@ -311,10 +342,13 @@
     <AndroidResource Include="Resources\layout\Activity_ProdutosPedidoList.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_TabelaPrecos.xml" />
+    <AndroidResource Include="Resources\layout\Activity_Sobre.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Adapter_Clientes_ListView.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_TabelaPrecos.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Adapter_Pedido_ListView.xml" />
@@ -332,109 +366,25 @@
     <AndroidResource Include="Resources\layout\Adapter_TabelaPreco_ListView.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BolaAmarela.png" />
+    <AndroidResource Include="Resources\layout\Fragment_Legendas.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BolaAmarelaParcial.png" />
+    <AndroidResource Include="Resources\layout\toolbar.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BolaAzul.png" />
+    <AndroidResource Include="Resources\values\colors.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BolaCinza.png" />
+    <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BolaCinzaEscura.png" />
+    <AndroidResource Include="Resources\layout\Fragment_Status.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BolaRoxo.png" />
+    <AndroidResource Include="Resources\drawable\BarrinhaCinzaClaro2.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BolaVerde.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BolaVerdeParcial.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BolaVermelha.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BolaVermelhaParcial.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BarrinhaAmarela.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BarrinhaAmarelaParcial.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BarrinhaAzul.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BarrinhaAzulParcial.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BarrinhaCinzaClaro.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BarrinhaCinzaEscuro.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BarrinhaRoxa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BarrinhaVerde.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BarrinhaVerdeParcial.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BarrinhaVermelha.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BarrinhaVermelhaParcial.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\EditTextStyle.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Status_Orcamento.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\StatusCancelado.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\StatusEntregue.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\StatusFaturado.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\StatusFinalizado.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\StatusNaoProcessado.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\StatusParcEntregue.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\StatusParcFaturado.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\StatusParcProcessado.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\StatusSincronizado.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\weblayer.venda.core\weblayer.venda.core.csproj">
-      <Project>{0AA9D10F-5744-450E-9AE2-F415C1579959}</Project>
-      <Name>weblayer.venda.core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\menu\menu_toolbar_Filtro.xml" />
+    <AndroidResource Include="Resources\drawable\BarrinhaCinzaEscuro2.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\ic_tune.png" />
@@ -452,7 +402,15 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_tune.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CHECKBOX_CANCELADO1.png" />
+    <AndroidResource Include="Resources\layout\Activity_FiltrarPedidos.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_toolbar_Filtro.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BtnFormatoRedondo.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
@@ -468,9 +426,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Activity_FIltrarPedidos2.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
