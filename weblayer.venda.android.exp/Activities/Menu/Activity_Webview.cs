@@ -5,6 +5,7 @@ using Android.Graphics;
 using Android.OS;
 using Android.Views;
 using Android.Webkit;
+using Android.Widget;
 
 namespace weblayer.venda.android.exp.Activities
 {
@@ -12,7 +13,7 @@ namespace weblayer.venda.android.exp.Activities
     public class Activity_WebView : Activity_Base
     {
         private WebView webView;
-        public ProgressDialog pd;
+        public ProgressBar myProgressBar;
 
         protected override int LayoutResource
         {

@@ -2124,6 +2124,9 @@ namespace weblayer.venda.android.exp
 			// aapt resource value: 0x7f0b0014
 			public const int multiply = 2131427348;
 			
+			// aapt resource value: 0x7f0b00b8
+			public const int myProgressBar = 2131427512;
+			
 			// aapt resource value: 0x7f0b0020
 			public const int never = 2131427360;
 			
@@ -2144,9 +2147,6 @@ namespace weblayer.venda.android.exp
 			
 			// aapt resource value: 0x7f0b0030
 			public const int parentPanel = 2131427376;
-			
-			// aapt resource value: 0x7f0b00b8
-			public const int progressBar = 2131427512;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int progress_circular = 2131427333;
