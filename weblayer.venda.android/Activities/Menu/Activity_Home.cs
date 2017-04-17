@@ -54,6 +54,9 @@ namespace weblayer.venda.android.Activities
 
                     break;
 
+                case Resource.Id.action_help:
+                    StartActivity(typeof(Activity_WebView));
+                    break;
 
                 case Resource.Id.action_sair:
 
@@ -73,8 +76,8 @@ namespace weblayer.venda.android.Activities
             toolbar.Menu.RemoveItem(Resource.Id.action_deletar);
             toolbar.Menu.RemoveItem(Resource.Id.action_adicionar);
             toolbar.Menu.RemoveItem(Resource.Id.action_salvar);
-            toolbar.Menu.RemoveItem(Resource.Id.action_help);
             toolbar.Menu.RemoveItem(Resource.Id.action_filtrar);
+            toolbar.Menu.RemoveItem(Resource.Id.action_legenda);
         }
 
         private void BindData()

@@ -102,13 +102,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activities\Activity_Base.cs" />
+    <Compile Include="Activities\Menu\Activity_Base.cs" />
+    <Compile Include="Activities\Menu\Activity_Webview.cs" />
     <Compile Include="Activities\Cliente\Activity_EditarCliente.cs" />
     <Compile Include="Activities\Cliente\Activity_Cliente.cs" />
-    <Compile Include="Activities\Activity_Home.cs" />
-    <Compile Include="Activities\Activity_Login.cs" />
-    <Compile Include="Activities\Activity_Novidades.cs" />
-    <Compile Include="Activities\Activity_Sobre.cs" />
+    <Compile Include="Activities\Menu\Activity_Home.cs" />
+    <Compile Include="Activities\Menu\Activity_Login.cs" />
+    <Compile Include="Activities\Menu\Activity_Novidades.cs" />
+    <Compile Include="Activities\Menu\Activity_Sobre.cs" />
     <Compile Include="Activities\Pedido\Activity_EditarPedido.cs" />
     <Compile Include="Activities\Pedido\Activity_FiltrarPedidos.cs" />
     <Compile Include="Activities\Pedido\Activity_Pedido.cs" />
@@ -471,6 +472,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_FIltrarPedidos2.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_Webview.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

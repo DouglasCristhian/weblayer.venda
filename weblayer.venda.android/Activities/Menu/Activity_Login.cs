@@ -45,6 +45,7 @@ namespace weblayer.venda.android.Activities
             toolbar.Menu.RemoveItem(Resource.Id.action_salvar);
             toolbar.Menu.RemoveItem(Resource.Id.action_deletar);
             toolbar.Menu.RemoveItem(Resource.Id.action_adicionar);
+            toolbar.Menu.RemoveItem(Resource.Id.action_legenda);
 
             toolbar.MenuItemClick += Toolbar_MenuItemClick;
 

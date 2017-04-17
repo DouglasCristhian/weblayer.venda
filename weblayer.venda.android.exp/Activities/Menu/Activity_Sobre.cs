@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace weblayer.venda.android.exp.Activities
 {
-    [Activity(Label = "Ajuda")]
+    [Activity(Label = "Sobre")]
     public class Activity_Sobre : Activity_Base
     {
         private ListView listviewSobre;

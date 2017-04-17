@@ -39,7 +39,7 @@ namespace weblayer.venda.android.Activities
                     StartActivityForResult(intent, 0);
                     break;
 
-                case Resource.Id.action_help:
+                case Resource.Id.action_legenda:
                     FragmentTransaction transaction = FragmentManager.BeginTransaction();
                     Fragment_Legendas dialog = new Fragment_Legendas();
                     dialog.Show(transaction, "dialog");
@@ -71,6 +71,7 @@ namespace weblayer.venda.android.Activities
             menu.RemoveItem(Resource.Id.action_refresh);
             menu.RemoveItem(Resource.Id.action_sobre);
             menu.RemoveItem(Resource.Id.action_sair);
+            menu.RemoveItem(Resource.Id.action_help);
             return base.OnCreateOptionsMenu(menu);
         }
 

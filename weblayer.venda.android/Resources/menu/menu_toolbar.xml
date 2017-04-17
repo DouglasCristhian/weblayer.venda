@@ -1,46 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/action_salvar"
+    android:icon="@mipmap/ic_save"
+    app:showAsAction="always"/>
+
+  <item
+    android:id="@+id/action_deletar"
+    android:icon="@mipmap/ic_delete"
+    app:showAsAction="always"/>
+
+  <item
+  android:id="@+id/action_refresh"
+  android:title="Atualizar"
+  android:icon="@mipmap/ic_refresh"
+  app:showAsAction="always"/>
 
   <item
     android:id="@+id/action_filtrar"
     android:icon="@mipmap/ic_tune"
     app:showAsAction="always"/>
-  
-  <item
-    android:id="@+id/action_salvar"
-    android:icon="@mipmap/ic_save"
-    app:showAsAction="always"/>
-  
-  <item
-    android:id="@+id/action_deletar"
-    android:icon="@mipmap/ic_delete"
-    app:showAsAction="always"/>
-  
+
   <item
     android:id="@+id/action_adicionar"
     android:icon="@mipmap/ic_add"
     app:showAsAction="always"/>
 
-    <item
-    android:id="@+id/action_sobre"
-    android:title="Sobre"
-    app:showAsAction="never"/>
-
   <item
-    android:id="@+id/action_refresh"
-    android:title="Atualizar"
-    android:icon="@mipmap/ic_refresh"
-    app:showAsAction="always"/>
+  android:id="@+id/action_sobre"
+  android:title="Sobre"
+  app:showAsAction="never"/>
 
   <item
     android:id="@+id/action_help"
+    android:title="Ajuda"
+    app:showAsAction="never"/>
+
+  <item
+    android:id="@+id/action_legenda"
     android:icon="@mipmap/ic_help"
     app:showAsAction="always"/>
-
 
   <item
     android:id="@+id/action_sair"
     android:title="Sair"
     app:showAsAction="never"/>
+
 </menu>

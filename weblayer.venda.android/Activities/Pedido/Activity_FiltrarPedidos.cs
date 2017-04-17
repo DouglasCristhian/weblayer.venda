@@ -103,12 +103,12 @@ namespace weblayer.venda.android.Activities
 
         private void SetStyle()
         {
-            spinnerDataEmissao.SetBackgroundResource(Resource.Drawable.EditTextStyle);
+            //spinnerDataEmissao.SetBackgroundResource(Resource.Drawable.EditTextStyle);
 
-            if (checkBoxNaoProcessado.Checked)
-            {
-                checkBoxNaoProcessado.SetBackgroundResource(Resource.Drawable.CHECKBOX_CANCELADO1);
-            }
+            //if (checkBoxNaoProcessado.Checked)
+            //{
+            //    checkBoxNaoProcessado.SetBackgroundResource(Resource.Drawable.CHECKBOX_CANCELADO1);
+            //}
         }
 
         private void BtnLimparFiltro_Click(object sender, System.EventArgs e)

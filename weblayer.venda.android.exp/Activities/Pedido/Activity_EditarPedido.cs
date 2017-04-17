@@ -500,7 +500,7 @@ namespace weblayer.venda.android.exp.Activities
                     btnItensPedido.Visibility = ViewStates.Gone;
                     spinnerClientes.Enabled = true;
                     btnGerarPDF.Visibility = ViewStates.Gone;
-                    btnItensPedido.Visibility = ViewStates.Visible;
+                    btnItensPedido.Visibility = ViewStates.Gone;
                 }
                 else if (pedido.vl_total != 0)
                 {

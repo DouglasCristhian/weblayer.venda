@@ -103,6 +103,7 @@ namespace weblayer.venda.android.Activities
             menu.RemoveItem(Resource.Id.action_help);
             menu.RemoveItem(Resource.Id.action_sair);
             menu.RemoveItem(Resource.Id.action_filtrar);
+            menu.RemoveItem(Resource.Id.action_legenda);
 
             if (pedido == null)
             {
@@ -176,14 +177,11 @@ namespace weblayer.venda.android.Activities
         private void SetStyle()
         {
             txtid_Codigo.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-            spinnerClientes.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtid_Vendedor.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtDataEmissao.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtValor_Total.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtMsgPedido.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtMsgNF.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-
-            //txtObservacao.SetBackgroundResource(Resource.Drawable.EditTextStyle);
 
             if (pedido != null)
             {
@@ -355,10 +353,6 @@ namespace weblayer.venda.android.Activities
                     txtMsgPedido.Enabled = false;
                     btnFinalizar.Visibility = ViewStates.Gone;
                     btnAdicionar.Visibility = ViewStates.Gone;
-                    //if (txtValor_Total.Text == "0")
-                    //{
-                    //    btnItensPedido.Visibility = ViewStates.Gone;
-                    //}
                 }
 
                 if ((pedido.vl_total == 0) || (txtValor_Total.Text == "0,00"))
@@ -555,12 +549,15 @@ namespace weblayer.venda.android.Activities
                     btnFinalizar.Visibility = ViewStates.Gone;
                     btnItensPedido.Visibility = ViewStates.Gone;
                     spinnerClientes.Enabled = true;
+                    btnGerarPDF.Visibility = ViewStates.Gone;
+                    btnItensPedido.Visibility = ViewStates.Gone;
                 }
                 else if (pedido.vl_total != 0)
                 {
                     spinnerClientes.Enabled = false;
                     btnFinalizar.Visibility = ViewStates.Visible;
                     btnItensPedido.Visibility = ViewStates.Visible;
+                    btnGerarPDF.Visibility = ViewStates.Visible;
                 }
                 if (pedido.fl_status != 0)
                 {
