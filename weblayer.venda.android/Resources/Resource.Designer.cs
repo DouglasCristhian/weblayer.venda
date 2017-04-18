@@ -1751,11 +1751,11 @@ namespace weblayer.venda.android
 			// aapt resource value: 0x7f020071
 			public const int notification_icon_background = 2130837617;
 			
-			// aapt resource value: 0x7f02007e
-			public const int notification_template_icon_bg = 2130837630;
-			
 			// aapt resource value: 0x7f02007f
-			public const int notification_template_icon_low_bg = 2130837631;
+			public const int notification_template_icon_bg = 2130837631;
+			
+			// aapt resource value: 0x7f020080
+			public const int notification_template_icon_low_bg = 2130837632;
 			
 			// aapt resource value: 0x7f020072
 			public const int notification_tile_bg = 2130837618;
@@ -1764,34 +1764,37 @@ namespace weblayer.venda.android
 			public const int notify_panel_notification_icon_bg = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int Status_Orcamento = 2130837620;
+			public const int SplashScreen = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int StatusCancelado = 2130837621;
+			public const int Status_Orcamento = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int StatusEntregue = 2130837622;
+			public const int StatusCancelado = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int StatusFaturado = 2130837623;
+			public const int StatusEntregue = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int StatusFinalizado = 2130837624;
+			public const int StatusFaturado = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int StatusNaoProcessado = 2130837625;
+			public const int StatusFinalizado = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int StatusParcEntregue = 2130837626;
+			public const int StatusNaoProcessado = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int StatusParcFaturado = 2130837627;
+			public const int StatusParcEntregue = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int StatusParcProcessado = 2130837628;
+			public const int StatusParcFaturado = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int StatusSincronizado = 2130837629;
+			public const int StatusParcProcessado = 2130837629;
+			
+			// aapt resource value: 0x7f02007e
+			public const int StatusSincronizado = 2130837630;
 			
 			static Drawable()
 			{
@@ -2796,10 +2799,13 @@ namespace weblayer.venda.android
 			public const int select_dialog_singlechoice_material = 2130968647;
 			
 			// aapt resource value: 0x7f040048
-			public const int support_simple_spinner_dropdown_item = 2130968648;
+			public const int SplashLayout = 2130968648;
 			
 			// aapt resource value: 0x7f040049
-			public const int toolbar = 2130968649;
+			public const int support_simple_spinner_dropdown_item = 2130968649;
+			
+			// aapt resource value: 0x7f04004a
+			public const int toolbar = 2130968650;
 			
 			static Layout()
 			{

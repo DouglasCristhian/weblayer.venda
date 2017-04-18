@@ -1,12 +1,11 @@
 using Android.App;
-using Android.Content;
 using Android.OS;
 using Android.Widget;
 using System.Collections.Generic;
 
 namespace weblayer.venda.android.exp.Activities
 {
-    [Activity(MainLauncher = true)]
+    [Activity(NoHistory = true, MainLauncher = false)]
     public class Activity_Home : Activity
     {
         Android.Support.V7.Widget.Toolbar toolbar;
