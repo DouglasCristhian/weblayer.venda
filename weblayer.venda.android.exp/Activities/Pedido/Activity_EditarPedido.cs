@@ -1,6 +1,9 @@
+using Android;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
+using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 using System;
@@ -34,6 +37,7 @@ namespace weblayer.venda.android.exp.Activities
         private string idcliente;
         private Spinner spinnerClientes;
         List<mSpinner> tblclientespinner;
+        private bool PROSSEGUIR;
 
         protected override int LayoutResource
         {
@@ -398,15 +402,55 @@ namespace weblayer.venda.android.exp.Activities
 
         private void BtnGerarPDF_Click(object sender, EventArgs e)
         {
-            PDFGeneratorHelper helper = new PDFGeneratorHelper();
-            string path = helper.GeneratePDF(pedido);
-
-            SendPDFToEmail(pedido);
+            PermissoesGarantidas();
+            if (PROSSEGUIR == true)
+            {
+                GerarPDF();
+            }
 
             //Java.IO.File file = new Java.IO.File(path);
             //Intent intent = new Intent(Intent.ActionView);
             //intent.SetDataAndType(Android.Net.Uri.FromFile(file), "application/pdf");
             //StartActivity(intent);
+        }
+
+        private void GerarPDF()
+        {
+            PDFGeneratorHelper helper = new PDFGeneratorHelper();
+            string path = helper.GeneratePDF(pedido);
+
+            SendPDFToEmail(pedido);
+        }
+
+        private void PermissoesGarantidas()
+        {
+            if ((ActivityCompat.CheckSelfPermission(this, Manifest.Permission.ReadExternalStorage) == Permission.Granted))
+            {
+                PROSSEGUIR = true;
+                GerarPDF();
+            }
+            else
+            {
+                string[] permissionRequest = { Manifest.Permission.ReadExternalStorage };
+                RequestPermissions(permissionRequest, 0);
+            }
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            if ((requestCode == 0))
+            {
+                if (grantResults[0] == Permission.Granted)
+                {
+                    PROSSEGUIR = true;
+                    GerarPDF();
+                }
+                else
+                    Toast.MakeText(this, "Não é possível exportar o arquivo PDF sem as devidas permissões", ToastLength.Long).Show();
+                return;
+            }
         }
 
         private void SendPDFToEmail(Pedido pedido)

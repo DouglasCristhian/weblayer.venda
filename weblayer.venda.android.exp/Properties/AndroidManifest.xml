@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="weblayer.venda.android.exp.weblayer.venda.android.exp" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="16" />
+	<uses-sdk android:minSdkVersion="17" android:targetSdkVersion="24" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<application android:label="W/Vendas Express" android:theme="@style/MaterialTheme" android:icon="@mipmap/ic_launcher" android:screenOrientation="sensorLandscape"></application>

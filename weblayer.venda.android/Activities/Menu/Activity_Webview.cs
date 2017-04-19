@@ -35,7 +35,7 @@ namespace weblayer.venda.android.Activities
 
             WebSettings webSettings = webView.Settings;
             webSettings.JavaScriptEnabled = true;
-            webView.LoadUrl("http://kb.weblayer.com.br/android-vendas-professional/");
+            webView.LoadUrl("http://kb.weblayer.com.br/w-vendas-professional/");
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

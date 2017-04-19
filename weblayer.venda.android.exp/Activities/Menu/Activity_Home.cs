@@ -33,7 +33,6 @@ namespace weblayer.venda.android.exp.Activities
 
                 case Resource.Id.action_help:
                     StartActivity(typeof(Activity_WebView));
-                    //Intent intent = new Intent(this, typeof(Activity_WebView));
                     break;
 
                 case Resource.Id.action_sair:

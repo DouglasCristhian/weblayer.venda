@@ -35,7 +35,8 @@ namespace weblayer.venda.android.exp.Activities
 
             WebSettings webSettings = webView.Settings;
             webSettings.JavaScriptEnabled = true;
-            webView.LoadUrl("http://kb.weblayer.com.br/android-vendas-express/");
+            webView.LoadUrl("http://kb.weblayer.com.br/w-vendas-express/");
+
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
