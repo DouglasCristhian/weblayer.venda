@@ -76,7 +76,7 @@
      android:textSize="18sp"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
-     android:text="Valor Produto"/>
+     android:text="Preço"/>
 
     <EditText
       android:id="@+id/txtValorProd"
