@@ -31,7 +31,7 @@ namespace weblayer.venda.android.exp.Activities
 
         private void LoadActivity()
         {
-            System.Threading.Thread.Sleep(5000); //Simulate a long pause    
+            System.Threading.Thread.Sleep(2000); //Simulate a long pause    
             RunOnUiThread(() => StartActivity(typeof(Activity_Home)));
         }
     }

@@ -64,8 +64,8 @@ namespace weblayer.venda.core.Dal
             if (List().Count > 0)
                 return;
 
-            Save(new TabelaPreco() { id_codigo = "1", ds_descricao = "TABELA_NORMAL"/* vl_valor = 5.00, vl_descontomaximo = 5*/ });
-            Save(new TabelaPreco() { id_codigo = "2", ds_descricao = "TABELA_PROMOÇÃO"/*, vl_valor = 12.00, vl_descontomaximo = 3*/ });
+            Save(new TabelaPreco() { id_codigo = "N", ds_descricao = "NORMAL"});
+            Save(new TabelaPreco() { id_codigo = "P", ds_descricao = "PROMOÇÃO"});
         }
 
     }

@@ -50,7 +50,7 @@ namespace weblayer.venda.android.exp.Adapters
                 row = LayoutInflater.From(mContext).Inflate(Resource.Layout.Adapter_Clientes_ListView, null, false);
             }
 
-            row.FindViewById<TextView>(Resource.Id.txtCodigoCliente).Text = "Código do Cliente: " + mItems[position].id_Codigo.ToString();
+            row.FindViewById<TextView>(Resource.Id.txtCodigoCliente).Text = "Código: " + mItems[position].id_Codigo.ToString();
             row.FindViewById<TextView>(Resource.Id.txtRazaoSocial).Text = "Razão Social: " + mItems[position].ds_RazaoSocial.ToString();
             row.FindViewById<TextView>(Resource.Id.txtNomeFantasia).Text = "Nome Fantasia: " + mItems[position].ds_NomeFantasia.ToString();
             row.FindViewById<TextView>(Resource.Id.txtCNPJ).Text = "CNPJ: " + mItems[position].ds_Cnpj.ToString();
@@ -59,7 +59,7 @@ namespace weblayer.venda.android.exp.Adapters
             TabelaPreco_Manager tbl = new TabelaPreco_Manager();
             tblPreco = tbl.Get(mItems[position].id_tabelapreco);
 
-            row.FindViewById<TextView>(Resource.Id.txtTabelaPrecoCli).Text = "Tabela de Preços: " + tblPreco.ds_descricao.ToString();
+            row.FindViewById<TextView>(Resource.Id.txtTabelaPrecoCli).Text = "Tabela de Preço: " + tblPreco.ds_descricao.ToString();
 
             return row;
         }
