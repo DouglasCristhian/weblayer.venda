@@ -48,7 +48,6 @@ namespace weblayer.venda.android.exp.Adapters
             }
 
             row.FindViewById<TextView>(Resource.Id.txtId_Cliente).Text = "Cliente: " + mItems[position].ds_cliente.ToString();
-            row.FindViewById<TextView>(Resource.Id.txtId_Vendedor).Text = "Vendedor: " + mItems[position].ds_vendedor.ToString();
             row.FindViewById<TextView>(Resource.Id.txtVolume_Total).Text = "Volume Total: " + mItems[position].vl_volume.ToString();
             row.FindViewById<TextView>(Resource.Id.txtValor_Total).Text = "Valor Total: " + mItems[position].vl_total.ToString("##,##0.00");
             row.FindViewById<TextView>(Resource.Id.txtData_Emissao).Text = "Data de Emissão " + mItems[position].dt_emissao.Value.ToString("dd/MM/yyyy");

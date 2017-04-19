@@ -57,8 +57,6 @@ namespace weblayer.venda.android.exp.Adapters
             Produto_Manager prod_manager = new Produto_Manager();
             prod = prod_manager.Get(mitems[position].id_produto);
 
-            row.FindViewById<TextView>(Resource.Id.txtIdProdutoTblPreco).Text = "Código do Produto: " + mitems[position].id_produto.ToString();
-            row.FindViewById<TextView>(Resource.Id.txtIdTabelaPrecoTblPrecos).Text = "Código da Tabela: " + mitems[position].id_tabpreco.ToString();
             row.FindViewById<TextView>(Resource.Id.txtDescProdutoTblPreco).Text = "Produto: " + prod.ds_nome.ToString();
             row.FindViewById<TextView>(Resource.Id.txtDescTabelaPrecoTblPrecos).Text = "Tabela: " + tblPreco.ds_descricao.ToString();
             row.FindViewById<TextView>(Resource.Id.txtValorPrecos).Text = "Valor: " + mitems[position].vl_Valor.ToString("##,##0.00");

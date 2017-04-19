@@ -8,16 +8,6 @@
     android:layout_height="match_parent">
 
   <TextView
-    android:id="@+id/txtIdProdutoTblPreco"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:textSize="17sp"/>
-  <TextView
-    android:id="@+id/txtIdTabelaPrecoTblPrecos"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:textSize="17sp"/>
-  <TextView
       android:id="@+id/txtDescProdutoTblPreco"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

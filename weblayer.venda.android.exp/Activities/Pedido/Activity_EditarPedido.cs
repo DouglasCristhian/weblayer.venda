@@ -22,7 +22,6 @@ namespace weblayer.venda.android.exp.Activities
     public class Activity_EditarPedido : Activity_Base
     {
         private EditText txtid_Codigo;
-        private EditText txtid_Vendedor;
         private EditText txtDataEmissao;
         private TextView txtValor_Total;
         private TextView txtStatusPedido;
@@ -157,7 +156,6 @@ namespace weblayer.venda.android.exp.Activities
         {
             txtid_Codigo = FindViewById<EditText>(Resource.Id.txtCodigoPedido);
             spinnerClientes = FindViewById<Spinner>(Resource.Id.spinnerIdCliente);
-            txtid_Vendedor = FindViewById<EditText>(Resource.Id.txtIdvendedor);
             txtDataEmissao = FindViewById<EditText>(Resource.Id.txtDataEmissao);
             txtValor_Total = FindViewById<TextView>(Resource.Id.txtValorTotal);
             txtMsgPedido = FindViewById<EditText>(Resource.Id.txtMsgPedido);
@@ -177,7 +175,6 @@ namespace weblayer.venda.android.exp.Activities
         private void SetStyle()
         {
             txtid_Codigo.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-            txtid_Vendedor.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtDataEmissao.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtValor_Total.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtMsgPedido.SetBackgroundResource(Resource.Drawable.EditTextStyle);
@@ -210,7 +207,6 @@ namespace weblayer.venda.android.exp.Activities
                 return;
 
             txtid_Codigo.Text = pedido.id_codigo.ToString();
-            txtid_Vendedor.Text = pedido.ds_vendedor.ToString();
             idcliente = pedido.ds_cliente.ToString();
             txtValor_Total.Text = pedido.vl_total.ToString(("##,##0.00"));
             txtDataEmissao.Text = pedido.dt_emissao.Value.ToString("dd/MM/yyyy");
@@ -257,7 +253,6 @@ namespace weblayer.venda.android.exp.Activities
             pedido.id_codigo = txtid_Codigo.Text;
             pedido.id_vendedor = 1;
             pedido.ds_cliente = idcliente;
-            pedido.ds_vendedor = txtid_Vendedor.Text.ToString();
             var idcli = tblclientespinner[spinnerClientes.SelectedItemPosition];
             pedido.id_cliente = idcli.Id();
             pedido.dt_emissao = datahora;
@@ -295,7 +290,6 @@ namespace weblayer.venda.android.exp.Activities
                 if (pedido.fl_status != 0)
                 {
                     txtid_Codigo.Enabled = false;
-                    txtid_Vendedor.Enabled = false;
                     spinnerClientes.Enabled = false;
                     txtDataEmissao.Enabled = false;
                     txtMsgNF.Enabled = false;
@@ -331,12 +325,6 @@ namespace weblayer.venda.android.exp.Activities
         private bool ValidateViews()
         {
             var validacao = true;
-
-            if (txtid_Vendedor.Length() == 0)
-            {
-                validacao = false;
-                txtid_Vendedor.Error = "Código do Vendedor inválido!";
-            }
 
             if (spinnerClientes.SelectedItemPosition == 0)
             {
