@@ -9,6 +9,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
     android:minWidth="400dp"
     android:minHeight="500dp">
 
@@ -64,6 +65,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:textSize="18sp"
+      android:theme="@style/SpinnerTheme"
       android:layout_marginLeft="18dip"
       android:layout_marginRight="18dip"/>
 

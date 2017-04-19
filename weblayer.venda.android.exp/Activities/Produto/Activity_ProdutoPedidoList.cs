@@ -50,6 +50,12 @@ namespace weblayer.venda.android.exp.Activities
             menu.RemoveItem(Resource.Id.action_help);
             menu.RemoveItem(Resource.Id.action_sair);
             menu.RemoveItem(Resource.Id.action_filtrar);
+            menu.RemoveItem(Resource.Id.action_legenda);
+
+            if (ped.fl_status != 0)
+            {
+                menu.RemoveItem(Resource.Id.action_adicionar);
+            }
 
             return base.OnCreateOptionsMenu(menu);
         }

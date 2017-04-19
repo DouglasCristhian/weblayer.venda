@@ -14,8 +14,8 @@ namespace weblayer.venda.android.Activities
     {
         private EditText txtCodTabelaPreco;
         private EditText txtDescricaoTabelaPreco;
-        private EditText txtValorTabelaPreco;
-        private EditText txtDescMaxTabelaPreco;
+        //private EditText txtValorTabelaPreco;
+        //private EditText txtDescMaxTabelaPreco;
         private TabelaPreco tblPreco;
 
         protected override int LayoutResource
@@ -56,6 +56,8 @@ namespace weblayer.venda.android.Activities
             menu.RemoveItem(Resource.Id.action_refresh);
             menu.RemoveItem(Resource.Id.action_help);
             menu.RemoveItem(Resource.Id.action_sair);
+            menu.RemoveItem(Resource.Id.action_filtrar);
+            menu.RemoveItem(Resource.Id.action_legenda);
 
             return base.OnCreateOptionsMenu(menu);
         }
@@ -80,16 +82,16 @@ namespace weblayer.venda.android.Activities
         {
             txtCodTabelaPreco.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtDescricaoTabelaPreco.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-            txtValorTabelaPreco.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-            txtDescMaxTabelaPreco.SetBackgroundResource(Resource.Drawable.EditTextStyle);
+            //txtValorTabelaPreco.SetBackgroundResource(Resource.Drawable.EditTextStyle);
+            //txtDescMaxTabelaPreco.SetBackgroundResource(Resource.Drawable.EditTextStyle);
         }
 
         private void FindViews()
         {
             txtCodTabelaPreco = FindViewById<EditText>(Resource.Id.txtCodigoTabelaPreco);
             txtDescricaoTabelaPreco = FindViewById<EditText>(Resource.Id.txtDescricaoTabelaPreco);
-            txtValorTabelaPreco = FindViewById<EditText>(Resource.Id.txtValorTabelaPreco);
-            txtDescMaxTabelaPreco = FindViewById<EditText>(Resource.Id.txtDescontoMaxTabelaPreco);
+            //txtValorTabelaPreco = FindViewById<EditText>(Resource.Id.txtValorTabelaPreco);
+            //txtDescMaxTabelaPreco = FindViewById<EditText>(Resource.Id.txtDescontoMaxTabelaPreco);
         }
 
         private void BindViews()
@@ -99,16 +101,16 @@ namespace weblayer.venda.android.Activities
 
             txtCodTabelaPreco.Text = tblPreco.id_codigo;
             txtDescricaoTabelaPreco.Text = tblPreco.ds_descricao;
-            txtValorTabelaPreco.Text = tblPreco.vl_valor.ToString("##,##0.00");
-            txtDescMaxTabelaPreco.Text = tblPreco.vl_descontomaximo.ToString("##,##0.00");
+            //txtValorTabelaPreco.Text = tblPreco.vl_valor.ToString("##,##0.00");
+            //txtDescMaxTabelaPreco.Text = tblPreco.vl_descontomaximo.ToString("##,##0.00");
         }
 
         private void BindData()
         {
             txtCodTabelaPreco.Enabled = false;
             txtDescricaoTabelaPreco.Enabled = false;
-            txtValorTabelaPreco.Enabled = false;
-            txtDescMaxTabelaPreco.Enabled = false;
+            //txtValorTabelaPreco.Enabled = false;
+            //txtDescMaxTabelaPreco.Enabled = false;
         }
 
         private void BindModel()
@@ -118,8 +120,8 @@ namespace weblayer.venda.android.Activities
 
             tblPreco.id_codigo = txtCodTabelaPreco.Text;
             tblPreco.ds_descricao = txtDescricaoTabelaPreco.Text;
-            tblPreco.vl_valor = double.Parse(txtValorTabelaPreco.Text);
-            tblPreco.vl_descontomaximo = double.Parse(txtDescMaxTabelaPreco.Text);
+            //tblPreco.vl_valor = double.Parse(txtValorTabelaPreco.Text);
+            //tblPreco.vl_descontomaximo = double.Parse(txtDescMaxTabelaPreco.Text);
 
         }
 
@@ -139,17 +141,17 @@ namespace weblayer.venda.android.Activities
                 txtDescricaoTabelaPreco.Error = "Descrição da tabela inválida!";
             }
 
-            if (txtValorTabelaPreco.Length() == 0)
-            {
-                validacao = false;
-                txtValorTabelaPreco.Error = "Valor da tabela inválido!";
-            }
+            //if (txtValorTabelaPreco.Length() == 0)
+            //{
+            //    validacao = false;
+            //    txtValorTabelaPreco.Error = "Valor da tabela inválido!";
+            //}
 
-            if (txtDescMaxTabelaPreco.Length() == 0)
-            {
-                validacao = false;
-                txtDescMaxTabelaPreco.Error = "Desconto máximo inválido!";
-            }
+            //if (txtDescMaxTabelaPreco.Length() == 0)
+            //{
+            //    validacao = false;
+            //    txtDescMaxTabelaPreco.Error = "Desconto máximo inválido!";
+            //}
 
             return validacao;
         }

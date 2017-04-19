@@ -21,7 +21,6 @@ namespace weblayer.venda.android.exp
         private List<mSpinner> spinnerDatas;
         public string MyPREFERENCES = "MyPrefs";
         public CheckBox[] lista;
-        string datacerta;
 
         protected override int LayoutResource
         {
@@ -37,7 +36,6 @@ namespace weblayer.venda.android.exp
 
             FindViews();
             BindData();
-            SetStyle();
 
             lista = new CheckBox[4];
             lista[0] = checkBoxOrcamento;
@@ -74,11 +72,6 @@ namespace weblayer.venda.android.exp
         public void BindData()
         {
             btnLimparFiltro.Click += BtnLimparFiltro_Click;
-        }
-
-        private void SetStyle()
-        {
-            spinnerDataEmissao.SetBackgroundResource(Resource.Drawable.EditTextStyle);
         }
 
         private void BtnLimparFiltro_Click(object sender, System.EventArgs e)
@@ -118,20 +111,13 @@ namespace weblayer.venda.android.exp
         {
             var prefs = Application.Context.GetSharedPreferences(MyPREFERENCES, FileCreationMode.WorldReadable);
 
-            if (prefs == null)
-            {
-                checkBoxOrcamento.Checked = true;
-                checkBoxFinalizado.Checked = true;
-                checkBoxEntregue.Checked = true;
-                checkBoxFaturado.Checked = true;
-            }
-
+            int i = 0;
             foreach (CheckBox check in lista)
             {
                 int result;
                 var pref = Application.Context.GetSharedPreferences(MyPREFERENCES, FileCreationMode.WorldReadable);
 
-                result = prefs.GetInt("CheckBox" + check.Id.ToString(), -1);
+                result = prefs.GetInt("CheckBox" + i.ToString(), -1);
                 if (result == 0)
                 {
                     check.Checked = true;
@@ -140,6 +126,7 @@ namespace weblayer.venda.android.exp
                 {
                     check.Checked = false;
                 }
+                i++;
             }
         }
 
@@ -164,15 +151,20 @@ namespace weblayer.venda.android.exp
             var prefs = Application.Context.GetSharedPreferences("MyPrefs", FileCreationMode.WorldWriteable);
             var prefEditor = prefs.Edit();
 
+            int i = 0;
             foreach (CheckBox check in lista)
             {
                 if (check.Checked == true)
                 {
+                    check.Id = i;
                     prefEditor.PutInt("CheckBox" + check.Id.ToString(), 0);
+                    i++;
                 }
                 else
                 {
+                    check.Id = i;
                     prefEditor.PutInt("CheckBox" + check.Id.ToString(), -1);
+                    i++;
                 }
             }
 

@@ -49,7 +49,6 @@ namespace weblayer.venda.android.exp.Activities
                 case Android.Resource.Id.Home:
                     Finish();
                     break;
-                    //return true;
             }
             return base.OnOptionsItemSelected(item);
         }
@@ -276,6 +275,7 @@ namespace weblayer.venda.android.exp.Activities
                 {
                     txtQuantidadeItem.Text = "0";
                 }
+                txtQuantidadeItem.Error = null;
                 go = (double.Parse(valorVenda.ToString()) * double.Parse(txtQuantidadeItem.Text.ToString()));
             }
             else

@@ -5,7 +5,6 @@
 
   </style>
 
-
   <style name="ParentMaterialTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <!--Tema pai para todos devices (Pre ou pro Lollipop-->
     <item name="colorPrimary">@color/colorPrimary</item>
@@ -21,9 +20,14 @@
     <!--Color do Overflow Menu (Os três pontinhos)-->
   </style>
 
-  <style name="PopupTheme" parent="ThemeOverlay.AppCompat.Light">
-    <item name="android:textColorPrimary">@android:color/black</item> <!-- Text Color dos items do Overflow menu-->
+  <style name="PopupTheme" parent="android:Theme.Holo.Light">
+    <item name="android:textColorPrimary">@android:color/black</item>
+    <item name="android:background">@color/grey</item>
+  </style>
+
+  <style name="SpinnerTheme" parent="android:Theme.Holo.Light">
 
   </style>
 
+  
 </resources>

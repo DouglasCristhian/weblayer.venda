@@ -98,6 +98,7 @@ namespace weblayer.venda.android.exp.Activities
             menu.RemoveItem(Resource.Id.action_help);
             menu.RemoveItem(Resource.Id.action_sair);
             menu.RemoveItem(Resource.Id.action_filtrar);
+            menu.RemoveItem(Resource.Id.action_legenda);
 
             if (cli == null)
             {
@@ -138,7 +139,6 @@ namespace weblayer.venda.android.exp.Activities
             txtRazaoSocialCli.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtNomeFantasiaCli.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtCNPJCli.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-            spinnerTabelaPreco.SetBackgroundResource(Resource.Drawable.EditTextStyle);
         }
 
         private void BindModel()

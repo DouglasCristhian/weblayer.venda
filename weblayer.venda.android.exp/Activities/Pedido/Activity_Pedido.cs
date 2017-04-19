@@ -42,7 +42,7 @@ namespace weblayer.venda.android.exp.Activities
                     StartActivityForResult(intent, 0);
                     break;
 
-                case Resource.Id.action_help:
+                case Resource.Id.action_legenda:
                     FragmentTransaction transaction = FragmentManager.BeginTransaction();
                     Fragment_Legendas dialog = new Fragment_Legendas();
                     dialog.Show(transaction, "dialog");
@@ -72,6 +72,8 @@ namespace weblayer.venda.android.exp.Activities
             menu.RemoveItem(Resource.Id.action_salvar);
             menu.RemoveItem(Resource.Id.action_sobre);
             menu.RemoveItem(Resource.Id.action_sair);
+            menu.RemoveItem(Resource.Id.action_help);
+
             return base.OnCreateOptionsMenu(menu);
         }
 
@@ -102,25 +104,25 @@ namespace weblayer.venda.android.exp.Activities
             int data = prefs.GetInt("Id_DataEmissao", 0);
             dataEmissao = data;
 
-            int valor = prefs.GetInt("CheckBox2131427464", -1);
+            int valor = prefs.GetInt("CheckBox0", -1);
             if (valor == 0)
             {
                 status = status + "0,";
             }
 
-            int valor1 = prefs.GetInt("CheckBox2131427466", -1);
+            int valor1 = prefs.GetInt("CheckBox1", -1);
             if (valor1 == 0)
             {
                 status = status + "1,";
             }
 
-            int valor2 = prefs.GetInt("CheckBox2131427468", -1);
+            int valor2 = prefs.GetInt("CheckBox2", -1);
             if (valor2 == 0)
             {
                 status = status + "2,";
             }
 
-            int valor3 = prefs.GetInt("CheckBox2131427470", -1);
+            int valor3 = prefs.GetInt("CheckBox3", -1);
             if (valor3 == 0)
             {
                 status = status + "3,";
@@ -228,8 +230,15 @@ namespace weblayer.venda.android.exp.Activities
                 }
 
                 status = data.GetStringExtra("Status");
-                dataEmissao = data.GetIntExtra("DataEmissao", 0);
-                FillList(status, dataEmissao);
+                if (status == null)
+                {
+                    Filtro_Checkboxes();
+                }
+                else if (status != null)
+                {
+                    dataEmissao = data.GetIntExtra("DataEmissao", 0);
+                    FillList(status, dataEmissao);
+                }
             }
         }
     }

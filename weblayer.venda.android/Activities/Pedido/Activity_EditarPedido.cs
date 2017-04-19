@@ -13,6 +13,7 @@ using weblayer.venda.android.Helpers;
 using weblayer.venda.core.Bll;
 using weblayer.venda.core.Dal;
 using weblayer.venda.core.Model;
+using Uri = Android.Net.Uri;
 
 namespace weblayer.venda.android.Activities
 {
@@ -30,6 +31,7 @@ namespace weblayer.venda.android.Activities
         private Button btnAdicionar;
         private Button btnItensPedido;
         private Button btnFinalizar;
+        private Button btnGerarPDF;
         private Pedido pedido;
         private string idcliente;
         private Spinner spinnerClientes;
@@ -49,6 +51,8 @@ namespace weblayer.venda.android.Activities
             {
                 case Resource.Id.action_salvar:
                     Save();
+                    if (ValidateViews())
+                        Finish();
 
                     return true;
 
@@ -98,6 +102,8 @@ namespace weblayer.venda.android.Activities
             menu.RemoveItem(Resource.Id.action_refresh);
             menu.RemoveItem(Resource.Id.action_help);
             menu.RemoveItem(Resource.Id.action_sair);
+            menu.RemoveItem(Resource.Id.action_filtrar);
+            menu.RemoveItem(Resource.Id.action_legenda);
 
             if (pedido == null)
             {
@@ -160,6 +166,7 @@ namespace weblayer.venda.android.Activities
             txtStatusPedido = FindViewById<TextView>(Resource.Id.txtStatusPedido);
             btnAdicionar = FindViewById<Button>(Resource.Id.btnAdicionar);
             btnItensPedido = FindViewById<Button>(Resource.Id.btnItensPedido);
+            btnGerarPDF = FindViewById<Button>(Resource.Id.btnGerarPDF);
             btnFinalizar = FindViewById<Button>(Resource.Id.btnFinalizar);
 
             txtDataEmissao.SetBackgroundColor(Android.Graphics.Color.LightGray);
@@ -170,14 +177,11 @@ namespace weblayer.venda.android.Activities
         private void SetStyle()
         {
             txtid_Codigo.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-            spinnerClientes.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtid_Vendedor.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtDataEmissao.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtValor_Total.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtMsgPedido.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             txtMsgNF.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-
-            //txtObservacao.SetBackgroundResource(Resource.Drawable.EditTextStyle);
 
             if (pedido != null)
             {
@@ -320,6 +324,7 @@ namespace weblayer.venda.android.Activities
             {
                 txtDataEmissao.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 txtDataEmissao.Click += EventtxtDataEmissao_Click;
+                btnGerarPDF.Visibility = ViewStates.Gone;
                 txtStatusPedido.Visibility = ViewStates.Gone;
                 lblStatusPedido.Visibility = ViewStates.Gone;
 
@@ -348,30 +353,50 @@ namespace weblayer.venda.android.Activities
                     txtMsgPedido.Enabled = false;
                     btnFinalizar.Visibility = ViewStates.Gone;
                     btnAdicionar.Visibility = ViewStates.Gone;
-                    if (txtValor_Total.Text == "0")
-                    {
-                        btnItensPedido.Visibility = ViewStates.Gone;
-                    }
                 }
 
                 if ((pedido.vl_total == 0) || (txtValor_Total.Text == "0,00"))
                 {
                     btnFinalizar.Visibility = ViewStates.Gone;
                     btnItensPedido.Visibility = ViewStates.Gone;
+                    btnGerarPDF.Visibility = ViewStates.Gone;
                     spinnerClientes.Enabled = true;
                 }
                 else if ((pedido.vl_total != 0) || (txtValor_Total.Text != "0,00"))
                 {
                     spinnerClientes.Enabled = false;
+                    btnGerarPDF.Visibility = ViewStates.Visible;
+                    btnGerarPDF.Enabled = true;
                 }
             }
 
             txtValor_Total.Enabled = false;
             btnAdicionar.Click += BtnAdicionar_Click;
             btnFinalizar.Click += BtnFinalizar_Click;
+            btnGerarPDF.Click += BtnGerarPDF_Click;
             txtValor_Total.Click += TxtValor_Total_Click;
             btnItensPedido.Click += TxtValor_Total_Click;
 
+        }
+
+        private void BtnGerarPDF_Click(object sender, EventArgs e)
+        {
+            PDFGeneratorHelper helper = new PDFGeneratorHelper();
+            string path = helper.GeneratePDF(pedido);
+
+            SendPDFToEmail(pedido);
+        }
+
+        private void SendPDFToEmail(Pedido pedido)
+        {
+            Intent intent = new Intent(Intent.ActionSend);
+            intent.SetType("*/*");
+
+            Java.IO.File file = new Java.IO.File((Android.OS.Environment.ExternalStorageDirectory + "/W Venda Pro - PDFs"), "Pedido " + pedido.id_codigo.ToString() + ", Cliente " + pedido.ds_cliente.ToString() + ".pdf");
+            intent.PutExtra(Intent.ExtraSubject, "Cliente " + pedido.ds_cliente.ToString() + ", Emissão: " + pedido.dt_emissao.Value.ToString("dd/MM/yyyy") + " " + DateTime.Now.ToString("HH:mm"));
+            intent.PutExtra(Intent.ExtraStream, Uri.FromFile(file));
+            intent.PutExtra(Intent.ExtraText, "Cliente " + pedido.ds_cliente.ToString() + ", Emissão: " + pedido.dt_emissao.Value.ToString("dd/MM/yyyy") + " " + DateTime.Now.ToString("HH:mm"));
+            StartActivity(intent);
         }
 
         private bool ValidateViews()
@@ -524,12 +549,19 @@ namespace weblayer.venda.android.Activities
                     btnFinalizar.Visibility = ViewStates.Gone;
                     btnItensPedido.Visibility = ViewStates.Gone;
                     spinnerClientes.Enabled = true;
+                    btnGerarPDF.Visibility = ViewStates.Gone;
+                    btnItensPedido.Visibility = ViewStates.Gone;
                 }
                 else if (pedido.vl_total != 0)
                 {
                     spinnerClientes.Enabled = false;
                     btnFinalizar.Visibility = ViewStates.Visible;
                     btnItensPedido.Visibility = ViewStates.Visible;
+                    btnGerarPDF.Visibility = ViewStates.Visible;
+                }
+                if (pedido.fl_status != 0)
+                {
+                    btnFinalizar.Visibility = ViewStates.Gone;
                 }
 
                 Intent intent = new Intent();

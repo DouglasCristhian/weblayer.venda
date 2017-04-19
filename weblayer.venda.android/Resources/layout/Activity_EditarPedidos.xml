@@ -27,7 +27,7 @@
        android:layout_marginLeft = "18dip"
        android:layout_marginRight = "18dip"
        android:text="Status do Pedido:"/>
-    
+
     <EditText
        android:id="@+id/txtStatusPedido"
        android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
        android:layout_marginRight = "18dip"
        android:focusable="false"
        android:editable="false"/>
-    
+
     <!--Cliente-->
     <TextView
        android:id="@+id/lblIdCliente"
@@ -53,6 +53,7 @@
        android:layout_height="wrap_content"
        android:layout_width="match_parent"
        android:layout_marginTop="3dp"
+       android:theme="@style/SpinnerTheme"  
        android:focusableInTouchMode="true"
        android:layout_marginLeft = "18dip"
        android:layout_marginRight = "18dip"/>
@@ -188,8 +189,8 @@
        android:layout_marginTop="3dp"
        android:layout_marginLeft = "18dip"
        android:layout_marginRight = "18dip"
-       android:layout_marginBottom="3dp"/>  
-    
+       android:layout_marginBottom="3dp"/>
+
 
     <Button
        android:id="@+id/btnItensPedido"
@@ -207,7 +208,15 @@
        android:text="Adicionar Item"
        android:layout_marginLeft = "18dip"
        android:layout_marginRight = "18dip"/>
-    
+
+    <Button
+       android:id="@+id/btnGerarPDF"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:text="Exportar"
+       android:layout_marginLeft = "18dip"
+       android:layout_marginRight = "18dip"/>
+
     <Button
        android:id="@+id/btnFinalizar"
        android:layout_height="wrap_content"

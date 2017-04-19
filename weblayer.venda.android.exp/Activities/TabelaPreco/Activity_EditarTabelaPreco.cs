@@ -14,7 +14,6 @@ namespace weblayer.venda.android.exp.Activities
     {
         private EditText txtCodTabelaPreco;
         private EditText txtDescricaoTabelaPreco;
-        private EditText txtDescMaxTabelaPreco;
         private TabelaPreco tblPreco;
 
         protected override int LayoutResource
@@ -52,6 +51,7 @@ namespace weblayer.venda.android.exp.Activities
             menu.RemoveItem(Resource.Id.action_help);
             menu.RemoveItem(Resource.Id.action_sair);
             menu.RemoveItem(Resource.Id.action_filtrar);
+            menu.RemoveItem(Resource.Id.action_legenda);
 
             if (tblPreco == null)
             {
@@ -122,12 +122,6 @@ namespace weblayer.venda.android.exp.Activities
             {
                 validacao = false;
                 txtDescricaoTabelaPreco.Error = "Descrição da tabela inválida!";
-            }
-
-            if (txtDescMaxTabelaPreco.Length() == 0)
-            {
-                validacao = false;
-                txtDescMaxTabelaPreco.Error = "Desconto máximo inválido!";
             }
 
             return validacao;
