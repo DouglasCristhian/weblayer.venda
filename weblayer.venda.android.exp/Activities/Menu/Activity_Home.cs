@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace weblayer.venda.android.exp.Activities
 {
-    [Activity(NoHistory = true, MainLauncher = false)]
+    [Activity(MainLauncher = false)]
     public class Activity_Home : Activity
     {
         Android.Support.V7.Widget.Toolbar toolbar;
