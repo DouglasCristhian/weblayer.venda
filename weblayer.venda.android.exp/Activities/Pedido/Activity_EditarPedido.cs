@@ -31,7 +31,7 @@ namespace weblayer.venda.android.exp.Activities
         private Button btnAdicionar;
         private Button btnItensPedido;
         private Button btnGerarPDF;
-        private Button btnFinalizar;
+        private Button btnFinalizar; 
         private Pedido pedido;
         private string idcliente;
         private Spinner spinnerClientes;

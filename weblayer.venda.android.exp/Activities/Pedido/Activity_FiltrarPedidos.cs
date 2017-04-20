@@ -26,7 +26,7 @@ namespace weblayer.venda.android.exp
         {
             get
             {
-                return Resource.Layout.Activity_FiltrarPedidos;
+                return Resource.Layout.Activity_FiltrarPedidos2;
             }
         }
 
