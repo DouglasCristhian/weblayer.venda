@@ -83,7 +83,7 @@ namespace weblayer.venda.core.Dal
             if (List().Count > 0)
                 return;
 
-            Save(new Cliente() { id_Codigo = "1", ds_NomeFantasia = "CLIENTE EXEMPLO 1", ds_RazaoSocial = "CLIENTE EXEMPLO 1 LTDA", ds_Cnpj = "11.111.111/1111-11", id_tabelapreco = 1 });
+            Save(new Cliente() { id_Codigo = "1", ds_NomeFantasia = "CLIENTE EXEMPLO", ds_RazaoSocial = "CLIENTE EXEMPLO 1 LTDA", ds_Cnpj = "11.111.111/1111-11", id_tabelapreco = 1 });
             
         }
     }

@@ -136,7 +136,7 @@ namespace weblayer.venda.core.Dal
             if (List().Count > 0)
                 return;
 
-            Save(new Pedido() { id_codigo = "1", dt_emissao = DateTime.Parse("2017/02/07"), id_cliente = 1, ds_cliente = "CLIENTE EXEMPLO 1", id_vendedor = 1, ds_vendedor = "", vl_total = 10.99, vl_descontoTotal = 0, vl_volume = 1, ds_MsgPedido = "MensagemPedido1", ds_MsgNF = "MensagemNF1", fl_status = 0 });
+            Save(new Pedido() { id_codigo = "1", dt_emissao = DateTime.Parse("2017/02/07"), id_cliente = 1, ds_cliente = "CLIENTE EXEMPLO", id_vendedor = 1, ds_vendedor = "", vl_total = 10.99, vl_descontoTotal = 0, vl_volume = 1, ds_MsgPedido = "MENSAGEM PEDIDO EXEMPLO", ds_MsgNF = "MENSAGEM NOTA EXEMPLO", fl_status = 0 });
             
         }
     }
