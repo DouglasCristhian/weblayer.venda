@@ -68,8 +68,7 @@ namespace weblayer.venda.core.Dal
             if (List().Count > 0)
                 return;
 
-            Save(new Produto() { id_codigo = "01", ds_nome = "PRODUTO EXEMPLO 1", ds_unimedida = "UN", vl_Venda = 10.99, vl_Lista = 10.99 });
-            Save(new Produto() { id_codigo = "02", ds_nome = "PRODUTO EXEMPLO 2", ds_unimedida = "UN", vl_Venda = 8.99, vl_Lista = 8.99 });
+            Save(new Produto() { id_codigo = "01", ds_nome = "PRODUTO EXEMPLO", ds_unimedida = "UN", vl_Venda = 10.99, vl_Lista = 10.99 });
             
         }
     }
