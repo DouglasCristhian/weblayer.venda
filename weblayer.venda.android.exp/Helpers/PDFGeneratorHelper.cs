@@ -150,7 +150,6 @@ namespace weblayer.venda.android.exp.Helpers
         private Paragraph PopularCapaPedido(Pedido pedido)
         {
             Paragraph paragraph = new Paragraph("Cliente: " + pedido.ds_cliente
-                                            + "\n\nVendedor: " + pedido.ds_vendedor
                                               + "\n\nData de Emissão: " + pedido.dt_emissao.Value.ToString("dd/MM/yyyy"));
             paragraph.IndentationLeft = 50f;
 
