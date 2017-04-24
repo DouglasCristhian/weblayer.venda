@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace weblayer.venda.android.exp.Helpers
+namespace weblayer.venda.android.core.Helpers
 {
     public static class DateHelper
     {

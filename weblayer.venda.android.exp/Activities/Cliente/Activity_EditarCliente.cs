@@ -5,6 +5,7 @@ using Android.Views;
 using Android.Widget;
 using System;
 using System.Collections.Generic;
+using weblayer.venda.android.core.Helpers;
 using weblayer.venda.android.exp.Adapters;
 using weblayer.venda.android.exp.Helpers;
 using weblayer.venda.core.Bll;

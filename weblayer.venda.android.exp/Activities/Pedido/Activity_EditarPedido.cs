@@ -9,6 +9,7 @@ using Android.Widget;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using weblayer.venda.android.core.Helpers;
 using weblayer.venda.android.exp.Adapters;
 using weblayer.venda.android.exp.Helpers;
 using weblayer.venda.core.Bll;
@@ -31,7 +32,7 @@ namespace weblayer.venda.android.exp.Activities
         private Button btnAdicionar;
         private Button btnItensPedido;
         private Button btnGerarPDF;
-        private Button btnFinalizar;
+        private Button btnFinalizar; 
         private Pedido pedido;
         private string idcliente;
         private Spinner spinnerClientes;
