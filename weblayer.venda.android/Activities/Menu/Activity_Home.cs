@@ -19,7 +19,7 @@ namespace weblayer.venda.android.Activities
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Activity_Home);
 
-            core.Dal.Database.Initialize();
+            venda.core.Dal.Database.Initialize();
 
             FindViews();
             BindData();

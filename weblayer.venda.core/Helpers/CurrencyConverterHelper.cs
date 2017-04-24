@@ -5,7 +5,7 @@ using Java.Text;
 using Java.Util;
 using System.Text.RegularExpressions;
 
-namespace weblayer.venda.android.exp.Helpers
+namespace weblayer.venda.android.core.Helpers
 {
     public class CurrencyConverterHelper : Java.Lang.Object, ITextWatcher
     {

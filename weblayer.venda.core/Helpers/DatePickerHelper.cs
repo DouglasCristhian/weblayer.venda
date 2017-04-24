@@ -2,7 +2,7 @@ using Android.App;
 using Android.OS;
 using System;
 
-namespace weblayer.venda.android.exp.Helpers
+namespace weblayer.venda.android.core.Helpers
 {
     public class DatePickerHelper : DialogFragment, DatePickerDialog.IOnDateSetListener
     {

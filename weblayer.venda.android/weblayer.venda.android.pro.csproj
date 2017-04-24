@@ -131,10 +131,6 @@
     <Compile Include="Adapters\Adapter_TabelaPreco_ListView.cs" />
     <Compile Include="Adapters\mSpinner.cs" />
     <Compile Include="Fragments\Fragment_Legendas.cs" />
-    <Compile Include="Helpers\CurrencyConverterHelper.cs" />
-    <Compile Include="Helpers\DatePickerHelper.cs" />
-    <Compile Include="Helpers\DialogEventArgs.cs" />
-    <Compile Include="Helpers\MaskHelper.cs" />
     <Compile Include="Helpers\PDFGeneratorHelper.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

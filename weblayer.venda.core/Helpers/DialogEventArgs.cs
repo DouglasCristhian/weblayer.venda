@@ -1,4 +1,4 @@
-namespace weblayer.venda.android.exp.Helpers
+namespace weblayer.venda.android.core.Helpers
 {
     public class DialogEventArgs
     {
