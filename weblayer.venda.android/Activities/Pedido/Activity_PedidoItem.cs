@@ -6,6 +6,7 @@ using Android.Text;
 using Android.Views;
 using Android.Widget;
 using System;
+using weblayer.venda.android.core.Helpers;
 using weblayer.venda.android.Helpers;
 using weblayer.venda.core.Bll;
 using weblayer.venda.core.Model;
