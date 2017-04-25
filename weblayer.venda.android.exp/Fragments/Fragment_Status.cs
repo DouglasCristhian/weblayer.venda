@@ -4,7 +4,7 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using System;
-using weblayer.venda.android.exp.Helpers;
+using weblayer.venda.android.core.Helpers;
 
 namespace weblayer.venda.android.exp.Fragments
 {

@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using System.Collections.Generic;
+using weblayer.venda.android.core.Helpers;
 using weblayer.venda.android.exp.Adapters;
 using weblayer.venda.android.exp.Fragments;
 using weblayer.venda.core.Bll;
@@ -156,7 +157,7 @@ namespace weblayer.venda.android.exp.Activities
             dialog.Show(transaction, "dialog");
         }
 
-        private void Dialog_DialogClosed(object sender, Helpers.DialogEventArgs e)
+        private void Dialog_DialogClosed(object sender, DialogEventArgs e)
         {
             string retorno = e.ReturnValue;
             int id = 0;

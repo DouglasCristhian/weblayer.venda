@@ -2,7 +2,7 @@ using Android.Text;
 using Android.Widget;
 using Java.Lang;
 
-namespace weblayer.venda.android.Helpers
+namespace weblayer.venda.android.core.Helpers
 {
     public class Mask : Object, ITextWatcher
     {

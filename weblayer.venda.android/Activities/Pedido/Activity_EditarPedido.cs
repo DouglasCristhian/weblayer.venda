@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using weblayer.venda.android.Adapters;
+using weblayer.venda.android.core.Helpers;
 using weblayer.venda.android.Helpers;
 using weblayer.venda.core.Bll;
 using weblayer.venda.core.Dal;
