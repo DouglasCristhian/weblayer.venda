@@ -16,4 +16,6 @@
   <color name="ParcEntregue">#75cc9c</color>
   <color name="Entregue">#27cc71</color>
 
+  <color name="button_focused">#DBDBDB</color>
+
 </resources>

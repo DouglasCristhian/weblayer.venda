@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Widget;
 using System.Collections.Generic;
 using System.Threading;
+using weblayer.venda.android.Activities.Menu;
 using weblayer.venda.core.Sinc;
 
 namespace weblayer.venda.android.Activities
@@ -56,6 +57,10 @@ namespace weblayer.venda.android.Activities
 
                 case Resource.Id.action_help:
                     StartActivity(typeof(Activity_WebView));
+                    break;
+
+                case Resource.Id.action_contato:
+                    StartActivity(typeof(Activity_Contato));
                     break;
 
                 case Resource.Id.action_sair:

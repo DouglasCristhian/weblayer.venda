@@ -38,6 +38,11 @@
     app:showAsAction="never"/>
 
   <item
+  android:id="@+id/action_contato"
+  android:title="Contato"
+  app:showAsAction="never"/>
+
+  <item
     android:id="@+id/action_legenda"
     android:icon="@mipmap/ic_help"
     app:showAsAction="always"/>
