@@ -39,13 +39,20 @@ namespace weblayer.venda.android.exp.Activities
 
         private string Novidades()
         {
-            string Novidades;
-            Novidades = " 1.0 (24/01/2017):"
-                                     + "\n\n     [Novo] Implementação do menu Novidades (Via opção 'Sobre')"
-                                     + "\n     [Melhorias] Atualização dos ícones do menu" +
-                         "\n\n1.0 (14/03/2017):"
+            string Novidades="";
+
+            Novidades = Novidades + "\n\n1.2 (19/06/2017):"
+                                     + "\n\n     [Melhoria] Novo item no menu: Contato";
+
+            Novidades = Novidades + "\n\n1.1 (14/03/2017):"
                                      + "\n\n     [Novo] Implementação do filtro de pedidos por data"
                                      + "\n     [Novo] Visualização do status do pedido";
+
+            Novidades = Novidades  + "\n\n1.0 (24/01/2017):"
+                                     + "\n\n     [Novo] Implementação do menu Novidades (Via opção 'Sobre')"
+                                     + "\n     [Melhorias] Atualização dos ícones do menu";
+
+            
             return Novidades;
 
         }
