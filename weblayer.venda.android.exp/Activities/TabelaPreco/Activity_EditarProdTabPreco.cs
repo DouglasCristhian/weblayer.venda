@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using weblayer.venda.android.core.Helpers;
 using weblayer.venda.android.exp.Adapters;
-using weblayer.venda.android.exp.Helpers;
 using weblayer.venda.core.Bll;
 using weblayer.venda.core.Dal;
 using weblayer.venda.core.Model;
@@ -81,6 +80,7 @@ namespace weblayer.venda.android.exp.Activities
             menu.RemoveItem(Resource.Id.action_sair);
             menu.RemoveItem(Resource.Id.action_filtrar);
             menu.RemoveItem(Resource.Id.action_legenda);
+            menu.RemoveItem(Resource.Id.action_contato);
 
             if (prodtabpreco == null)
             {

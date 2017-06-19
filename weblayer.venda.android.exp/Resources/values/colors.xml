@@ -10,4 +10,6 @@
   <color name="Faturado">#f3b913</color>
   <color name="Entregue">#27cc71</color>
 
+  <color name="button_focused">#DBDBDB</color>
+
 </resources>

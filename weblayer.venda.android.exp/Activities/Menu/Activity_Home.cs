@@ -2,6 +2,7 @@ using Android.App;
 using Android.OS;
 using Android.Widget;
 using System.Collections.Generic;
+using weblayer.venda.android.exp.Activities.Menu;
 
 namespace weblayer.venda.android.exp.Activities
 {
@@ -33,6 +34,10 @@ namespace weblayer.venda.android.exp.Activities
 
                 case Resource.Id.action_help:
                     StartActivity(typeof(Activity_WebView));
+                    break;
+
+                case Resource.Id.action_contato:
+                    StartActivity(typeof(Activity_Contato));
                     break;
 
                 case Resource.Id.action_sair:
